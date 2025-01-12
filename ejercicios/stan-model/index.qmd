@@ -1,0 +1,87 @@
+---
+title: "Modelación con Stan"
+---
+
+```{r}
+library(tidyverse)
+```
+
+
+La modelación estadística tiene múltiples opciones actualmente. Señaladamente **R**, **Python**, **Julia**, **Matlab**, *Stata* y **Stan** que de acuerdo con su propia apreciación "es una plataforma de última generación para el modelado estadístico y el cálculo estadístico de alto rendimiento en la que confían miles de usuarios". **Stan** es básicamente un lenguaje para la programación de modelos probabilísticos que permite:
+
++ Inferencia estadística bayesiana completa.
++ Inferencia bayesiana aproximada con inferencia variacional.
++ Estimación de máxima verosimilitud penalizada con optimización.
+
+**Stan** tiene su motor de cálculo propio, pero  interactúa muy bien con los lenguajes de análisis de datos más populares (*R*, *Python*, *MATLAB*, etc.) y en los sistemas operativos comunes (_Linux_, _Mac_, _Windows_). Puedes obtener más información sobre esta propuesta de modelación estadística en la [página de Stan](https://mc-stan.org/).
+
+
+## Preparación
+
+El concepto que utiliza **Stan** parte de la especificación de las funciones de densidad que le interesan al usuario para enseguida ajustar los modelos a los datos. Un ejemplo trivial es el siguiente, en el que sólo nos proponemos estimar la media de una muestra de datos que asumiremos se distribuyen normalmente. Lo primero que hay que hacer es crear un archivo que especifique el modelo en los términos que **Stan** requiere. La especificación básica es la siguiente (se pueden agregar comentarios con un doble diagonal). Primero una definición del tipo de datos que requiere el modelo.
+
+``` stan
+// The input data is a vector 'y' of length 'N'.
+data {
+  int<lower=0> N;
+  vector[N] y;
+}
+```
+
+En seguida se detallan los parámetros que definen el modelo.
+
+``` stan
+// The parameters accepted by the model. Our model
+// accepts two parameters 'mu' and 'sigma'.
+parameters {
+  real mu;
+  real<lower=0> sigma;
+}
+```
+
+Finalmente, se especifica el modelo. El modelo completo se guarda como un archivo *stan* al que se llamará cuando se busque realizar el ajuste.
+
+
+``` stan
+// The model to be estimated. We model the output
+// 'y' to be normally distributed with mean 'mu'
+// and standard deviation 'sigma'.
+model {
+  y ~ normal(mu, sigma);
+}
+
+```
+
+Para ejemplificar el uso del modelo `stan` ya definido arriba, sólo nos resta preparar algunos datos de prueba, activar la biblioteca `rstan` y realizar el ajuste, que básicamente consiste en generar un muestreo de la distribución de probabilidades. Al invocar la función `stan` se _compila_ la especificación del modelo para que **Stan** lo pueda procesar. Una vez hecho eso, se realiza un proceso de muestreo de las distribución conjunta especificada, lo qe equivale a *ajustar el modelo* en **Stan**.
+
+
+```{r class.source="bg-warning"}
+library(rstan)
+library(tibble)
+rstan_options(auto_write = TRUE)
+
+datos <-  list(N = 1000, 
+               y = rnorm(1000, 10, 2))
+               
+norm_fit <- stan(file = 'modelo.stan', data = datos)
+
+```
+
+Un objeto `stanfit` en **R** contiene los resultados derivados de ajustar (muestrear) un modelo **Stan** utilizando métodos Monte Carlo para cadenas de Markov (es la que se usa por default) o alguna de las _aproximaciones variacionales_ que es capaz de procesar Stan.
+
+Ahora podemos ver los resultados del ajuste del modelo y explorar los resultados que arroja.
+
+```{r}
+
+summary(norm_fit)
+
+ajuste <- as_tibble(rstan::extract(norm_fit))
+
+head(ajuste)
+
+head(as_tibble(as.data.frame(norm_fit)))
+
+mean(ajuste$mu)
+
+```
+

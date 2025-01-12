@@ -1,0 +1,15 @@
+{
+  "hash": "d59aa4707e8247cc96135116d58a9c40",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Tarea de análisis críticos\"\nauthor: [\"Miguel Equihua\", \"Elio Lagunes\"] \ndate: \"2024-02-1\"\ndraft: false\ncategories: [taller]\ncode-fold: true\n---\n\n\n\n::: {layout=\"[[-15, 70, -15], [-15, 70, -15]]\"}\n![](unixexceldates.png)\n\nFuente: [xkcd.com](https://xkcd.com/2676/)\n:::\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(skimr) # para echar un ojito a las bases de datos\nlibrary(sf)    # para trabajo geoespacial con vectores\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
