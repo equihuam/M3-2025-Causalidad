@@ -1,7 +1,7 @@
 ---
 title: "Restricciones a la aleatorización"
 author: ["Miguel Equihua", "Elio Lagunes"]
-date: "2024-02-02"
+date: "2025-01-31"
 lang: es
 draft: true
 categories: [clase]

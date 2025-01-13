@@ -4,16 +4,14 @@ sbtiitle: "Directed Acyclic Graphs (DAG)"
 author: 
   - name: "Miguel Equihua"
     email: "equihuam@gmail.com"
-  - name: "Octavio Pérez Maqueo"
-    email: "octavio.maqueo@inecol.mx"
   - name: "Elio G. Lagunes"
     email: "elio.lagunes@inecol.mx"
-date: "2024-01-29"
+date: "2025-01-28"
 draft: true
 date-format: "[Xalapa, Ver.,] D MMMM YYYY"
 categories: [presentación]
 lang: es
-footer: "[M3-Causalidad](https://m3-causalidad-2024.netlify.app/)"
+footer: "[M3-Causalidad](http://m3-2025-causalidad.miequiz-ca.net/)"
 logo:  "images/Logo-Inecol.png"
 title-slide-attributes:
     data-background-image: "images/gamma-plantilla_alfa.png"
@@ -31,7 +29,6 @@ execute:
   echo: true
 embed-resources: false
 preload-iframes: true
-lightbox: true
 ---
 
 ## La escalera de la causalidad
@@ -48,19 +45,22 @@ lightbox: true
 # Diagrama Causal
 
 ::: {.columns}
-::: {.column width="50%" .smaller}
+::: {.column width="50%}
+::: {.smaller}
 + Es un diagrama o *grafo* que describe una proposición causal para un conjunto de variables.
 
 + Las Herramientas matemáticas y estadísticas para operarlos han sido impulsadas por Judea Pearl y sus colegas desde los 1980.
 
 + Particularmente interesan los grafos acíclicos dirigidos, de ahí *DAG* .
 :::
+:::
 
-:::{.column width="50%"}
+:::{.column width="50%}
 
 ![](images/causal-diagram.svg)
 :::
 :::
+
 
 :::{style="font-size:60%;"}
 **Pearl, J. (1995). Causal Diagrams for Empirical Research.** *Biometrika* **,** *82* **(4), 669–688. https://doi.org/10.2307/2337329**
@@ -70,7 +70,8 @@ lightbox: true
 ## Terminología básica de un DAG
 
 ::: {.columns}
-::: {.column width="50%" style="font-size:80%"}
+::: {.column width="50%"}
+::: {style="font-size:80%"}
 
 + **Nodo** : una variable
 + **Arista** : una relación causal, representada por una flecha
@@ -79,6 +80,7 @@ lightbox: true
 + **Ancestros** : Nodos que están "aguas arriba" de una variable dada. En este *DAG* *A* y *C* son ancestros de *X* .
 + **Descendientes** : Nodos que están "aguas abajo" de una variable en particular. En este *DAG* *Y* y *B* son descendientes de *X* .
 
+:::
 :::
 
 :::{.column width="50%"}
@@ -96,7 +98,9 @@ lightbox: true
 ## Papel de las variables en un DAG
 
 :::{.columns}
-:::{.column width="60%" style="font-size:60%"}
+:::{.column width="60%"}
+:::{style="font-size:60%;"}
+
 + **Factor de Confusión** : Es ancestro tanto de la explicativa *X* como de la respuesta *Y* . *A* lo es el *DAG* .
 + **Mediador** : Es al mismo tiempo descendiente de la explicativa y ancestro de la respuesta. *F* lo es. Parte (o la totalidad) del efecto causal sobre la respuesta se transmite a través de él.
 + **Proxy de un** **Factor de** **Confusión** : Es descendiente de un factor de confusión y ancestro de la explicativa o de la respuesta (pero no de ambas, pues entonces sería un factor de confusión). El efecto de confusión se transmite a través de esta variable. *B* es proxy.
@@ -104,8 +108,9 @@ lightbox: true
 + **Instrumento** : Un instrumento es un ancestro de la explicativa. No tiene ningún camino hacia la respuesta *Y* que no pase a través de la explicativa *X* (pues sería un factor de confusión). *D* es un instrumento.
 + **Colisionador** : Un colisionador es un descendiente tanto de la exposición X como de la respuesta Y. E es un colisionador en el ejemplo DAG.
 :::
+:::
 
-::: {.column width="40%"}
+::: {.column width="40%}
 ![](images/tipos-relacion-dag.svg){width=500px}
 :::
 :::
@@ -235,9 +240,14 @@ Ejemplo con datos de COVID-19 sobre mortalidad por raza, tal y como se describe 
 
 La paradoja: los blancos no hispanos tienen una mayor mortalidad si nos fijamos en los datos agregados. Pero: Desagregados por edad (relativo a la expectativa de vida, de ahí el arco B), los blancos tienen una mortalidad menor en todos los grupos de edad. El DAG correspondiente:
 
+. . .
+
+::::{layout="[[1, 1], [-1, 1]]"}
+
 ![](images/Clase_2 - Diagramas Causales9.png)
 
 Como podemos ver en el gráfico, la edad es un factor de confusión para esta relación y, por tanto, mirar los datos observacionales *Pr* (Muerte\|Raza) no dará la respuesta correcta. Una vez que observamos *Pr* (Muerte\|Raza, Edad), el efecto de la variable Raza se invierte. La razón por la que puede ocurrir esto es poco intuitiva.
+:::
 
 ## La paradoja de Berkson {.smaller}
 
@@ -251,7 +261,7 @@ Como podemos ver en el gráfico, la edad es un factor de confusión para esta re
 + **El condicionamiento sobre el colisionador ha desbloqueado la vía causal entre las dos variables.**
 :::
 
-::: {.column width=40%}
+::: {.column width="40%" }
 ![](images/covid-comorbilidades.png)
 :::
 :::
@@ -299,4 +309,5 @@ Hay varias causas de bajo peso al nacer. Fumar es una de ellas, pero hay otras.
 Las otras causas de bajo peso al nacer tienen un mayor riesgo negativo sobre la mortalidad infantil, aparte de su efecto sobre el bajo peso al nacer.
 
 Como reto, dibuja el DAG correspondiente y combina todos estos hechos para averiguar cómo el condicionamiento sobre el peso al nacer puede crear el hallazgo de que fumar tiene un falso efecto protector.
+
 

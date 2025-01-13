@@ -1,5 +1,6 @@
 ---
 title: "M3-Presentaciones"
+lang: es
 listing:
   contents:
     - "presentaciones/*/*.qmd"
@@ -9,6 +10,5 @@ listing:
   sort-ui: false
   filter-ui: false
 page-layout: full
-lang: es
 title-block-banner: true
 ---

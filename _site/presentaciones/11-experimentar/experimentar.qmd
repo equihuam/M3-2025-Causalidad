@@ -4,16 +4,14 @@ subtitle: "algunos ejemplos"
 author: 
   - name: "Miguel Equihua"
     email: "equihuam@gmail.com"
-  - name: "Octavio Pérez Maqueo"
-    email: "octavio.maqueo@inecol.mx"
   - name: "Elio G. Lagunes"
     email: "elio.lagunes@inecol.mx"
-date: "2024-02-8"
+date: "2025-02-7"
 draft: true
 date-format: "[Xalapa, Ver.,] D MMMM YYYY"
 categories: [presentación]
 lang: es
-footer: "[M3-Causalidad](https://m3-causalidad-2024.netlify.app/)"
+footer: "[M3-Causalidad](http://m3-2025-causalidad.miequiz-ca.net/)"
 logo:  "images/Logo-Inecol.png"
 title-slide-attributes:
     data-background-image: "images/gamma-plantilla_alfa.png"

@@ -2,44 +2,17 @@
   {
     "listing": "/presentaciones.html",
     "items": [
-      "/presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html",
-      "/presentaciones/03-modelo-lineal/pres-modelo-lineal.html",
-      "/presentaciones/04-diagramas-causales/Diagramas Causales.html",
-      "/presentaciones/09-medidas-repetidas/medidas-repetidas.html",
-      "/presentaciones/11-experimentar/experimentar.html"
+      "/presentaciones/09-medidas-repetidas/medidas-repetidas.html"
     ]
   },
   {
     "listing": "/ejercicios.html",
-    "items": [
-      "/ejercicios/ejercicio-critico/index.html",
-      "/ejercicios/critico/index.html",
-      "/ejercicios/pizzas/index.html",
-      "/ejercicios/venenos/index.html",
-      "/ejercicios/solucion-venenos/solucion-venenos.html",
-      "/ejercicios/solucion-pizzas/solucion-masa-pizza.html",
-      "/ejercicios/tareas/index.html",
-      "/ejercicios/stan-model/index.html"
-    ]
-  },
-  {
-    "listing": "/ejercicios/critico/index.html",
     "items": []
   },
   {
     "listing": "/index.html",
     "items": [
-      "/posts/00-Bienvenida/index.html",
-      "/posts/01-concepto-y-modelos-experimentar/index.html",
-      "/posts/09-medidas-repetidas/index.html",
-      "/posts/10-experimentar/index.html",
-      "/posts/08-modelos-mixtos/index.html",
-      "/posts/07-experimentos-anidados/index.html",
-      "/posts/06-Restringir-aleatorizacion/index.html",
-      "/posts/05-dis-comp-aleat/index.html",
-      "/posts/04-diagramas-causales/index.html",
-      "/posts/02-leyes-de-la-ciencia/index.html",
-      "/posts/03-modelo-lineal/index.html"
+      "/posts/00-Bienvenida/index.html"
     ]
   }
 ]

@@ -6,11 +6,11 @@ author:
   - name: "Elio Lagunes"
     email: "elio.lagunes.mx"
 date: "2024-02-08"
-draft: true
+draft: false
 date-format: "[Xalapa, Ver.,] D MMMM, YYYY"
 categories: [presentación]
 lang: es
-footer: "[M3-Causalidad](https://m3-causalidad-2024.netlify.app/)"
+footer: "[M3-Causalidad](http://m3-2025-causalidad.miequiz-ca.net/)"
 logo:  "images/Logo-Inecol.png"
 title-slide-attributes:
     data-background-image: "images/gamma-plantilla_alfa.png"

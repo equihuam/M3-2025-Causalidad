@@ -13,14 +13,10 @@
 <script src="../../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
 <link href="../../site_libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet">
 <script src="../../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.js" defer="true"></script>
-<link href="../../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.css" rel="stylesheet">
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
+<link href="../../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Miguel Equihua">
-  <meta name="author" content="Octavio Pérez Maqueo">
   <meta name="author" content="Elio G. Lagunes">
   <title>Curso de Estadística (Inecol 2025) – Introducción a Diagramas Causales</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -352,14 +348,6 @@ Miguel Equihua
 </div>
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Octavio Pérez Maqueo 
-</div>
-<div class="quarto-title-author-email">
-<a href="mailto:octavio.maqueo@inecol.mx">octavio.maqueo@inecol.mx</a>
-</div>
-</div>
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
 Elio G. Lagunes 
 </div>
 <div class="quarto-title-author-email">
@@ -368,7 +356,7 @@ Elio G. Lagunes
 </div>
 </div>
 
-  <p class="date">Xalapa, Ver., 29 enero 2024</p>
+  <p class="date">Xalapa, Ver., 28 enero 2025</p>
 </section>
 <section id="la-escalera-de-la-causalidad" class="slide level2">
 <h2>La escalera de la causalidad</h2>
@@ -378,10 +366,10 @@ Elio G. Lagunes
 <div class="quarto-layout-panel" data-layout="[[1, 1], [1]]">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="images/Clase_2 - Diagramas Causales2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="images/Clase_2 - Diagramas Causales2.png" width="420"></a></p>
+<p><img data-src="images/Clase_2 - Diagramas Causales2.png" width="420"></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="images/Clase_2 - Diagramas Causales3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="images/Clase_2 - Diagramas Causales3.png" width="178"></a></p>
+<p><img data-src="images/Clase_2 - Diagramas Causales3.png" width="178"></p>
 </div>
 </div>
 <div class="quarto-layout-row">
@@ -395,14 +383,16 @@ Elio G. Lagunes
 <section id="diagrama-causal" class="title-slide slide level1 center">
 <h1>Diagrama Causal</h1>
 <div class="columns">
-<div class="column smaller" style="width:50%;">
+<div class="column" style="width:&quot;50%;">
+<div class="smaller">
 <ul>
 <li><p>Es un diagrama o <em>grafo</em> que describe una proposición causal para un conjunto de variables.</p></li>
 <li><p>Las Herramientas matemáticas y estadísticas para operarlos han sido impulsadas por Judea Pearl y sus colegas desde los 1980.</p></li>
 <li><p>Particularmente interesan los grafos acíclicos dirigidos, de ahí <em>DAG</em> .</p></li>
 </ul>
-</div><div class="column" style="width:50%;">
-<p><a href="images/causal-diagram.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img data-src="images/causal-diagram.svg"></a></p>
+</div>
+</div><div class="column" style="width:&quot;50%;">
+<p><img data-src="images/causal-diagram.svg"></p>
 </div></div>
 <div style="font-size:60%;">
 <p><strong>Pearl, J. (1995). Causal Diagrams for Empirical Research.</strong> <em>Biometrika</em> <strong>,</strong> <em>82</em> <strong>(4), 669–688. https://doi.org/10.2307/2337329</strong></p>
@@ -411,7 +401,8 @@ Elio G. Lagunes
 <section id="terminología-básica-de-un-dag" class="slide level2">
 <h2>Terminología básica de un DAG</h2>
 <div class="columns">
-<div class="column" style="font-size:80%">
+<div class="column" style="width:50%;">
+<div style="font-size:80%">
 <ul>
 <li><strong>Nodo</strong> : una variable</li>
 <li><strong>Arista</strong> : una relación causal, representada por una flecha</li>
@@ -420,8 +411,9 @@ Elio G. Lagunes
 <li><strong>Ancestros</strong> : Nodos que están “aguas arriba” de una variable dada. En este <em>DAG</em> <em>A</em> y <em>C</em> son ancestros de <em>X</em> .</li>
 <li><strong>Descendientes</strong> : Nodos que están “aguas abajo” de una variable en particular. En este <em>DAG</em> <em>Y</em> y <em>B</em> son descendientes de <em>X</em> .</li>
 </ul>
+</div>
 </div><div class="column" style="width:50%;">
-<p><a href="images/elementos-de-un-dag.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img data-src="images/elementos-de-un-dag.svg"></a></p>
+<p><img data-src="images/elementos-de-un-dag.svg"></p>
 </div></div>
 </section>
 <section id="b-es-una-variable-mediadora-del-efecto-de-a" class="slide level2">
@@ -437,7 +429,7 @@ Elio G. Lagunes
 </div>
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<p><a href="images/variable-mediadora.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img data-src="images/variable-mediadora.svg"></a></p>
+<p><img data-src="images/variable-mediadora.svg"></p>
 </div>
 </div>
 </div>
@@ -445,7 +437,8 @@ Elio G. Lagunes
 <section id="papel-de-las-variables-en-un-dag" class="slide level2">
 <h2>Papel de las variables en un DAG</h2>
 <div class="columns">
-<div class="column" style="font-size:60%">
+<div class="column" style="width:60%;">
+<div style="font-size:60%;">
 <ul>
 <li><strong>Factor de Confusión</strong> : Es ancestro tanto de la explicativa <em>X</em> como de la respuesta <em>Y</em> . <em>A</em> lo es el <em>DAG</em> .</li>
 <li><strong>Mediador</strong> : Es al mismo tiempo descendiente de la explicativa y ancestro de la respuesta. <em>F</em> lo es. Parte (o la totalidad) del efecto causal sobre la respuesta se transmite a través de él.</li>
@@ -454,8 +447,9 @@ Elio G. Lagunes
 <li><strong>Instrumento</strong> : Un instrumento es un ancestro de la explicativa. No tiene ningún camino hacia la respuesta <em>Y</em> que no pase a través de la explicativa <em>X</em> (pues sería un factor de confusión). <em>D</em> es un instrumento.</li>
 <li><strong>Colisionador</strong> : Un colisionador es un descendiente tanto de la exposición X como de la respuesta Y. E es un colisionador en el ejemplo DAG.</li>
 </ul>
-</div><div class="column" style="width:40%;">
-<p><a href="images/tipos-relacion-dag.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img data-src="images/tipos-relacion-dag.svg" width="500"></a></p>
+</div>
+</div><div class="column" style="width:&quot;40%;">
+<p><img data-src="images/tipos-relacion-dag.svg" width="500"></p>
 </div></div>
 </section>
 <section id="cuándo-esperar-asociación" class="slide level2">
@@ -466,7 +460,7 @@ Elio G. Lagunes
 <div class="quarto-layout-panel" data-layout="[[1], [-1, 1]]">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<p><a href="images/esperar asociación.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img data-src="images/esperar asociación.svg"></a></p>
+<p><img data-src="images/esperar asociación.svg"></p>
 </div>
 </div>
 <div class="quarto-layout-row">
@@ -487,7 +481,7 @@ Elio G. Lagunes
 <div class="quarto-layout-panel" data-layout="[[1], [-1, 2]]">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<p><a href="images/sesgo-sistematico.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img data-src="images/sesgo-sistematico.svg"></a></p>
+<p><img data-src="images/sesgo-sistematico.svg"></p>
 </div>
 </div>
 <div class="quarto-layout-row">
@@ -513,7 +507,7 @@ Elio G. Lagunes
 </div>
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<p><a href="images/sesgo-seleccion.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img data-src="images/sesgo-seleccion.svg"></a></p>
+<p><img data-src="images/sesgo-seleccion.svg"></p>
 </div>
 </div>
 </div>
@@ -560,7 +554,7 @@ Elio G. Lagunes
 </div>
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<p><a href="images/variable-intermedia.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img data-src="images/variable-intermedia.png"></a></p>
+<p><img data-src="images/variable-intermedia.png"></p>
 </div>
 </div>
 </div>
@@ -581,7 +575,7 @@ Elio G. Lagunes
 <p>Si una variable <em>A</em> es una causa común de las variables <em>X</em> e <em>Y</em> , y solo hay una ruta entre <em>X</em> e <em>Y</em> , entonces <em>X</em> e <em>Y</em> son condicionalmente independientes cuando se consideran como condicionantes los datos de <em>A</em> .</p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="images/variale-causa-comun.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img data-src="images/variale-causa-comun.png"></a></p>
+<p><img data-src="images/variale-causa-comun.png"></p>
 </div>
 </div>
 </div>
@@ -602,7 +596,7 @@ Elio G. Lagunes
 <p>Si una variable <em>A</em> es el nodo de colisión entre dos variables <em>X</em> e <em>Y</em> , y solo hay un camino entre <em>X</em> e <em>Y</em> , entonces <em>X</em> e <em>Y</em> son incondicionalmente independientes pero dependen condicionalmente de <em>A</em> así como de cualquier descendiente de <em>A</em> .</p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="images/variale-colisionador.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img data-src="images/variale-colisionador.png"></a></p>
+<p><img data-src="images/variale-colisionador.png"></p>
 </div>
 </div>
 </div>
@@ -628,7 +622,7 @@ Elio G. Lagunes
 </ul>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="images/regla-puerta-trasera.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img data-src="images/regla-puerta-trasera.svg"></a></p>
+<p><img data-src="images/regla-puerta-trasera.svg"></p>
 </div>
 </div>
 </div>
@@ -658,8 +652,21 @@ Elio G. Lagunes
 <h2>La paradoja de Simpson</h2>
 <p>Ejemplo con datos de COVID-19 sobre mortalidad por raza, tal y como se describe en el <a href="http://causality.cs.ucla.edu/blog/index.php/2020/07/06/race-covid-mortality-and-simpsons-paradox-by-dana-mackenzie/"><em>blog de Judea Pearl</em></a> .</p>
 <p>La paradoja: los blancos no hispanos tienen una mayor mortalidad si nos fijamos en los datos agregados. Pero: Desagregados por edad (relativo a la expectativa de vida, de ahí el arco B), los blancos tienen una mortalidad menor en todos los grupos de edad. El DAG correspondiente:</p>
-<p><a href="images/Clase_2 - Diagramas Causales9.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img data-src="images/Clase_2 - Diagramas Causales9.png"></a></p>
+<div class="fragment">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[1, 1], [-1, 1]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="images/Clase_2 - Diagramas Causales9.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <p>Como podemos ver en el gráfico, la edad es un factor de confusión para esta relación y, por tanto, mirar los datos observacionales <em>Pr</em> (Muerte|Raza) no dará la respuesta correcta. Una vez que observamos <em>Pr</em> (Muerte|Raza, Edad), el efecto de la variable Raza se invierte. La razón por la que puede ocurrir esto es poco intuitiva.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="la-paradoja-de-berkson" class="slide level2 smaller">
 <h2>La paradoja de Berkson</h2>
@@ -674,7 +681,7 @@ Elio G. Lagunes
 <li><strong>El condicionamiento sobre el colisionador ha desbloqueado la vía causal entre las dos variables.</strong></li>
 </ul>
 </div><div class="column" style="width:40%;">
-<p><a href="images/covid-comorbilidades.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img data-src="images/covid-comorbilidades.png"></a></p>
+<p><img data-src="images/covid-comorbilidades.png"></p>
 </div></div>
 </section>
 <section id="efecto-problemático-de-un-colisionador" class="slide level2">
@@ -722,7 +729,7 @@ Elio G. Lagunes
 <div class="quarto-auto-generated-content">
 <p><img src="images/Logo-Inecol.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p><a href="https://m3-causalidad-2024.netlify.app/">M3-Causalidad</a></p>
+<p><a href="http://m3-2025-causalidad.miequiz-ca.net/">M3-Causalidad</a></p>
 </div>
 </div>
 <div class="reveal-header">
@@ -1139,38 +1146,6 @@ Elio G. Lagunes
       }
     });
     </script>
-    <script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":false,"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom"});
-    (function() {
-      let previousOnload = window.onload;
-      window.onload = () => {
-        if (previousOnload) {
-          previousOnload();
-        }
-        lightboxQuarto.on('slide_before_load', (data) => {
-          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-          const href = trigger.getAttribute('href');
-          if (href !== null) {
-            const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-            if (imgEl !== null) {
-              const srcAttr = imgEl.getAttribute("src");
-              if (srcAttr && srcAttr.startsWith("data:")) {
-                slideConfig.href = srcAttr;
-              }
-            }
-          } 
-        });
-      
-        lightboxQuarto.on('slide_after_load', (data) => {
-          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(slideNode);
-          }
-        });
-      
-      };
-      
-    })();
-              </script>
     
 
 </body></html>
