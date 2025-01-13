@@ -7,7 +7,7 @@ author:
   - name: "Elio Lagunes"
     email: "elio.lagunes.mx"
 date: "2024-01-29"
-draft: false
+draft: true
 date-format: "[Xalapa, Ver.,] D MMMM, YYYY"
 categories: [presentación]
 lang: es

@@ -3,7 +3,7 @@ title: "Pizzas"
 author: ["Miguel Equihua", "Elio Lagunes"]
 date: "2024-02-02"
 lang: es
-draft: false
+draft: true
 categories: [taller]
 format:
   html:

@@ -3,7 +3,7 @@ title: "El Modelo estadístico lineal"
 author: ["Miguel Equihua", "Octavio Pérez Maqueo", "Elio Lagunes"]
 date: "2024-01-29"
 lang: es
-draft: false
+draft: true
 categories: [clase]
 format:
   html:

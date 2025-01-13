@@ -3,7 +3,7 @@ title: "Conceptos y Modelos en la experimentación"
 author: ["Miguel Equihua", "Octavio Pérez Maqueo", "Elio Lagunes"]
 date: "2025-01-27"
 lang: es
-draft: false
+draft: true
 categories: [clase]
 
 format: 

@@ -13,8 +13,11 @@
     "listing": "/ejercicios.html",
     "items": [
       "/ejercicios/ejercicio-critico/index.html",
+      "/ejercicios/critico/index.html",
       "/ejercicios/pizzas/index.html",
       "/ejercicios/venenos/index.html",
+      "/ejercicios/solucion-venenos/solucion-venenos.html",
+      "/ejercicios/solucion-pizzas/solucion-masa-pizza.html",
       "/ejercicios/tareas/index.html",
       "/ejercicios/stan-model/index.html"
     ]

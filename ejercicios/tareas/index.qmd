@@ -3,7 +3,7 @@ title: "Control de Tareas"
 author: ["Miguel Equihua", "Elio Lagunes"]
 date: "2024-02-07"
 lang: es
-draft: false
+draft: true
 categories: [clase]
 format:
   html:
