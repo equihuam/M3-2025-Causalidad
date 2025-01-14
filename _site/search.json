@@ -10,8 +10,8 @@
     "objectID": "presentaciones/02-leyes-de-la-ciencia/index.html#instrucciones-para-participar",
     "href": "presentaciones/02-leyes-de-la-ciencia/index.html#instrucciones-para-participar",
     "title": "Leyes de la Ciencia",
-    "section": "Instrucciones para participar",
-    "text": "Instrucciones para participar\n\n\n\n\n\n\nlo que hay que hacer es\n\n\n\nEn tu computadora ir vevox.app\nPara usar el celular instala Vevox desde la tienda de apps"
+    "section": "",
+    "text": "lo que hay que hacer es\n\n\n\n\nEn tu computadora ir vevox.app\nPara usar el celular instala Vevox desde la tienda de apps"
   },
   {
     "objectID": "presentaciones/02-leyes-de-la-ciencia/index.html#para-ti-qué-es-la-ciencia",
@@ -137,7 +137,7 @@
     "href": "posts/00-Bienvenida/index.html#plan-de-clase",
     "title": "Bienvenidos al Módulo 3 de estadística",
     "section": "Plan de clase",
-    "text": "Plan de clase\n\n\nCódigo\ndias &lt;- rep(NA, 31+28) \ndias[c(27:28, 30:31, 34:35, 37)] &lt;- \"M3 clase\"\ndias[c(29, 34, 37)] &lt;- \"M3 lectura\"\ndias[38] &lt;- \"M3 Mini simposio\"\ndias[c(25:26, 32,33, 36, 39:40)] &lt;- \"Descanso\"\n\na &lt;- calendR(from = \"2025-01-01\",\n        to = \"2025-2-28\",\n        special.days = dias,\n        special.col = c(\"gray\", \"lightgreen\", \"pink\", \"gold\"),\n        legend.pos = \"right\")\n\ndias &lt;- rep(NA, 31) \ndias[c(27:28, 30:31)] &lt;- \"M3 clase\"\ndias[c(29)] &lt;- \"M3 lectura\"\ndias[c(25:26)] &lt;- \"Descanso\"\n\ncalendR(month = 1,\n        lunar = TRUE,\n        special.days = dias,\n        special.col = c(\"gray\", \"lightgreen\", \"pink\"),\n        legend.pos = \"right\")\n\n\n\n\n\n\n\n\n\nCódigo\ndias &lt;- rep(NA, 28) \ndias[c(3:4, 6)] &lt;- \"M3 clase\"\ndias[c(5)] &lt;- \"M3 lectura\"\ndias[7] &lt;- \"M3 Mini simposio\"\ndias[c(1,2, 5, 8:10)] &lt;- \"Descanso\"\n\ncalendR(month = 2,\n        lunar = TRUE,\n        special.days = dias,\n        special.col = c(\"gray\", \"lightgreen\", \"pink\"))\n\n\n\n\n\n\n\n\n\nCódigo\ncontenido &lt;- read_csv(\"contenido.csv\", col_names = TRUE, show_col_types = FALSE)\ncontenido$lectura &lt;- c(\" \", \"debate\")[contenido$lectura + 1]\n\ncontenido %&gt;% flextable(col_keys = c(\"dia\", \"lectura\", \"tema\")) %&gt;% \n  set_header_labels(values = list(dia = \"Día\", \n                                  lectura= \"Lectura\", \n                                  tema = \"Tema\")) %&gt;% \n  autofit() %&gt;% \n  theme_zebra(odd_body = c(\"lightcyan1\")) %&gt;% \n  bold(i = 1:9, j = 1)\n\n\nCalendario de actividades del Módulo 3DíaLecturaTemaLunes 27 Un lenguaje para describir modelos (diseño de experimentos y de tratamientos)Martes 28 Causalidad y modelación gráfica: Grafos Acíclicos Dirigidos (DAG)Miércoles 29debateDiseño de experimentos: hipótesis y la modelación estadísticaJueves 30 Efectos fijos y aleatorios sus implicaciones en los modelos estadísticosViernes 31 Evitar confusión por variables conocidas: Bloques aleatorizadosLunes 3debateMuestreo dentro unidades experimentales: Diseños anidadosMartes 4 Unidades experimentales múltinivel y anidadas: Diseños de Parcelas divididasJueves 6debateModelos jerárquicos (incluye medidas repetidas)Viernes 7 Feria del diseño para discutir los protocolos de los estudiantes"
+    "text": "Plan de clase\n\n\nCódigo\ndias &lt;- rep(NA, 31) \ndias[c(27:28, 30:31)] &lt;- \"M3 clase\"\ndias[c(29)] &lt;- \"M3 lectura\"\ndias[c(25:26)] &lt;- \"Descanso\"\n\ncalendR(month = 1,\n        lunar = TRUE,\n        special.days = dias,\n        special.col = c(\"gray\", \"lightgreen\", \"pink\"),\n        legend.pos = \"right\")\n\n\n\n\n\n\n\n\n\nCódigo\ndias &lt;- rep(NA, 28) \ndias[c(4)] &lt;- \"M3 clase\"\ndias[c(3, 6)] &lt;- \"M3 lectura\"\ndias[7] &lt;- \"M3 Mini simposio\"\ndias[c(1, 2, 5, 8:9)] &lt;- \"Descanso\"\n\ncalendR(month = 2,\n        lunar = TRUE,\n        special.days = dias,\n        special.col = c(\"gray\", \"lightgreen\", \"pink\", \"gold\"))\n\n\n\n\n\n\n\n\n\nCódigo\ncontenido &lt;- read_csv(\"contenido.csv\", col_names = TRUE, show_col_types = FALSE)\ncontenido$lectura &lt;- c(\" \", \"debate\")[contenido$lectura + 1]\n\ncontenido %&gt;% flextable(col_keys = c(\"dia\", \"lectura\", \"tema\")) %&gt;% \n  set_header_labels(values = list(dia = \"Día\", \n                                  lectura= \"Lectura\", \n                                  tema = \"Tema\")) %&gt;% \n  autofit() %&gt;% \n  theme_zebra(odd_body = c(\"lightcyan1\")) %&gt;% \n  bold(i = 1:9, j = 1)\n\n\nAactividades del Módulo 3DíaLecturaTemaLunes 27 Un lenguaje para describir modelos (diseño de experimentos y de tratamientos)Martes 28 Causalidad y modelación gráfica: Grafos Acíclicos Dirigidos (DAG)Miércoles 29debateDiseño de experimentos: hipótesis y la modelación estadísticaJueves 30 Efectos fijos y aleatorios sus implicaciones en los modelos estadísticosViernes 31 Evitar confusión por variables conocidas: Bloques aleatorizadosLunes 3debateMuestreo dentro unidades experimentales: Diseños anidadosMartes 4 Unidades experimentales múltinivel y anidadas: Diseños de Parcelas divididasJueves 6debateModelos jerárquicos (incluye medidas repetidas)Viernes 7 Feria del diseño para discutir los protocolos de los estudiantes"
   },
   {
     "objectID": "posts/00-Bienvenida/index.html#lecturas",
@@ -194,5 +194,19 @@
     "title": "Modelo Estadístico Lineal",
     "section": "¿Qué valores toman las X, las R y las H?",
     "text": "¿Qué valores toman las X, las R y las H?\nLa forma más común de modelar datos cualitativos es:\n\n\n\n\nMediante variables usualmente llamadas factores.\nUn factor es una listas de nombres o códigos de identificación de estados o niveles mutuamente excluyentes.\nEn la modelación se requiere convertir el factor a variables indicadoras o dummy.\nHabrá tantas variables dummy como estados o niveles tenga el factor\nCada variable se construye anotando la presencia/ausencia de la condición del factor.\n\n\n\n\n\\[\nH_1 = \\left\\{\n         \\begin{align*}\n           \\text{si } \\color{red}{sí} \\text{ es híbrido del tipo } a &: 1 \\\\\n           \\text{si } \\color{red}{no} \\text{ es híbrido del tipo } a &: 0\n         \\end{align*}\n      \\right\\}\n\\]"
+  },
+  {
+    "objectID": "presentaciones/02-leyes-de-la-ciencia/index.html",
+    "href": "presentaciones/02-leyes-de-la-ciencia/index.html",
+    "title": "Leyes de la Ciencia",
+    "section": "",
+    "text": "lo que hay que hacer es\n\n\n\n\nEn tu computadora ir vevox.app\nPara usar el celular instala Vevox desde la tienda de apps"
+  },
+  {
+    "objectID": "presentaciones/03-modelo-lineal/index.html",
+    "href": "presentaciones/03-modelo-lineal/index.html",
+    "title": "Modelo Estadístico Lineal",
+    "section": "",
+    "text": "¿Descriptivo o comparativo?\n¿Cómo se miden las variables (escalas)?\n¿Cómo se definen los tratamientos?\n¿Cómo se asignan los tratamientos a las unidades de observación?\n¿Procesos de confusión?\n¿Se usó aleatorización en algún punto?"
   }
 ]

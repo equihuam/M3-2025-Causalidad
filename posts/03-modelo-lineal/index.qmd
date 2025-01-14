@@ -5,9 +5,7 @@ date: "2025-01-28"
 lang: es
 draft: true
 categories: [clase]
-format:
-  html:
-    code-fold: true
+code-fold: true
 ---
 
 ![](mathematics.jpg){width="400"}
