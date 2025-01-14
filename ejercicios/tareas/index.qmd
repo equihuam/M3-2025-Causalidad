@@ -1,7 +1,7 @@
 ---
-title: "Control de Tareas"
+title: "Control de Entregas"
 author: ["Miguel Equihua", "Elio Lagunes"]
-date: "2024-02-07"
+date: last-modified
 lang: es
 draft: true
 categories: [clase]
@@ -13,8 +13,10 @@ editor_options:
 ---
 
 ```{r}
+#| label: inicial
 #| warning: false
 #| include: false
+#| echo: false
 
 suppressPackageStartupMessages(library(googledrive))
 suppressPackageStartupMessages(library(googlesheets4))
@@ -23,22 +25,12 @@ library(DT)
 
 # Autenticación genérica
 suppressMessages(drive_auth(email = "miguel.equihua@ecologia.edu.mx"))
-```
-
-
-
-
-
-
-
-```{r m3_estadistica, warning=FALSE, include=FALSE}
-# localiza la carpeta e tareas M3-estadistica 2025
 
 m3_dir <- drive_ls(path = as_dribble('M3-estadística/2025'), recursive = TRUE, type = "folder")
   
 
 # Contenido de la carpeta Tareas
-m3_tareas <- drive_ls(m3_dir$name[grepl("Tareas", m3_dir$name)])
+m3_tareas <- drive_ls(path = as_id(m3_dir$id[grepl("Tareas", m3_dir$name)]))
 
 ```
 

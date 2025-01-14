@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "presentaciones.html",
+    "href": "presentaciones.html",
+    "title": "M3-Presentaciones",
+    "section": "",
+    "text": "Medidas Repetidas\n\n\n\n\n\n\npresentación\n\n\n\n\n\n\n\n\n\n8 feb 2024\n\n\nMiguel Equihua, Elio Lagunes\n\n\n\n\n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "ejercicios.html",
+    "href": "ejercicios.html",
+    "title": "M3-ejercicios",
+    "section": "",
+    "text": "No hay resultados"
+  },
+  {
+    "objectID": "posts/00-Bienvenida/index.html#objetivos-del-módulo-3",
+    "href": "posts/00-Bienvenida/index.html#objetivos-del-módulo-3",
+    "title": "Bienvenidos al Módulo 3 de estadística",
+    "section": "Objetivos del Módulo 3",
+    "text": "Objetivos del Módulo 3\nDurante las últimas semanas revisaron conceptos de probabilidad y matemáticas que necesitamos como un lenguaje eficiente de comunicación. También empezaron a explorar como es que se pueden analizar proposiciones sobre la existencia de asociación o incluso relaciones de dependencia entre dos variables: modelos de regresión simple. Ahora vamos a aplicar y extender estos aprendizajes para abordar el desafío de producir conocimiento que nos permita comprender como funciona el mundo. Asumir un interés en la comprensión causal requiere desarrollar las habilidades de pensamiento crítico, lo que constituye por tanto otro de los propósitos del módulo.\nUtilizaremos el lenguaje de programación R como plataforma de cómputo para el análisis de datos. Aspiramos a ofrecerles así un curso introductorio para su uso. También nos interesa acercarnos a los enfoques formales para el análisis causal actual, mediante la formulación de Grafos Acíclicos Dirigidos (DAG). Los invitamos a hacer explícitas y a dibujar las relaciones causales de sus proyectos para comprenderlas, comunicarlas y analizarlas con mayor eficiencia.\nComo ejercicio inicial les pedimos preparen y nos entreguen en una sola cuartilla la descripción de una de las preguntas de investigación que se han planteado en su proyecto de posgrado, con suficiente detalle como para comprender el asunto y la propuesta sobre como poner a prueba la idea planteada. No se trata de todo el protocolo de su proyecto de investigación. Escojan sólo un aspecto de él que deseen compartir y explorar en este curso como oportunidad de aprendizaje."
+  },
+  {
+    "objectID": "posts/00-Bienvenida/index.html#plan-de-clase",
+    "href": "posts/00-Bienvenida/index.html#plan-de-clase",
+    "title": "Bienvenidos al Módulo 3 de estadística",
+    "section": "Plan de clase",
+    "text": "Plan de clase\n\n\nCódigo\ndias &lt;- rep(NA, 31+28) \ndias[c(27:28, 30:31, 34:35, 37)] &lt;- \"M3 clase\"\ndias[c(29, 34, 37)] &lt;- \"M3 lectura\"\ndias[38] &lt;- \"M3 Mini simposio\"\ndias[c(25:26, 32,33, 36, 39:40)] &lt;- \"Descanso\"\n\na &lt;- calendR(from = \"2025-01-01\",\n        to = \"2025-2-28\",\n        special.days = dias,\n        special.col = c(\"gray\", \"lightgreen\", \"pink\", \"gold\"),\n        legend.pos = \"right\")\n\ndias &lt;- rep(NA, 31) \ndias[c(27:28, 30:31)] &lt;- \"M3 clase\"\ndias[c(29)] &lt;- \"M3 lectura\"\ndias[c(25:26)] &lt;- \"Descanso\"\n\ncalendR(month = 1,\n        lunar = TRUE,\n        special.days = dias,\n        special.col = c(\"gray\", \"lightgreen\", \"pink\"),\n        legend.pos = \"right\")\n\n\n\n\n\n\n\n\n\nCódigo\ndias &lt;- rep(NA, 28) \ndias[c(3:4, 6)] &lt;- \"M3 clase\"\ndias[c(5)] &lt;- \"M3 lectura\"\ndias[7] &lt;- \"M3 Mini simposio\"\ndias[c(1,2, 5, 8:10)] &lt;- \"Descanso\"\n\ncalendR(month = 2,\n        lunar = TRUE,\n        special.days = dias,\n        special.col = c(\"gray\", \"lightgreen\", \"pink\"))\n\n\n\n\n\n\n\n\n\nCódigo\ncontenido &lt;- read_csv(\"contenido.csv\", col_names = TRUE, show_col_types = FALSE)\ncontenido$lectura &lt;- c(\" \", \"debate\")[contenido$lectura + 1]\n\ncontenido %&gt;% flextable(col_keys = c(\"dia\", \"lectura\", \"tema\")) %&gt;% \n  set_header_labels(values = list(dia = \"Día\", \n                                  lectura= \"Lectura\", \n                                  tema = \"Tema\")) %&gt;% \n  autofit() %&gt;% \n  theme_zebra(odd_body = c(\"lightcyan1\")) %&gt;% \n  bold(i = 1:9, j = 1)\n\n\nCalendario de actividades del Módulo 3DíaLecturaTemaLunes 27 Un lenguaje para describir modelos (diseño de experimentos y de tratamientos)Martes 28 Causalidad y modelación gráfica: Grafos Acíclicos Dirigidos (DAG)Miércoles 29debateDiseño de experimentos: hipótesis y la modelación estadísticaJueves 30 Efectos fijos y aleatorios sus implicaciones en los modelos estadísticosViernes 31 Evitar confusión por variables conocidas: Bloques aleatorizadosLunes 3debateMuestreo dentro unidades experimentales: Diseños anidadosMartes 4 Unidades experimentales múltinivel y anidadas: Diseños de Parcelas divididasJueves 6debateModelos jerárquicos (incluye medidas repetidas)Viernes 7 Feria del diseño para discutir los protocolos de los estudiantes"
+  },
+  {
+    "objectID": "posts/00-Bienvenida/index.html#lecturas",
+    "href": "posts/00-Bienvenida/index.html#lecturas",
+    "title": "Bienvenidos al Módulo 3 de estadística",
+    "section": "Lecturas",
+    "text": "Lecturas\nComo parte de las experiencias de aprendizaje que realizaremos tenemos tres lecturas. Les pedimos que hagan una lectura crítica de los textos propuestos y que preparen un comentario que contenga sus apreciaciones en favor o en contra de los argumentos presentados. También esperamos comenten sobre las implicaciones amplias y para la práctica científica en lo general, de los argumentos que exponen los autores. Sus reacciones tendrán oportunidad de ser expuestas y debatidas en un espacio del programa del módulo 3 a lo largo de 60 minutos.\nlas lecturas son:\n\nbelief in conspiracy theories\nguide to model selection and causal inference\nSame data, different analysts"
+  },
+  {
+    "objectID": "posts/00-Bienvenida/index.html#evaluación",
+    "href": "posts/00-Bienvenida/index.html#evaluación",
+    "title": "Bienvenidos al Módulo 3 de estadística",
+    "section": "Evaluación",
+    "text": "Evaluación\n\nEl Módulo III será evaluado a través de las tareas y controles de lectura que les pediremos que hagan conforme se desarrolle el curso. La participación en quizes y preguntas en línea será considerada como una oportunidad de mejora, aunque la no participación no se considerará para disminuir la calificación."
+  },
+  {
+    "objectID": "posts/00-Bienvenida/index.html#estudiantes",
+    "href": "posts/00-Bienvenida/index.html#estudiantes",
+    "title": "Bienvenidos al Módulo 3 de estadística",
+    "section": "Estudiantes",
+    "text": "Estudiantes\n\n\nCódigo\nestudiantes_2024 &lt;- read_excel(\"Lista-de-alumnos-2025.xlsx\", skip = 0)\n\nestudiantes_2024 %&gt;% \n  arrange(Estudiante) %&gt;% \n  flextable(col_keys = c(\"Matrícula\", \"Estudiante\")) %&gt;%\n  bg(i = ~str_detect(Adscripción, \"baja\"), bg = \"gray80\") %&gt;% \n  autofit() %&gt;%\n  theme_vanilla()\n\n\nEstudianteCeballos Vargas Heidi DanielaChávez Sánchez Jesús OmarContreras Martínez GuadalupeElizondo Salas Andrea CarolinaFlores Zarza BrayanHernández Navarro Héctor SantiagoJiménez Acosta NinfaLeon Wilchez Yeli YesseniaMartínez Sáenz Juan PabloMorales Cid Luis RobertoMÁRQUEZ GUERRA SONIAOlmedo Blanco María del CarmenPavón Acosta DenissePizarro Ortiz Sergio CristobalPérez Morales Juan ManuelRamírez Solano María AngélicaReyes Jiménez Ottmar RaymundoRodríguez Becerra Sared HelenaTorralva Apodaca ErickValdez Ojeda Luis FernandoVargas Amaya Andrés Felipe"
+  },
+  {
+    "objectID": "ejercicios/tareas/index.html",
+    "href": "ejercicios/tareas/index.html",
+    "title": "Control de Entregas",
+    "section": "",
+    "text": "Esta es la lista de tareas que hemos recibido y reunido en la carpeta que tenemos en Google Drive."
+  },
+  {
+    "objectID": "ejercicios/tareas/index.html#tareas",
+    "href": "ejercicios/tareas/index.html#tareas",
+    "title": "Control de Entregas",
+    "section": "",
+    "text": "Esta es la lista de tareas que hemos recibido y reunido en la carpeta que tenemos en Google Drive."
+  },
+  {
+    "objectID": "ejercicios/tareas/index.html#lecturas",
+    "href": "ejercicios/tareas/index.html#lecturas",
+    "title": "Control de Entregas",
+    "section": "Lecturas",
+    "text": "Lecturas\n\n\n\n\n\n\nEsta es la colección de controles de lectura que hemos recibido."
+  }
+]
