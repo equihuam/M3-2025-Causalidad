@@ -4,7 +4,7 @@ author:
   - name:  "Miguel Equihua"
     email: "equihuam@gmail.com"
   - name:  "Elio Lagunes"
-    email: "elio.lagunes.mx"
+    email: "elio.lagunes@inecol.mx"
 date: "2025-01-27"
 lang: es
 draft: false
@@ -29,7 +29,7 @@ Durante las últimas semanas revisaron conceptos de probabilidad y matemáticas 
 
 Utilizaremos el lenguaje de programación **R** como plataforma de cómputo para el análisis de datos. Aspiramos a ofrecerles así un curso introductorio para su uso. También nos interesa acercarnos a los enfoques formales para el análisis causal actual, mediante la formulación de *Grafos Acíclicos Dirigidos* (**DAG**). Los invitamos a hacer explícitas y a dibujar las relaciones causales de sus proyectos para comprenderlas, comunicarlas y analizarlas con mayor eficiencia.
 
-Como ejercicio inicial les pedimos preparen y nos entreguen en **una sola cuartilla** la descripción de una de las preguntas de investigación que se han planteado en su proyecto de posgrado, con suficiente detalle como para comprender el asunto y la propuesta sobre como poner a prueba la idea planteada. *No se trata de todo el protocolo de su proyecto de investigación*. Escojan sólo un aspecto de él que deseen compartir y explorar en este curso como oportunidad de aprendizaje.
+Como ejercicio inicial les pedimos preparen y nos entreguen en **una sola cuartilla** la descripción de una de las preguntas de investigación que se han planteado en su proyecto de posgrado, con suficiente detalle como para comprender el asunto y la propuesta sobre como poner a prueba la idea planteada. *No se trata de todo el protocolo de su proyecto de investigación*. Escojan sólo un aspecto de él. Sólo lo que deseen compartir y explorar en este curso como oportunidad de aprendizaje.
 
 ## Plan de clase
 
@@ -45,8 +45,7 @@ dias[c(25:26)] <- "Descanso"
 calendR(month = 1,
         lunar = TRUE,
         special.days = dias,
-        special.col = c("gray", "lightgreen", "pink"),
-        legend.pos = "right")
+        special.col = c("gray", "lightgreen", "pink"))
 
 dias <- rep(NA, 28) 
 dias[c(4)] <- "M3 clase"
@@ -57,7 +56,8 @@ dias[c(1, 2, 5, 8:9)] <- "Descanso"
 calendR(month = 2,
         lunar = TRUE,
         special.days = dias,
-        special.col = c("gray", "lightgreen", "pink", "gold"))
+        special.col = c("gray", "lightgreen", "pink", "gold"),
+        legend.pos = "right")
 
 
 contenido <- read_csv("contenido.csv", col_names = TRUE, show_col_types = FALSE)
