@@ -1,13 +1,14 @@
 ---
-title: "About"
-image: profile.jpg
+title: "Acerca de"
+image: images/stained-glass-1181864_1920.jpg
 about:
   template: jolla
   links:
     - icon: github
       text: Github
       href: https://github.com
-
 ---
 
 Blog de clase sobre Diseño de experimentos. Es el módulo III del curso de estadística que se imparte en el Inecol.
+
+
