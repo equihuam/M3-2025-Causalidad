@@ -1,0 +1,21 @@
+[
+  {
+    "listing": "/presentaciones.html",
+    "items": [
+      "/presentaciones/02-leyes-de-la-ciencia/index.html",
+      "/presentaciones/03-modelo-lineal/index.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/00-Bienvenida/index.html"
+    ]
+  },
+  {
+    "listing": "/ejercicios.html",
+    "items": [
+      "/ejercicios/tareas/index.html"
+    ]
+  }
+]

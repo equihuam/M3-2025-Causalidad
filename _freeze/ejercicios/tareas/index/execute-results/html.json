@@ -1,0 +1,19 @@
+{
+  "hash": "0873ad5994cf431da7bc7c17bfcb55d2",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Control de Entregas\"\nauthor: [\"Miguel Equihua\", \"Elio Lagunes\"]\ndate: last-modified\nlang: es\ndraft: false\ncategories: [clase]\nformat:\n  html:\n    code-fold: true\neditor_options: \n  chunk_output_type: console\n---\n\n\n\n\n\n\n\n\n## Tareas\n\n::: {layout=\"[50, -1, 50]\"}\nEsta es la lista de tareas que hemos recibido y reunido en la carpeta que tenemos en Google Drive. \n\n![](images/homework-152957_1280.png){width=100px}\n\n:::\n\n\\\n\\\n\\\n\n\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n\n```{=html}\n<div class=\"datatables html-widget html-fill-item\" id=\"htmlwidget-bf96b6e1033777c73d5e\" style=\"width:100%;height:auto;\"></div>\n<script type=\"application/json\" data-for=\"htmlwidget-bf96b6e1033777c73d5e\">{\"x\":{\"filter\":\"none\",\"vertical\":false,\"data\":[[],[],[],[]],\"container\":\"<table class=\\\"display\\\">\\n  <thead>\\n    <tr>\\n      <th> <\\/th>\\n      <th>Tarea<\\/th>\\n      <th>Alumno<\\/th>\\n      <th>Archivo<\\/th>\\n    <\\/tr>\\n  <\\/thead>\\n<\\/table>\",\"options\":{\"columnDefs\":[{\"orderable\":false,\"targets\":0},{\"name\":\" \",\"targets\":0},{\"name\":\"tarea\",\"targets\":1},{\"name\":\"alumno\",\"targets\":2},{\"name\":\"name\",\"targets\":3}],\"order\":[],\"autoWidth\":false,\"orderClasses\":false}},\"evals\":[],\"jsHooks\":[]}</script>\n```\n\n:::\n:::\n\n\n\n---------------------------------------\n\n## Lecturas\n\n::: {layout=\"[50, -1, 50]\"}\nEsta es la colección de controles de lectura que hemos recibido.\n\n![](images/reading-glasses-153748_1280.png){width=200px}\n\n:::\n\n\\\n\\\n\\\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n\n```{=html}\n<div class=\"datatables html-widget html-fill-item\" id=\"htmlwidget-7a4e3b070e77e48812ad\" style=\"width:100%;height:auto;\"></div>\n<script type=\"application/json\" data-for=\"htmlwidget-7a4e3b070e77e48812ad\">{\"x\":{\"filter\":\"none\",\"vertical\":false,\"data\":[[],[],[],[]],\"container\":\"<table class=\\\"display\\\">\\n  <thead>\\n    <tr>\\n      <th> <\\/th>\\n      <th>Lectura<\\/th>\\n      <th>Alumno<\\/th>\\n      <th>Archivo<\\/th>\\n    <\\/tr>\\n  <\\/thead>\\n<\\/table>\",\"options\":{\"columnDefs\":[{\"orderable\":false,\"targets\":0},{\"name\":\" \",\"targets\":0},{\"name\":\"lectura\",\"targets\":1},{\"name\":\"alumno\",\"targets\":2},{\"name\":\"name\",\"targets\":3}],\"order\":[],\"autoWidth\":false,\"orderClasses\":false}},\"evals\":[],\"jsHooks\":[]}</script>\n```\n\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<link href=\"../../site_libs/htmltools-fill-0.5.8.1/fill.css\" rel=\"stylesheet\" />\n<script src=\"../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js\"></script>\n<link href=\"../../site_libs/datatables-css-0.0.0/datatables-crosstalk.css\" rel=\"stylesheet\" />\n<script src=\"../../site_libs/datatables-binding-0.33/datatables.js\"></script>\n<script src=\"../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js\"></script>\n<link href=\"../../site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css\" rel=\"stylesheet\" />\n<link href=\"../../site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css\" rel=\"stylesheet\" />\n<script src=\"../../site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js\"></script>\n<link href=\"../../site_libs/crosstalk-1.2.1/css/crosstalk.min.css\" rel=\"stylesheet\" />\n<script src=\"../../site_libs/crosstalk-1.2.1/js/crosstalk.min.js\"></script>\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
