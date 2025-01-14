@@ -3,7 +3,7 @@ title: "Control de Entregas"
 author: ["Miguel Equihua", "Elio Lagunes"]
 date: last-modified
 lang: es
-draft: true
+draft: false
 categories: [clase]
 format:
   html:
