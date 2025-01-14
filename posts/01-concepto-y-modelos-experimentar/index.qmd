@@ -8,9 +8,9 @@ categories: [clase]
 
 format: 
   live-html
+engine: knitr 
 theme: 
     dark: Sandstone
-engine: knitr 
 ---
 
 

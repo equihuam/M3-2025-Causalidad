@@ -32,13 +32,13 @@ suppressMessages(drive_auth(email = "miguel.equihua@ecologia.edu.mx"))
 
 
 ```{r m3_estadistica, warning=FALSE, include=FALSE}
-# localiza la carpeta e tareas M3-estadistica 2024
+# localiza la carpeta e tareas M3-estadistica 2025
 
-m3_dir <- drive_ls(path = 'M3-estadística', recursive = TRUE, type = "folder")
+m3_dir <- drive_ls(path = as_dribble('M3-estadística/2025'), recursive = TRUE, type = "folder")
   
 
 # Contenido de la carpeta Tareas
-m3_tareas <- drive_ls(m3_dir$name[grepl("Tarea", m3_dir$name)])
+m3_tareas <- drive_ls(m3_dir$name[grepl("Tareas", m3_dir$name)])
 
 ```
 
