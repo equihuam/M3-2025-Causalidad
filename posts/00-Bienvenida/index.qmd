@@ -42,7 +42,7 @@ dias[c(27:28, 30:31)] <- "M3 clase"
 dias[c(29)] <- "M3 lectura"
 dias[c(25:26)] <- "Descanso"
 
-calendR(month = 1,
+ene <- calendR(month = 1,
         lunar = TRUE,
         special.days = dias,
         special.col = c("gray", "lightgreen", "pink"))
@@ -53,12 +53,15 @@ dias[c(3, 6)] <- "M3 lectura"
 dias[7] <- "M3 Mini simposio"
 dias[c(1, 2, 5, 8:9)] <- "Descanso"
 
-calendR(month = 2,
+feb <- calendR(month = 2,
         lunar = TRUE,
         special.days = dias,
         special.col = c("gray", "lightgreen", "pink", "gold"),
         legend.pos = "right")
 
+ene
+
+feb
 
 contenido <- read_csv("contenido.csv", col_names = TRUE, show_col_types = FALSE)
 contenido$lectura <- c(" ", "debate")[contenido$lectura + 1]
