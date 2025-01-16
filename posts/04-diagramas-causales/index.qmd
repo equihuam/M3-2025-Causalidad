@@ -170,7 +170,6 @@ Para construir el **DAG** hago lo siguiente. Puse algo de definición de variabl
 #| fig-height: 3
 
 
-install.packages("dagitty", quiet = TRUE)
 library(dagitty)
 
 aspirina_dag <- dagitty('dag{A[exposure, pos="1, 0"]
