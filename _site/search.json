@@ -10,8 +10,8 @@
     "objectID": "presentaciones/02-leyes-de-la-ciencia/index.html#instrucciones-para-participar",
     "href": "presentaciones/02-leyes-de-la-ciencia/index.html#instrucciones-para-participar",
     "title": "Leyes de la Ciencia",
-    "section": "",
-    "text": "lo que hay que hacer es\n\n\n\n\nEn tu computadora ir vevox.app\nPara usar el celular instala Vevox desde la tienda de apps"
+    "section": "Instrucciones para participar",
+    "text": "Instrucciones para participar\n\n\n\n\n\n\nlo que hay que hacer es\n\n\n\nEn tu computadora ir vevox.app\nPara usar el celular instala Vevox desde la tienda de apps"
   },
   {
     "objectID": "presentaciones/02-leyes-de-la-ciencia/index.html#para-ti-qué-es-la-ciencia",
@@ -194,20 +194,6 @@
     "title": "Modelo Estadístico Lineal",
     "section": "¿Qué valores toman las X, las R y las H?",
     "text": "¿Qué valores toman las X, las R y las H?\nLa forma más común de modelar datos cualitativos es:\n\n\n\n\nMediante variables usualmente llamadas factores.\nUn factor es una listas de nombres o códigos de identificación de estados o niveles mutuamente excluyentes.\nEn la modelación se requiere convertir el factor a variables indicadoras o dummy.\nHabrá tantas variables dummy como estados o niveles tenga el factor\nCada variable se construye anotando la presencia/ausencia de la condición del factor.\n\n\n\n\n\\[\nH_1 = \\left\\{\n         \\begin{align*}\n           \\text{si } \\color{red}{sí} \\text{ es híbrido del tipo } a &: 1 \\\\\n           \\text{si } \\color{red}{no} \\text{ es híbrido del tipo } a &: 0\n         \\end{align*}\n      \\right\\}\n\\]"
-  },
-  {
-    "objectID": "presentaciones/02-leyes-de-la-ciencia/index.html",
-    "href": "presentaciones/02-leyes-de-la-ciencia/index.html",
-    "title": "Leyes de la Ciencia",
-    "section": "",
-    "text": "lo que hay que hacer es\n\n\n\n\nEn tu computadora ir vevox.app\nPara usar el celular instala Vevox desde la tienda de apps"
-  },
-  {
-    "objectID": "presentaciones/03-modelo-lineal/index.html",
-    "href": "presentaciones/03-modelo-lineal/index.html",
-    "title": "Modelo Estadístico Lineal",
-    "section": "",
-    "text": "¿Descriptivo o comparativo?\n¿Cómo se miden las variables (escalas)?\n¿Cómo se definen los tratamientos?\n¿Cómo se asignan los tratamientos a las unidades de observación?\n¿Procesos de confusión?\n¿Se usó aleatorización en algún punto?"
   },
   {
     "objectID": "posts/04-diagramas-causales/index.html",

@@ -159,7 +159,6 @@ A <- factor(A, levels = c("sin aspirina", "con aspirina"))
 Y <-  -2 * (A=="con aspirina") + U + rnorm(n)  # Accidente cerebral
 datos_aspirina <- tibble(U, L, A, Y)
 
-
 ```
 
 
@@ -169,6 +168,7 @@ Para construir el **DAG** hago lo siguiente. Puse algo de definición de variabl
 #| label: dag_aspirina
 #| fig-width: 3
 #| fig-height: 3
+
 
 library(dagitty)
 
