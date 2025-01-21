@@ -41,9 +41,10 @@ Haz click sobre la imágen para ver la presentación
 \
 \
 
+::: {.callout-note collapse=true}
 # Dudas sobre puerta trasera
 
-La cuestión que se nos complicó más en la clase de hoy fue el asunto de la _puerta trasera_. Aquí retomo el tema alrededor de la pregunta sobre _aspirina_ en la que nos atoramos.
+La cuestión que se nos complicó más en este tema el año pasado fue el asunto de la _puerta trasera_. Aquí retomo el tema alrededor de la pregunta sobre _aspirina_ en la que si dificultó la comprensión del asunto.
 
 Para referencia esta son la pregunta y **DAG** asociados:
 
@@ -60,6 +61,8 @@ El contexto de este **DAG** se relaciona con la práctica farmacoepidemiológica
 Para obtener más ayuda, les recomendamos acercarse a [dagitty](http://dagitty.net), que es un sitio de aprendizaje y uso de **DAGs**. Ahí hay una herramienta de dibujo de **DAGs** y permite explorar opciones para el diseño de estudios y _recibir consejos_ sobre la calidad de la estimación que distintos enfoques de diseño pueden ofrecer. Esta herramienta también está disponible como una biblioteca para **R**. Con esta herramienta produjimos este resultado. 
 
 ![](images/dagitty.png)
+
+:::
 
 ### Simulador computacional para aprender 
 
@@ -118,10 +121,10 @@ datos_aspirina <- tibble(U, L, A, Y)
 head(datos_aspirina)
 ```
 
-El modelo ideal es por lo tanto:
+El modelo real es por lo tanto:
 
 $$
-Y = -2 A + U
+Y = -2 A(L) + U 
 $$
 
 #### Situación erronea, no se controló el factor de confusión *enfermedad cardíaca*
