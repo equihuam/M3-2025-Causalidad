@@ -41,28 +41,7 @@ Haz click sobre la imágen para ver la presentación
 \
 \
 
-::: {.callout-note collapse=true}
-# Dudas sobre puerta trasera
 
-La cuestión que se nos complicó más en este tema el año pasado fue el asunto de la _puerta trasera_. Aquí retomo el tema alrededor de la pregunta sobre _aspirina_ en la que si dificultó la comprensión del asunto.
-
-Para referencia esta son la pregunta y **DAG** asociados:
-
-![](images/asprina.png)
-
-Los autores de este ejemplo, [Hernan & Robins](https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/) explican lo siguiente:
-
-![](images/sesgo-por-inidicacion.png)
-
-### Confusión por indicación o _prescripción_
-
-El contexto de este **DAG** se relaciona con la práctica farmacoepidemiológica al realizar estudios observacionales del efecto de los medicamentos, con protocolos en los que se comparan los resultados de personas que toman medicamentos específicos contra los de personas que no los toman (aunque pueden, por ejemplo, tomar otro tipo de medicación). En estos estudios, los participantes o sus médicos eligen si van a tomar o no los medicamentos. Por tanto, la asignación del tratamiento dista mucho de ser aleatoria. Se suelen hacer como seguimiento una vez liberado un fármaco en el mercado. La _confusión por indicación_ es un sesgo que se encuentra con frecuencia en estos estudios observacionales farmacoepidemiológicos de los efectos de los fármacos. 
-
-Para obtener más ayuda, les recomendamos acercarse a [dagitty](http://dagitty.net), que es un sitio de aprendizaje y uso de **DAGs**. Ahí hay una herramienta de dibujo de **DAGs** y permite explorar opciones para el diseño de estudios y _recibir consejos_ sobre la calidad de la estimación que distintos enfoques de diseño pueden ofrecer. Esta herramienta también está disponible como una biblioteca para **R**. Con esta herramienta produjimos este resultado. 
-
-![](images/dagitty.png)
-
-:::
 
 ### Simulador computacional para aprender 
 
@@ -389,4 +368,28 @@ par(cex=1.5, lwd = 3, oma = c(1,2,1,1), mar = (c(4,2,1,1) + 0.5))
 plotLocalTestResults(ejemplo_1_analisis_DAG, col = "blue")
 ```
 
-### [**¿Puedes comentar tu interpretación de estos resultados del modelo y los datos sobre aprendizaje y conocimiento?**]{style="color:GoldenRod"}
+[**¿Puedes comentar tu interpretación de estos resultados del modelo y los datos sobre aprendizaje y conocimiento?**]{style="color:GoldenRod; font-size:1.8em"}
+
+
+::: {.callout-note collapse=true}
+# Dudas sobre puerta trasera
+
+La cuestión que se nos complicó más en este tema el año pasado fue el asunto de la _puerta trasera_. Aquí retomo el tema alrededor de la pregunta sobre _aspirina_ en la que si dificultó la comprensión del asunto.
+
+Para referencia esta son la pregunta y **DAG** asociados:
+
+![](images/asprina.png)
+
+Los autores de este ejemplo, [Hernan & Robins](https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/) explican lo siguiente:
+
+![](images/sesgo-por-inidicacion.png)
+
+### Confusión por indicación o _prescripción_
+
+El contexto de este **DAG** se relaciona con la práctica farmacoepidemiológica al realizar estudios observacionales del efecto de los medicamentos, con protocolos en los que se comparan los resultados de personas que toman medicamentos específicos contra los de personas que no los toman (aunque pueden, por ejemplo, tomar otro tipo de medicación). En estos estudios, los participantes o sus médicos eligen si van a tomar o no los medicamentos. Por tanto, la asignación del tratamiento dista mucho de ser aleatoria. Se suelen hacer como seguimiento una vez liberado un fármaco en el mercado. La _confusión por indicación_ es un sesgo que se encuentra con frecuencia en estos estudios observacionales farmacoepidemiológicos de los efectos de los fármacos. 
+
+Para obtener más ayuda, les recomendamos acercarse a [dagitty](http://dagitty.net), que es un sitio de aprendizaje y uso de **DAGs**. Ahí hay una herramienta de dibujo de **DAGs** y permite explorar opciones para el diseño de estudios y _recibir consejos_ sobre la calidad de la estimación que distintos enfoques de diseño pueden ofrecer. Esta herramienta también está disponible como una biblioteca para **R**. Con esta herramienta produjimos este resultado. 
+
+![](images/dagitty.png)
+
+:::
