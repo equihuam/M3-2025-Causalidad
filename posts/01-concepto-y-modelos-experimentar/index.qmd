@@ -372,7 +372,7 @@ IPE=\frac{\frac{(E_{R}-E_{C})}{gl_{C}-gl_{R}}}{\frac{E_{C}}{gl_{C}}} \\
 \text{ si podemos suponer normalidad en la variable de respuesta }\\
 \sim F_{(gl_{C}-gl_{R}), gl_{C}}
 $$
-Así, el estadístico de prueba que hemos construido es el **IPE**. Si suponemos que las variables son adecuadamente descritas por un modelo de probabilidades *normal* (Gaussiano), entones el IPE se distribuirá como una función de probabilidades *F*. Por cierto, si lo que si el experimento sólo compara dos medias entonces se cumple que los estadísticos son la misma distribución de probabilidades: $F = t^{2}$
+Así, el estadístico de prueba que hemos construido es el **IPE**. Si suponemos que las variables son adecuadamente descritas por un modelo de probabilidades *normal* (Gaussiano), entones el IPE se distribuirá como una función de probabilidades *F*. Por cierto, si el experimento sólo compara dos medias entonces se cumple que los estadísticos *t* y *F* refieren en última instancia a la misma distribución de probabilidades: $F = t^{2}$
 
 ::: {.callout-important title="Mesaje clave"}
 * El análisis de datos *la mayoría de las veces*, se realiza comparando distintos modelos. 
@@ -414,6 +414,8 @@ Por cierto esta es una prueba "omnibus", es decir ¡prueba todo (la igualdad de 
 Para ver como es que opera el anova veamos el ejemplo que sigue. Considera un solo factor, "f", con dos niveles.
 
 ```{webr}
+
+set.seed(1234)
 
 anova.data <- data.frame(y=c(rnorm(7, 5.4, 1), rnorm(7, 10.8, 1)))
 anova.data$f <- factor(rep(c("a", "b"), each = 7))  
@@ -496,9 +498,9 @@ dist_med_s_y
 
 Estas tres formas de calcular las distancias entre datos y promedios se asocia con *fuentes de variación*
 
-1.  variaciones o error total
-2.  variaciones o error residual (componente aleatorio/efecto aleatorio)
-3.  variaciones o error del modelo (componente sistemático/efecto fijo)
+1.  variaciones en las observaciones o error total
+2.  variaciones intrínsecas de los sujetos o error residual (componente aleatorio/efecto aleatorio)
+3.  variaciones por efecto del factor causal o error del modelo (componente sistemático/efecto fijo)
 
 En el cuadro de análisis de varianza se suele etiquetar a los componentes de error de acuerdo con su *fuente*. Se les acompaña con los grados de libertad, la *suma de cuadrados* de las distancias que mostré en las tres gráficas anteriores y luego los llamados *cuadrados medios*. Para referencia podemos pedrle a **R** que nos reporte el cuadro de ANOVA de este modelo.
 
@@ -532,7 +534,7 @@ Las variables de efectos aleatorios surgen cuando se considera que el factor con
 
 ### Anidamiento vs. cruzamiento
 
-La anidación o el cruzamiento es otra característica de los datos, o más bien del diseño experimental. Hablamos de que un conjunto de variables están cruzadas en un diseño experimental cuando todos los posibles niveles de las variables están expuestas por igual entre ellas. Podríamos decir que las variables se combinan de "igual a igual". Es decir, podemos tener tantas posibles combinaciones de las variables como el producto del numero de niveles que tengan. En el caso del experiment de *Bouteloua*, el experimento sugiere que los sitios y los tratamientos están "cruzados", de ahí que tengamos necesidad de disponer por lo menos de 4 unidades experimentales.
+La anidación o el cruzamiento es otra característica de los datos, o más bien del diseño experimental. Hablamos de que un conjunto de variables están cruzadas en un diseño experimental cuando todos los posibles niveles de las variables están expuestas por igual entre ellas. Podríamos decir que las variables se combinan de "igual a igual". Es decir, podemos tener tantas posibles combinaciones de las variables como el producto del numero de niveles que tengan. En el caso del experimento de *Bouteloua*, el experimento sugiere que los sitios y los tratamientos están "cruzados", de ahí que tengamos necesidad de disponer por lo menos de 4 unidades experimentales.
 
 El ejemplo de escuelas que ilustro a continuación debe ayudar a entender mejor estos conceptos. Si las clases son iguales para todas las escuelas, nos estaríamos refiriendo a algo así:
 
