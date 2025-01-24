@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Miguel Equihua">
+<meta name="author" content="Elio Lagunes">
+
+<title>Conceptos y Modelos en la experimentación – Curso de Estadística (Inecol 2025)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/bar-chart.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="../../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Curso de Estadística (Inecol 2025)</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-algo-más" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Algo más</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-algo-más">    
+        <li>
+    <a class="dropdown-item" href="../../about.html">
+ <span class="dropdown-text">Acerca de</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../presentaciones.html">
+ <span class="dropdown-text">M3-Presentaciones</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../ejercicios.html">
+ <span class="dropdown-text">M3-ejercicios</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/equihuam/M3-2024_causalidad"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Conceptos y Modelos en la experimentación</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">clase</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Autores/as</div>
+      <div class="quarto-title-meta-contents">
+               <p>Miguel Equihua </p>
+               <p>Elio Lagunes </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Fecha de publicación</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">27 de enero de 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="un-cuento-de-vampiros-y-ciencia" class="level1">
+<h1>Un cuento de Vampiros y Ciencia</h1>
+<p><img src="images/vampiro-dracula.png" class="img-fluid" width="300"></p>
+<p>McElreath (2020) presenta en su libro el hipotético ejemplo de <em>la prueba de sangre para vampirismo</em>. Propone que hay un análisis de sangre que detecta correctamente 95% de las veces, la afiliación de un individuo al linaje del conde Drácula y los inmortales vampiros. En notación matemática:</p>
+<p><span class="math display">\[
+{Pr(resultado~ positivo~de~la~prueba|vampiro) = 0.95}
+\]</span></p>
+<p>Es una prueba muy precisa, casi siempre identificando <em>vampiros</em> reales. Sin embargo, también comete errores y produce falsos positivos. Es así que el uno por ciento de las veces diagnostica incorrectamente a los <em>simples mortales</em> como <em>vampiros</em>:</p>
+<p><span class="math display">\[
+{Pr(resultado~positivo~de~la~prueba|mortal) = 0.01}
+\]</span></p>
+<p>La última pieza de información que necesitamos es saber que los <em>vampiros</em> en realidad son bastante raros. Sólo el 0.1% de la población lo es, lo que implica:</p>
+<p><span class="math display">\[
+{Pr(vampiro) = 0.001}
+\]</span></p>
+<p>A partir de este conocimiento científico, supongamos que un amigo da positivo en el test de vampirismo.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="¿Cuál es la probabilidad de que sea un inmortal chupasangre">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿Cuál es la probabilidad de que sea un inmortal chupasangre
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>El enfoque de investigación formal empezaría por usar el <em>teorema de Bayes</em> para deducir la probabilidad <span class="math inline">\({Pr(vampiro|positivo)}\)</span>, lo que en cierta forma implica “invertir la probabilidad”, pues lo que ahora sabemos es el valor de <span class="math inline">\({Pr(positivo|vampiro)}\)</span>. El cálculo puede presentarse como:</p>
+<p><span class="math display">\[
+\Pr(vampiro|positivo) = \frac{Pr(positivo|vampiro) \times Pr(vampiro)}{Pr(positivo)}
+\]</span></p>
+<p>en donde <span class="math inline">\({Pr(positivo)}\)</span> es la probabilidad promedio de los resultados positivos de la prueba, es decir,</p>
+<p><span class="math display">\[
+Pr(positivo) = Pr(positivo|vampiro)\times Pr(vampiro) + Pr(positivo|mortal) \times ({1 − Pr(vampiro)})
+\]</span></p>
+</div>
+</div>
+</div>
+<p>Todo esto lo podemos hacer en <strong>R</strong>.</p>
+<p>Primero tomamos nota de lo que ya sabemos a partir del enunciado anterior, ¡<em>a priori</em>!</p>
+<div class="cell">
+<div>
+<div id="webr-1" class="exercise-cell">
+
+</div>
+<script type="webr-1-contents">
+eyJjb2RlIjoiXG4gIFByX3Bvc2l0aXZvX3ZhbXBpcm8gPC0gMC45NSAgXG4gIFByX3Bvc2l0aXZvX01vcnRhbCA8LSAwLjAxIFxuICBQcl92YW1waXJvIDwtIDAuMDAxIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJlZGl0Ijp0cnVlfX0=
+</script>
+</div>
+</div>
+<p>Si queremos verificar los datos podemos imprimirlos con la función <code>cat</code>:</p>
+<div class="cell">
+<div>
+<div id="webr-2" class="exercise-cell">
+
+</div>
+<script type="webr-2-contents">
+eyJjb2RlIjoiICBjYXQocGFzdGUoXCIgUFt2YW1waXJvICtdID0gXCIsIFByX3Bvc2l0aXZvX3ZhbXBpcm8sIFwiXFxuXCIsICBcbiAgICAgICAgICAgIFwiUFttb3J0YWwgK10gID0gXCIsIFByX3Bvc2l0aXZvX01vcnRhbCwgXCJcXG5cIixcbiAgICAgICAgICAgIFwiUFtzZXIgdmFtcGlyb10gPSBcIiwgUHJfdmFtcGlybywgXCJcXG5cIikpIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJlZGl0Ijp0cnVlfX0=
+</script>
+</div>
+</div>
+<p>Tomamos la fórmula de Bayes para <em>invertir la probabilidad</em>, pues queremos saber qué está pasando cuando tenemos la fortuna de toparnos con un resultado positivo en la prueba de sangre:</p>
+<p><span class="math display">\[
+Pr(positivo|vampiro)
+\]</span></p>
+<p>Esto equivale a preguntarnos, dado que ya vimos el resultado científico que significa la prueba de sangre, ¿será vampiro el sujeto de quien se obtuvo esa muestra?:</p>
+<p><span class="math display">\[
+Pr(vampiro|positivo)
+\]</span></p>
+<div class="cell">
+<div>
+<div id="webr-3" class="exercise-cell">
+
+</div>
+<script type="webr-3-contents">
+eyJjb2RlIjoiUHJfcG9zaXRpdm8gPC0gUHJfcG9zaXRpdm9fdmFtcGlybyAqIFByX3ZhbXBpcm8gKyAgICAgIyB2YW1waXJvIGRhICtcbiAgICAgICAgICAgICAgIFByX3Bvc2l0aXZvX01vcnRhbCAqICgxIC0gUHJfdmFtcGlybykgICMgTW9ydGFsIGRhICtcblxuUHJfdmFtcGlyb19wb3NpdGl2byA8LSAoUHJfcG9zaXRpdm9fdmFtcGlybyAqIFByX3ZhbXBpcm8pIC8gUHJfcG9zaXRpdm9cblxucm91bmQoUHJfdmFtcGlyb19wb3NpdGl2bywgMykgKiAxMDAiLCJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWV9fQ==
+</script>
+</div>
+</div>
+<p>Por lo tanto, esta es la probabilidad de que el amigo sea en realidad un vampiro.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="¿Encuentras este resultado afin o contrario a lo que pensabas antes de hacer los cálculos?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿Encuentras este resultado afin o contrario a lo que pensabas antes de hacer los cálculos?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><img src="images/questions-1922477_1280.jpg" class="img-fluid" style="width:30.0%"></p>
+</div>
+</div>
+<p>Este es un resultado muy importante. Exactamente así, o algo muy parecido, es el procedimiento que se sigue en muchos contextos de prueba realistas: <em>las pruebas de PCR</em>, <em>antígeno</em> o <em>anticuerpos para SarsCov-2</em>, <em>la prueba del VIH</em> la del <em>DNA en un perfil criminal</em> y por supuesto la <em>prueba de significancia estadística</em>.</p>
+<p>Quizás ayude a mejorar la intuición que tenemos de las cosas el considerar que siempre que la condición de interés sea muy rara, desarrollar una <em>prueba excelente</em>, capaz de diagnosticar bien todos los casos verdaderos (aunque invitablemente produzca también algunos falsos positivos), no es garantía suficiente de que un resultado positivo en general conlleve mucha información.</p>
+<p>La razón es que usualmente resulta inevitable tener <strong>falsos positivos</strong> y por simple aritmética, esos casos serán la mayoría de los resultados que tendremos, incluso si todos los <em>verdaderos positivos</em> fueran <em>detectados correctamente</em>.</p>
+<p>Aunque, como dice McElreath, no hay nada particularmente bayesiano aqui. Podríamos pensar que la ecuación que usamos aquí salio de la nada, aunque quizás la recuerdes de algún curso previo, de alguna charla interesante por ahí o incluso de lo que viste con Rosario ¡hace unas semanas!</p>
+<p>Quizás el ejemplo puede verse en forma más intuitiva utilizando otra narrativa para comprender lo que está ocurriendo. Digamos que en lugar de informar sobre las probabilidades, como antes, te digo lo siguiente:</p>
+<ol type="1">
+<li>En una población de 100,000 personas, 100 de ellas son <em>vampiros</em>.</li>
+<li>De los 100 que son vampiros 95 darán positivo en la prueba de vampirismo.</li>
+<li>De los 99,900 <em>simples mortales</em>, 999 darán positivo a la prueba de vampirismo.</li>
+</ol>
+<p>Ahora piensa en esto, si hacemos pruebas a las 100,000 personas, ¿qué proporción de los que dan positivo en las pruebas de vampirismo son realmente <em>vampiros</em>?</p>
+<p>Muchas personas, aunque ciertamente no todas, encuentran esta forma de contar la historia mucho más fácil. Sigamos por este camino.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="¿Qué tal si contamos el número de personas que dan positivo?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿Qué tal si contamos el número de personas que dan positivo?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+95 + 999 = 1094
+\]</span> De estas 1094 pruebas positivas, 95 de ellas son vampiros reales, lo que nos lleva sencillamente a esto:</p>
+<p><span class="math display">\[
+Pr(vampiro|positivo) = \frac{95}{1094} ≈ 0.087
+\]</span></p>
+<p>Esta es exactamente la misma respuesta de 8.7% que encontramos antes. Pero no tuvimos que recordar la ´“formula mágica” de Bayes, nada más tuvimos que contar y pensar con calma.</p>
+</div>
+</div>
+</div>
+<p>Esta forma de presentar el problema mediante el “conteo de los actores” en lugar de recurrir a probabilidades, suele denominarse <em>formato de frecuencia</em> o <em>frecuencias naturales</em>.</p>
+<p>Las razones propuestas para explicar el por qué el <em>formato de frecuencia</em> ayuda a la gente a intuir el enfoque correcto siguen siendo polémicas. Podría ser que de entrada sólo podemos encontrarnos con conteos en el mundo real. Quizás sea cierto que nadie ha visto nunca una probabilidad andando por ahí. Independientemente de la explicación de este fenómeno, podemos explotarlo.</p>
+<p>Los eventos muestreados en el análisis de las distribuciones de probabilidades de modelos estadísticos en algún análisis de datos, son los valores de los parámetros. La mayoría de los parámetros no tienen una “materialización” empírica exacta.</p>
+<p>El formalismo bayesiano trata las distribuciones de los parámetros como una plausibilidad relativa, no como un proceso aleatorio que ocurre en el mundo físico. En cualquier caso, la aleatoriedad es siempre una propiedad de la información, nunca del mundo real.</p>
+<section id="estadística-para-mejorar-la-ciencia" class="level2">
+<h2 class="anchored" data-anchor-id="estadística-para-mejorar-la-ciencia">Estadística para mejorar la ciencia</h2>
+<div class="callot-tip" title="¿Podemos confiar en que la estadística nos proteja de la mala ciencia?">
+<p>El ejemplo del vampirismo que acabamos de ver tiene la misma estructura lógica que muchos problemas de <em>detección</em> considerando que:</p>
+<ol type="1">
+<li>Hay algún estado binario al que no tenemos acceso.</li>
+<li>Observamos un indicio imperfecto del estado oculto.</li>
+<li>(Deberíamos/podríamos) usar el teorema de Bayes para deducir lógicamente el impacto del indicio en nuestra incertidumbre (aunque <a href="http://www.theguardian.com/law/2011/oct/02/formula-justice-bayes-theorem-miscarriage">ve lo que salió en el periódico</a>)</li>
+</ol>
+<p>La inferencia científica puede enmarcase en términos similares:</p>
+<ol type="1">
+<li>Una hipótesis es verdadera o falsa, pero no podemos saberlo;</li>
+<li>Obtenemos un indicio estadístico de la <strong>falsedad</strong> de la hipótesis;</li>
+<li>Debemos/podemos utilizar el teorema de Bayes para deducir lógicamente el impacto del indicio en el estado de la hipótesis.</li>
+</ol>
+<p>Es el tercer paso el que casi nunca se hace. Sin debatir por lo pronto si debemos o no usar a Bayes, consideremos por un momento la idea como un ejemplo de juguete.</p>
+</div>
+<section id="resultados-posibles-de-un-estudio-científico" class="level3">
+<h3 class="anchored" data-anchor-id="resultados-posibles-de-un-estudio-científico">Resultados posibles de un estudio científico</h3>
+<section id="probabilidad-de-acertar" class="level4">
+<h4 class="anchored" data-anchor-id="probabilidad-de-acertar">Probabilidad de <em>acertar</em></h4>
+<p>Supongamos que la probabilidad de obtener un hallazgo positivo, cuando la hipótesis postulada es cierta, es <span class="math inline">\({Pr(señal~detectada|verdadero) =Pr(H|V) = 0.95}\)</span>.</p>
+<p>Ese es lo que se suele llamar <strong>la potencia de la prueba</strong>.</p>
+</section>
+<section id="probabilidad-de-errar" class="level4">
+<h4 class="anchored" data-anchor-id="probabilidad-de-errar">Probabilidad de <em>errar</em></h4>
+<p>Supongamos que la probabilidad de un hallazgo positivo, cuando una hipótesis es falsa, es <span class="math inline">\({Pr(señal~detectada|falso) = Pr(H|F) = 0.05}\)</span>.</p>
+<p>Esa es la tasa de falsos positivos, se trata del, digamos 5%, de la <strong>prueba de significancia</strong> que usamos convencionalmente.</p>
+</section>
+<section id="cuál-será-el-estado-real-del-mundo" class="level4">
+<h4 class="anchored" data-anchor-id="cuál-será-el-estado-real-del-mundo">¿Cuál será el estado real del mundo?</h4>
+<p>Finalmente, tenemos que establecer la tasa base con la que ocurren las hipótesis que son verdaderas. Supongamos, por ejemplo, que 1 de cada 100 hipótesis resulta ser verdadera. Entonces <span class="math inline">\({Pr(verdadero) = P(V) = 0.01}\)</span>.</p>
+<p>En realidad nadie conoce este valor ni se ve posible conocerlo, pero la historia de la ciencia sugiere que es pequeño.</p>
+</section>
+<section id="probabilidad-de-haber-acertado-con-una-hipótesis" class="level4">
+<h4 class="anchored" data-anchor-id="probabilidad-de-haber-acertado-con-una-hipótesis">Probabilidad de haber acertado con una hipótesis</h4>
+<p>Para averiguar esto, calculamos la componente <em>a posteriori</em>:</p>
+<p><span class="math display">\[
+Pr(detectada|Hipótesis) = \frac{Pr(Hipótesis|detectada) Pr(detectado)} {Pr(Hipótesis)} = \\
+\\
+\frac{Pr(H|V) Pr(V)} {Pr(H|V) Pr(V) + Pr(H|F) Pr(F)}
+\\
+\]</span></p>
+<div class="cell">
+<div>
+<div id="webr-4" class="exercise-cell">
+
+</div>
+<script type="webr-4-contents">
+eyJjb2RlIjoiXG5Qcl9wb3N0ZXJpb3JfaGFsbGF6Z29fY2llcnRvIDwtICgwLjk1ICogMC4wMSkgLyBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgKCgwLjk1ICogMC4wMSkgKyAoMC4wNSAqICgxLTAuMDEpKSlcblxuUHJfcG9zdGVyaW9yX2hhbGxhemdvX2NpZXJ0byIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiZWRpdCI6dHJ1ZX19
+</script>
+</div>
+</div>
+<p>Como podemos ver, al substituir los valores <em>imaginados</em>, encontramos que la respuesta es aproximadamente <span class="math inline">\({Pr(V|H) = 0.16}\)</span>.</p>
+<p>Así que un resultado positivo corresponde a un 16% de probabilidad de que la hipótesis sea cierta.</p>
+<p>Este es el mismo fenómeno de baja tasa de base que se aplica en las pruebas médicas (y también en nuestro ejemplo de <em>vampiros</em>).</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="¿Podremos mejorar la práctica científica?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿Podremos mejorar la práctica científica?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><img src="images/confundida.png" class="img-fluid" style="width:50.0%"></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Experimentos pensados">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Experimentos pensados
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Una manera de explorar lo que puede pasar en distintos escenarios, asumiendo un razonamiento específico, nos da oportunidad de valorar la utilidad de hacer un <em>escript</em>, <em>algoritmo</em> o <em>programa</em>. Así podemos automatizar una tarea repetitiva y potencialmente aburrida para ver las implicaciones de la idea en todo tipo de situaciones. Qizás podríamos considerarlo semejante a lo qe Einstein llamaba <strong>experimento pensado</strong>. Veamos como hacerlo.</p>
+<div class="cell">
+<div>
+<div id="webr-5" class="exercise-cell">
+
+</div>
+<script type="webr-5-contents">
+eyJjb2RlIjoiXG5jaWVuY2lhIDwtIGZ1bmN0aW9uIChwcl9wb3NfY2llcnRvID0gMC45NSwgcHJfY2llcnRvID0gMC4wMSlcbntcbiAgICBwcl9mYWxzbyA8LSAxIC0gcHJfY2llcnRvXG4gICAgcHJfcG9zX2ZhbHNvIDwtIDEgLSBwcl9wb3NfY2llcnRvXG5cbiAgICBwcl9jaWVydG9fcG9zIDwtIHByX3Bvc19jaWVydG8gKiBwcl9jaWVydG8gLyBcbiAgICAgICAgICAgICAgICAgICAgKHByX3Bvc19jaWVydG8gKiBwcl9jaWVydG8gKyBwcl9wb3NfZmFsc28gKiBwcl9mYWxzbylcblxuICAgIHJldHVybihwcl9jaWVydG9fcG9zKVxufSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiZWRpdCI6dHJ1ZX19
+</script>
+</div>
+</div>
+<p>Hemos definido un programa como una <em>función</em> en <strong>R</strong>. Esta función puede tomar datos y procesarlos de acuerdo con la lógica que le hemos especificado.</p>
+<p>Ahora podemos experimentar para tener una idea aproximada de lo que está pasando.</p>
+<ol type="1">
+<li>Elegimos una serie de valores de interés (cada uno sería un <em>escenario</em>)</li>
+</ol>
+<div class="cell">
+<div>
+<div id="webr-6" class="exercise-cell">
+
+</div>
+<script type="webr-6-contents">
+eyJjb2RlIjoidmFsb3Jlc19kZV9pbnRlcsOpcyA8LSBzZXEoMC45LCAwLjk5LCAwLjAxKSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiZWRpdCI6dHJ1ZX19
+</script>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Preparamos un espacio en la memoria para anotar los resultados.</li>
+</ol>
+<div class="cell">
+<div>
+<div id="webr-7" class="exercise-cell">
+
+</div>
+<script type="webr-7-contents">
+eyJjb2RlIjoicmVzdWx0YWRvcyA8LSBkYXRhLmZyYW1lKG51bWVyaWMoMCksIG51bWVyaWMoMCkpXG5mb3IgKHByIGluIHZhbG9yZXNfZGVfaW50ZXLDqXMpIFxuICAgIHJlc3VsdGFkb3MgPC0gcmJpbmQocmVzdWx0YWRvcywgYyhwciwgY2llbmNpYShwciwgMC4wMSkpKVxuXG5uYW1lcyhyZXN1bHRhZG9zKSA8LSBjKFwicF9lcnJvclwiLCBcInBfcG9zdFwiKSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiZWRpdCI6dHJ1ZX19
+</script>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Veamos los resultados del experimento con ayuda de una gráfica.</li>
+</ol>
+<div class="cell">
+<div>
+<div id="webr-8" class="exercise-cell">
+
+</div>
+<script type="webr-8-contents">
+eyJjb2RlIjoiIyDDgXJlYSBkZSBncmFmaWNhY2nDs24uIG1hcigpIHBhcmEgZWwgbWFyZ2VuLiBvbWEoKSBhbHJlZGVkb3IgZGVsIG1hcmdlbi5cbnBhcihvbWE9YygyLDMsMSwyKSkgIyBhYmFqbz0yLCBpenE9MywgYXJyaWJhPTEsIGRlcj0yXG5wYXIobWFyPWMoNCw0LDIsMikgKyAwLjcpXG5cbiMgVGFtYcOxbyBkZSBsYSBncsOhZmljYVxub3B0aW9ucyhyZXByLnBsb3Qud2lkdGggPSAxNSwgcmVwci5wbG90LmhlaWdodCA9IDUpXG5cbiMgR3LDoWZpY2FcbnBsb3QoeCA9IDEgLSByZXN1bHRhZG9zJHBfZXJyb3IsIHkgPSByZXN1bHRhZG9zJHBfcG9zdCxcbiAgICAgdHlwZSA9IFwiYlwiLCB4bGFiID0gXCJ2YWxvciBkZSBQXCIsIHlsYWIgPSBcIlByIHBvc3QgZGV0ZWNjacOzbiBwb3NpdGl2YVwiLCBcbiAgICAgY2V4ID0gMiwgY2V4LmF4aXMgID0gMSwgY2V4LmxhYiA9IDIpIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJlZGl0Ijp0cnVlfX0=
+</script>
+</div>
+</div>
+<p><img src="images/doubt-2137526_1280.png" class="img-fluid" style="width:10.0%"></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="¿Tú que piensas?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿Tú que piensas?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Una investigación muy exigente que reduce la detección de falsos positivos a 1%, nos permite llevar la probabilidad posterior de <em>descubrimientos exitosos</em> hasta 0.5.</p>
+<p>Apenas tan buena como el lanzamiento de una moneda.</p>
+<p>Podemos pensar que lo que hemos hecho hasta aquí es prácticamente un juego, pero ¿qué tan cercano podría ser a lo que ocurre en la vida real? y si fuera una razonable aproximación ¿a qué nos conduce?</p>
+<p>Quizás nos sugiera que lo más importante es mejorar la tasa base, <span class="math inline">\({Pr(V)}\)</span>, y eso requiere pensar mejor, no hacer muchas más pruebas o incluso ponerse exageradamente quisquilloso</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="crisis-de-reproducibilidad" class="level2">
+<h2 class="anchored" data-anchor-id="crisis-de-reproducibilidad">Crisis de reproducibilidad</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img src="images/Crisis_reproducibilidad.png" class="img-fluid"></p>
+</div><div class="column" style="width:50%;">
+<p><img src="images/Crisis_reproducibilidad-2.png" class="img-fluid"></p>
+</div>
+</div>
+<p><strong>Fuente:</strong> <a href="https://doi.org/10.1038/d41586-019-00067-3">Stoddart, C. (2016). Is there a reproducibility crisis in science?. Nature</a></p>
+<p>&nbsp; &nbsp; &nbsp;</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿Ha mejorado la situación?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[100],[-100], [60,-5, 35]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<p>La falta de reproducibilidad de los experimentos se traduce en artículos que son cuestionados y se ven forzados a retirarse. Claro, no es la única razón para retirar un artículo, pero si la más frecuente. A fines del año pasado salió esta noticia en Nature.</p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 60.0%;justify-content: center;">
+<p><a href="https://www.nature.com/articles/d41586-023-03974-8"><img src="images/articulos-retirados.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 5.0%;justify-content: flex-start;">
+<p>&nbsp;</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 35.0%;justify-content: center;">
+<p><img src="images/fabrica-papers.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Sin duda la forma como hemos optado por hacer ciencia está teniendo problemas que debemos afrontar. La cuestión es que podemos o más bien que debemos hacer para enfrentarlos productivamente y así producir una ciencia mejor.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Buscar la verdad">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Buscar la verdad
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[60, -5, 35]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 60.0%;justify-content: flex-start;">
+<blockquote class="blockquote">
+<p>La búsqueda de la verdad siempre debería prevalecer sobre el deseo defensivo del ego de tener la razón. Esto no es fácil, porque a la mayoría de la gente le resulta difícil admitir que se equivoca. Y es precisamente por esto por lo que la ciencia resulta tan liberadora. Provee un marco de trabajo para la autocorrección, porque el conocimiento científico siempre es provisional. Un hecho científico aceptado hoy puede ser refutado mañana. Por tanto, el método científico engendra humildad epistemológica.</p>
+</blockquote>
+</div>
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 5.0%;justify-content: flex-start;">
+<p>&nbsp;</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 35.0%;justify-content: center;">
+<p><img src="images/saad-gad.jpg" class="img-fluid"></p>
+</div>
+</div>
+</div>
+<p><a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2020.579578/full">Gad Saad</a></p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="el-enfoque-de-modelación" class="level1">
+<h1>El enfoque de modelación</h1>
+<p>La propuesta que seguiremos en el <strong>Módulo 3</strong> se basa en traducir situaciones reales en abstracciones que escribimos como modelos estadísticos. De esta manera buscamos generar expresiones matemáticas que dan cuenta de nuestras concepciones sobre cómo funcionan aspectos concretos de la naturaleza (<em>proposición causal</em>). Es así que nos planteamos generar series de números <em>idealizados por el modelo</em> que podemos comparar con series de números observamos directamente de la naturaleza. Sí estas dos series de números se <em>parecen lo suficiente</em>, nos <em>sentiremos con confianza</em> como para pensar que nuestro modelo es útil para describir el comportamiento del segmento de la naturaleza que elegimos abstraer.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="¿Podríamos usarlo para intervenir en él?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿Podríamos usarlo para intervenir en él?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><img src="images/confused-880735_1280.jpg" class="img-fluid" style="width:50.0%"></p>
+</div>
+</div>
+<p>El modelo que contiene todas las variables explicativas que proponemos tinen que ver con el fenómeno que estamos analizando lo llamaremos <strong>modelo completo</strong>. Tiene todos los parámetros posibles de acuerdo con el diseño del estudio, usualmente al menos un término por cada grupo experimental (tratamiento). En general el método para llegar a un segundo modelo es postular restricciones (supuestos que especifican el valor de particulares) sobre los parámetros del primer modelo.</p>
+<p>Las restricciones usualmente son nuestra(s) hipótesis nula(s) y en ese caso las usamos para eliminar algunos parámetros del conjunto usado en el modelo completo, equivalente a dar por hecho que el parámetro correspondiente es 0. Naturalmente llamaremos al modelo resultante simplemente el <strong>modelo restringido</strong> o <strong>modelo reducido</strong>.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="¿Piensas que sería válido restringir un modelo con valores de algún parámetro con un valor que no sea cero?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿Piensas que sería válido restringir un modelo con valores de algún parámetro con un valor que no sea cero?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><img src="images/building-1080599_1280.jpg" class="img-fluid" style="width:50.0%"></p>
+</div>
+</div>
+<p>Consideremos el ejemplo siguiente. Se trata de un grupo de hojas a las que medimos el contenido de nitrógeno. En este estudio no sabemos ni estamos postulando ninguna forma de obtener predicciones distintas para subgrupos de hojas. El modelo correspondiente es:</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="¿Es éste un modelo de regresión simple?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿Es éste un modelo de regresión simple?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>¿Podrías explicar esta ecuación?</p>
+<p><span class="math display">\[
+y_{i} = \mu + \varepsilon_{i}
+\]</span></p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><img src="images/ANOVA_Modelo_hojas-01.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Una idea simple para comparar los modelos que acabamos de ver es tomar la diferencia en el error asociado con cada modelo. Como esta diferencia estará afectada por la escala de medición del fenómeno estudiado, conviene <em>normalizarla</em>, es decir expresarla como un *error relativo<strong> para obtenerlo sólo habremos de dividir por el error más pequeño que podríamos tener: </strong>la del modelo completo<strong>. Llamarémos a este valor, provisionalmene, el <em>índice proporcional de error</em> (</strong>IPE**). Un índice grande corresponde con modelos que difieren mucho en su <em>ajuste</em> a los datos. Por tanto, estaremos ante la necesidad de elegir alguno de los dos.</p>
+<p>Al considerar modelos de distinta complejidad debemos pensar en alguna manera de incorporar ese aspecto en nuestro análisis. Es así que llegamos a la noción de <em>grados de libertad</em> que la expresamos como el número de observaciones menos el número de parámetros en un modelo.</p>
+<p>Con todo esto, el cálculo del <em>índice proporcional de error</em> (<strong>IPE</strong>) se puede formular para eliminar el efecto de la complejidad de los modelos que se comparan. El resultado es este:</p>
+<p><span class="math display">\[
+IPE=\frac{\frac{(E_{R}-E_{C})}{gl_{C}-gl_{R}}}{\frac{E_{C}}{gl_{C}}} \\
+\text{ si podemos suponer normalidad en la variable de respuesta }\\
+\sim F_{(gl_{C}-gl_{R}), gl_{C}}
+\]</span> Así, el estadístico de prueba que hemos construido es el <strong>IPE</strong>. Si suponemos que las variables son adecuadamente descritas por un modelo de probabilidades <em>normal</em> (Gaussiano), entones el IPE se distribuirá como una función de probabilidades <em>F</em>. Por cierto, si lo que si el experimento sólo compara dos medias entonces se cumple que los estadísticos son la misma distribución de probabilidades: <span class="math inline">\(F = t^{2}\)</span></p>
+<div class="callout callout-style-default callout-important callout-titled" title="Mesaje clave">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mesaje clave
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>El análisis de datos <em>la mayoría de las veces</em>, se realiza comparando distintos modelos.</li>
+<li>Cada modelo corresponde con alguna hipótesis particular.</li>
+<li>Los distintos modelos abarcan las varias hipótesis nulas que podrían plantearse, H<sub>0</sub>, pero también pueden incluir cuaquiera de las <em>hipótesis alternativa</em>, H<sub>A</sub>, que nos interese valorar.</li>
+<li>El procesos de selección de modelos y las caracterísiticas de los modelos que finalmente elijamos serán los protagonistas de la historia que habremos de narrar en el reporte de resultados y discusión de hallazgos.</li>
+</ul>
+</div>
+</div>
+<div class="cell">
+<div>
+<div id="webr-9" class="exercise-cell">
+
+</div>
+<script type="webr-9-contents">
+eyJjb2RlIjoiXG5wZigxOTguNTAsIDEsIDIsIGxvd2VyLnRhaWw9RilcbnB0KHNxcnQoMTk4LjUwKSwgMiwgbG93ZXIudGFpbCA9IEYpKjIiLCJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWV9fQ==
+</script>
+</div>
+</div>
+<section id="anova" class="level2">
+<h2 class="anchored" data-anchor-id="anova">ANOVA</h2>
+<section id="conceptos-básicos-modelo-de-una-vía-un-criterio-completamente-aleatorizado" class="level3">
+<h3 class="anchored" data-anchor-id="conceptos-básicos-modelo-de-una-vía-un-criterio-completamente-aleatorizado">Conceptos básicos (modelo de una vía, un criterio, completamente aleatorizado)</h3>
+<p>Hay situaciones en las que la información que tenemos para predecir una respuesta la tenemos en forma cualitativa, incluso la presencia o ausencia de una categoría. Una variable categórica es una medición discreta y las clases no tienen ningún orden particular. Por ejemplo, consideremos de nuevo las diferentes especies en los datos de energía láctea. Algunas de ellas son simios, mientras que otras son monos del Nuevo Mundo. Podríamos preguntarnos cómo deberían variar las predicciones cuando la especie es un simio en lugar de un mono. El grupo taxonómico es una variable categórica, porque ninguna especie puede ser mitad simio y mitad mono (discreción), y no hay ningún sentido en el que uno sea más grande o más pequeño que el otro (desorden). Otros ejemplos comunes de variables categóricas son:</p>
+<ul>
+<li>Sexo: macho, hembra</li>
+<li>Estado de desarrollo: lactante, juvenil, adulto</li>
+<li>Región geográfica: África, Europa, Melanesia</li>
+</ul>
+<p>Algunos de ustedes ya sabrán que variables como esta, llamadas rutinariamente <em>factores</em>, pueden ser fácilmente incluidas en los modelos lineales. Pero lo que no resulta tan intuitivo es la forma cómo se representan estas variables en un modelo. El ordenador hace todo el trabajo por nosotros, ocultando la maquinaria.</p>
+<p>La hipótesis nula en un análisis de la varianza tipo I común es:</p>
+<p><span class="math display">\[
+H_0: m_1 = m_2 = m_3 = ... = m_k
+\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="¿Cómo es que esta hipótesis se pone a prueba en un ANDEVA?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿Cómo es que esta hipótesis se pone a prueba en un ANDEVA?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Por cierto esta es una prueba “omnibus”, es decir ¡prueba todo (la igualdad de todas las medias) de un jalón!</p>
+</div>
+</div>
+<p>Para ver como es que opera el anova veamos el ejemplo que sigue. Considera un solo factor, “f”, con dos niveles.</p>
+<div class="cell">
+<div>
+<div id="webr-10" class="exercise-cell">
+
+</div>
+<script type="webr-10-contents">
+eyJjb2RlIjoiXG5hbm92YS5kYXRhIDwtIGRhdGEuZnJhbWUoeT1jKHJub3JtKDcsIDUuNCwgMSksIHJub3JtKDcsIDEwLjgsIDEpKSlcbmFub3ZhLmRhdGEkZiA8LSBmYWN0b3IocmVwKGMoXCJhXCIsIFwiYlwiKSwgZWFjaCA9IDcpKSAgIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJlZGl0Ijp0cnVlfX0=
+</script>
+</div>
+</div>
+<p>Pongamos estos datos en una gráfica simple, sgún el orden en el que fueron obtenidas las mediciones. Lo primero que haremos es definir la tabla de datos <strong>anova.data</strong>, como espacio de trabajo. Haremos esto con la función <code>attach()</code>. Esto hace que las variables contenidas en la tabla se puedan llamar directamente sin tener que anteponer el nombre de la estructura que las contiene. Esto es conveniente, pero si olvidamos regresar al espacio general de trabajo, con la función <code>detach()</code>, podemos encontrarnos con situaciones algo extrañas. En caso de que eso ocurra, resulta útil la función <code>search()</code>, que muestra los espacios de trabajo activos.</p>
+<div class="cell">
+<div>
+<div id="webr-11" class="exercise-cell">
+
+</div>
+<script type="webr-11-contents">
+eyJjb2RlIjoiXG5hdHRhY2goYW5vdmEuZGF0YSlcbnBsb3QoeSlcbmFibGluZShtZWFuKHkpLCAwKVxuZm9yIChpIGluIDE6bGVuZ3RoKHkpKSBsaW5lcyAoYyhpLGkpLCBjKG1lYW4oeSksIHlbaV0pKSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiZWRpdCI6dHJ1ZX19
+</script>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="¿Qué muestra esta gráfica? ¿a que equivale la suma de los trazos verticales?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿Qué muestra esta gráfica? ¿a que equivale la suma de los trazos verticales?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div>
+<div id="webr-12" class="exercise-cell">
+
+</div>
+<script type="webr-12-contents">
+eyJjb2RlIjoiXG5kaXN0X21lZF95IDwtIHN1bSgoeSAtIG1lYW4oeSkpKioyKVxuZGlzdF9tZWRfeSIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiZWRpdCI6dHJ1ZX19
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Ahora incorporemos la información del factor <strong><em>f</em></strong>. Para esto hay que calcular los promedios de “y” que corresponden a los niveles de <strong><em>f</em></strong></p>
+<div class="cell">
+<div>
+<div id="webr-13" class="exercise-cell">
+
+</div>
+<script type="webr-13-contents">
+eyJjb2RlIjoiXG5tZWFucyA8LSB0YXBwbHkoeSwgZiwgbWVhbilcbm1lYW5zIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJlZGl0Ijp0cnVlfX0=
+</script>
+</div>
+</div>
+<p>Grafiquemos esta nueva estructura de datos.</p>
+<div class="cell">
+<div>
+<div id="webr-14" class="exercise-cell">
+
+</div>
+<script type="webr-14-contents">
+eyJjb2RlIjoiXG5wbG90KHkpXG5saW5lcyhjKDEsIDcuNSksIGMobWVhbnNbMV0sIG1lYW5zWzFdKSlcbmxpbmVzKGMoNy41LCAxNCksIGMobWVhbnNbMl0sIG1lYW5zWzJdKSlcbmZvciAoaSBpbiAxOjcgKSBsaW5lcyAoYyhpLGkpLCBjKG1lYW5zWzFdLCB5W2ldKSlcbmZvciAoaSBpbiA4OjE0KSBsaW5lcyAoYyhpLGkpLCBjKG1lYW5zWzJdLCB5W2ldKSkiLCJhdHRyIjp7ImV2YWwiOnRydWUsImVkaXQiOnRydWV9fQ==
+</script>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="¿Qué muestra esta gráfica? ¿a que equivale la suma de los trazos verticales?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿Qué muestra esta gráfica? ¿a que equivale la suma de los trazos verticales?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div>
+<div id="webr-15" class="exercise-cell">
+
+</div>
+<script type="webr-15-contents">
+eyJjb2RlIjoiXG5kaXN0X21lZF9zIDwtIHN1bShtMT1zdW0oKHlbMTo3XSAtIG1lYW5zWzFdKSoqMiksIFxuICAgICAgICAgICAgICAgICAgbTI9c3VtKCh5Wzg6MTRdIC0gbWVhbnNbMl0pKioyKSlcblxuZGlzdF9tZWRfcyIsImF0dHIiOnsiZXZhbCI6dHJ1ZSwiZWRpdCI6dHJ1ZX19
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="si-las-dos-medias-fueran-iguales-cómo-compararían-estas-dos-gráficas" class="level3">
+<h3 class="anchored"><span style="color:GoldenRod"><strong>Si las dos <em>medias</em> fueran iguales ¿cómo compararían estas dos gráficas?</strong></span></h3>
+<div class="callout callout-style-default callout-tip callout-titled" title="¿Qué interpretación tiene la diferencia entre las dos sumas mencionadas arriba?">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿Qué interpretación tiene la diferencia entre las dos sumas mencionadas arriba?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Esta diferencia se asocia con la siguiente gráfica:</p>
+<div class="cell">
+<div>
+<div id="webr-16" class="exercise-cell">
+
+</div>
+<script type="webr-16-contents">
+eyJjb2RlIjoiXG5tb2RlbG8gPC0gbG0oeSB+IGYpICMgwr9xdcOpIGVzdG95IGhhY2llbmRvIGFxdcOtP1xucGxvdCAoeSwgY29sID0gXCJyZWRcIilcbmFibGluZSAobWVhbih5KSwgMClcbnBvaW50cyhwcmVkaWN0KG1vZGVsbyksIHBjaCA9IDE2LCBjb2wgPSBcImxpZ2h0Ymx1ZVwiKVxuZm9yIChpIGluIDE6MTQpIGxpbmVzKGMoaSwgaSksIGMobWVhbih5KSwgcHJlZGljdChtb2RlbG8pW2ldKSwgY29sID0gXCJncmF5XCIpIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJlZGl0Ijp0cnVlfX0=
+</script>
+</div>
+</div>
+<p>Ahora la suma de estas líneas verticales es</p>
+<div class="cell">
+<div>
+<div id="webr-17" class="exercise-cell">
+
+</div>
+<script type="webr-17-contents">
+eyJjb2RlIjoiXG5kaXN0X21lZF9zX3kgPC0gc3VtKHN1bSgocmVwKG1lYW5zWzFdLCA3KSAtIG1lYW4oYW5vdmEuZGF0YSR5KSkqKjIpLCAgXG4gICAgICAgICAgICAgICAgICAgIHN1bSgocmVwKG1lYW5zWzJdLCA3KSAtIG1lYW4oYW5vdmEuZGF0YSR5KSkqKjIpKVxuZGlzdF9tZWRfc195IiwiYXR0ciI6eyJldmFsIjp0cnVlLCJlZGl0Ijp0cnVlfX0=
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Estas tres formas de calcular las distancias entre datos y promedios se asocia con <em>fuentes de variación</em></p>
+<ol type="1">
+<li>variaciones o error total</li>
+<li>variaciones o error residual (componente aleatorio/efecto aleatorio)</li>
+<li>variaciones o error del modelo (componente sistemático/efecto fijo)</li>
+</ol>
+<p>En el cuadro de análisis de varianza se suele etiquetar a los componentes de error de acuerdo con su <em>fuente</em>. Se les acompaña con los grados de libertad, la <em>suma de cuadrados</em> de las distancias que mostré en las tres gráficas anteriores y luego los llamados <em>cuadrados medios</em>. Para referencia podemos pedrle a <strong>R</strong> que nos reporte el cuadro de ANOVA de este modelo.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Analiza la correspondencia entre los valores y las gráficas que vimos arriba con lo que reporta **R**">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Analiza la correspondencia entre los valores y las gráficas que vimos arriba con lo que reporta <strong>R</strong>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div>
+<div id="webr-18" class="exercise-cell">
+
+</div>
+<script type="webr-18-contents">
+eyJjb2RlIjoiXG5hbm92YShtb2RlbG8pXG5cbmRpc3RfbWVkX3lcbmRpc3RfbWVkX3NcbmRpc3RfbWVkX3NfeSBcblxuZGV0YWNoKGFub3ZhLmRhdGEpIiwiYXR0ciI6eyJldmFsIjp0cnVlLCJlZGl0Ijp0cnVlfX0=
+</script>
+</div>
+</div>
+<section id="disposición-de-tratamientos-e-intereses-sobre-los-factores" class="level2">
+<h2 class="anchored" data-anchor-id="disposición-de-tratamientos-e-intereses-sobre-los-factores">Disposición de tratamientos e intereses sobre los factores</h2>
+<section id="efectos-fijos" class="level3">
+<h3 class="anchored" data-anchor-id="efectos-fijos">Efectos fijos</h3>
+<p>Quizás la forma más simple de identificar las variables explicativas que tienen efectos fijos es pensar en ellas como variables cuyos niveles identifican en forma completa las condiciones de interés para el investigador. Por ejemplo, en el caso de un experimento que analiza el desempeño de larvas de mariposa que toman una dieta rica en proteinas y al mismo tiempo están expuestas a la presencia o no de un alcaloide. Estamos interesados precisamente en esas dietas y en la presencia o no del alcaloide. Estos dos factores son fijos. Es el tipo de variables que normalmente consideramos en nuestros objetivos de investigación. Se asume que su identificación y definición es completa, se asume que no hay más niveles de interés que los definidos y por lo tanto el modelo resultante no puede utilizarse para predecir fuera del ámbito de esas definiciones.</p>
+</section>
+<section id="efectos-aleatorios" class="level3">
+<h3 class="anchored" data-anchor-id="efectos-aleatorios">Efectos aleatorios</h3>
+<p>Las variables de efectos aleatorios surgen cuando se considera que el factor considerado no es sino una muestra de los posibles resultados que se pueden obtener de muestrear la condición que caracteriza el factor. Por ejemplo, si en un experimento para explorar la germinación de <em>Bouteloua gracilis</em> bajo distintas condiciones de temperatura en campo, se distribuyen las semillas en varios sitios de una zona de interés. Los aprecia que hay básicamente dos tipos de ambiente, suelos arenosos y suelos con algo de grava, así que se eligen 5 sitios en cada condición, y en cada uno de ellos se ponen a prueba dos tratamientos, “pisoteo por ganado” y “sin pisoteo por ganado”. Los 10 sitios elegidos estarían definidos como de efectos aleatorios, pues podemos ver que los niveles elegidos son en realidad una muestra de las posibles condiciones que prevalecen en la zona de estudio. Además, claramente el interés de la predicción es ser generalizable para toda la zona. A veces podemos pensar en esta forma de proceder como equivalente a un <em>muestreo estratificado</em>, en este caso, los tipos de ambiente son los estratos. No es el caso del tratamiento pisoteo. aprovechando podemos ver que en este experimento tendremos un mínimo de 4 combinaciones experimentales, y que ese arreglo mínimo se repetirá 5 veces, así que reqeriremos 20 unidades experimentales para realizar el estudio.</p>
+<p>::: {.callout-tip title=“¿Puedes darnos un ejemplo en el que distingas entre efectos fijos y aleatorios?”</p>
+<p><img src="images/man-159771_1280.png" class="img-fluid" style="width:50.0%"></p>
+</section>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section id="anidamiento-vs.-cruzamiento" class="level3">
+<h3 class="anchored" data-anchor-id="anidamiento-vs.-cruzamiento">Anidamiento vs.&nbsp;cruzamiento</h3>
+<p>La anidación o el cruzamiento es otra característica de los datos, o más bien del diseño experimental. Hablamos de que un conjunto de variables están cruzadas en un diseño experimental cuando todos los posibles niveles de las variables están expuestas por igual entre ellas. Podríamos decir que las variables se combinan de “igual a igual”. Es decir, podemos tener tantas posibles combinaciones de las variables como el producto del numero de niveles que tengan. En el caso del experiment de <em>Bouteloua</em>, el experimento sugiere que los sitios y los tratamientos están “cruzados”, de ahí que tengamos necesidad de disponer por lo menos de 4 unidades experimentales.</p>
+<p>El ejemplo de escuelas que ilustro a continuación debe ayudar a entender mejor estos conceptos. Si las clases son iguales para todas las escuelas, nos estaríamos refiriendo a algo así:</p>
+<p><img src="images/Bx8v2.png" class="img-fluid"></p>
+<p>Esto significa que cada clase se imparte por igual y en las mismas condiciones a cada escuela. Algo difícil de imaginar, ¡pero quizás no en los tiempos de la COVID-19!. Este es un diseño cruzado (algunos también podrían llamarlo afiliación múltiple). En <strong>R</strong> y con las funciones que ajustan modelos estadísticos lineales (<code>lm() y glm()</code>) se produce mediante el operador <code>*</code>.</p>
+<p>El arreglo anidado se produce cuando las unidades experimentales están subordinadas a algún criterio de clasificación. Un factor B está anidado en otro factor A cuando cada nivel del factor B aparece asociado a un único nivel del factor A (los niveles de B están subordinados a los de A). Aquí tenemos clases anidadas en escuelas, lo cual es un escenario familiar.</p>
+<p><img src="images/ahXIG.png" class="img-fluid"></p>
+<p>El punto importante aquí es que, entre cada escuela, las clases tienen el mismo identificador, aunque sean distintas si están anidadas. La clase 1 aparece en la escuela 1, la escuela 2 y la escuela 3. Sin embargo, si los datos están anidados, la clase 1 en la escuela 1 no es la misma unidad de medida que la clase 1 en la escuela 2 y la escuela 3.</p>
+<p>No es posible saber, simplemente inspeccionando los datos, si tenemos efectos aleatorios anidados o cruzados. Esto sólo puede determinarse con el conocimiento de los datos y el diseño experimental. Debido a esto, es muy importante especificar con suficiente claridad el diseño experimental incluyendo las operaciones involucradas para ponerlo en práctica, para poder construir correctamente el modelo estadístico correspondiente, ya que dependiendo de la naturaleza de las variables (fija o aleatoria), los modelos producirán resultados diferentes.</p>
+<p>El concepto de variables aleatorias no es fácil de comprender, por lo que no hay que preocuparse demasiado por entenderlo completamente en este momento. También es útil tener en cuenta que el hecho de que una variable se considere fija o aleatoria en cierto grado dependerá de la interpretación de la persona que diseña el experimento y realiza el análisis. En <strong>R</strong>, la operación para incluir efectos anidados es el operador <code>/</code>.</p>
+<p>En forma específica las interacciones derivadas de cruzamiento se pueden anotar en un modelo como <code>a:b</code> y un anidamiento <code>a %in% b</code></p>
+<p>Naturalmente podemos encontrar situaciones en las que el experimento combina efectos aleatorios y fijos. Naturalmente, tal diseño se denomina de efectos mixtos.</p>
+</section>
+</section>
+<section id="dag-de-un-diseño-experimental-simple" class="level2">
+<h2 class="anchored" data-anchor-id="dag-de-un-diseño-experimental-simple">DAG de un diseño experimental simple</h2>
+<p>Un experimento con asignación de tratamientos en forma completamente al azar, garantiza al máximo posile las vías de influencias ocultas o inadvertidas. Por diseño, la respuesta de las unidades experimentales, <em>Y</em>, al tratamiento <em>T</em> sólo tiene a la asignación aleatoria <em>A</em> como única causa que antecede al tratamiento. Esto lo podemos representar con el diagrama acíclico dirigido, <strong>DAG</strong>, siguiente:</p>
+<p><span class="math display">\[
+\fbox{A} \rightarrow T \rightarrow Y
+\]</span></p>
+<p>En este DAG, el marco que rodea a la <em>A</em> indica <em>aleatorización</em>, y como sugiere el diagrama, es la única causa que actua sore el tratamiento. Si hubiera una vía de influencia alternativa (<em>backdoor</em>), a través de alguna tercera variable como podría ser en un caso de germinación de semillas, la luminosidad del sitio o el grado de humendad en el sustrato; entonces, la aleatorización no sería el único factor que influiría sore el tratamiento. El recuadro alrededor de <em>A</em> (el proceso de aleatorización) indica que no existen otros factores actuando sobre <em>T</em>, es decir, <em>A</em> es una influencia puramente estocástica. Esta idea y el proceso de realización de un experimento controlado con aleatorización, da cuenta con toda claridad del valor de esta forma de realizar estudios para desentrañar relaciones de causalidad.</p>
+<p>Este DAG nos conduce al modelo linear siguiente</p>
+<p><span class="math display">\[
+y = \mu + T +  \varepsilon
+\]</span></p>
+<p>En donde <em>y</em> son las mediciones de la variable <em>Y</em> en respuesta al efecto de <em>T</em>, <span class="math inline">\(\mu\)</span> es un valor de referencia general (tradicionalmente la media general de la variale <em>Y</em>, aunque puede elegirse cualquier otro valor de referencia que convenga al estudio) y la épsilon da cuenta del efecto aleatorio inducido por <span class="math inline">\(\fbox{A}\)</span>, por lo que es necesario postular una distribución de probabilidades apropiada para caracterizar su comportamiento.</p>
+</section>
+<section id="la-tradición-de-prueba-de-hipótesis" class="level2">
+<h2 class="anchored" data-anchor-id="la-tradición-de-prueba-de-hipótesis">La tradición de prueba de hipótesis</h2>
+<p>El planteamiento de la prueba de significancia estadística de hipótesis se pueden encontrar ya en el siglo XIX, su formalización teórica realmente ocurre en los años 20 y 30 del siglo XX con las publicaciones de Sir Ronald Fisher, Jerzy Neyman y Egon Pearson.</p>
+<p>Entre estos autores existieron diferencias filosóficas y conceptuales entre sus planteamientos y posturas. En special Fisher y Neyman sostuvieron acres debates que sólo se interrumpieron con el fallecimiento de Fisher en 1962. No obstante <a href="http://www.elsevier.es/es-revista-investigacion-educacion-medica-343-articulo-la-prueba-hipotesis-nula-sus-X2007505712427368">el debate continua hasta hoy</a>.</p>
+<p>El resultado es que el uso actual de la <strong>prueba estadística de hipótesis</strong> se ha conformado como un <em>extraño híbrido</em> surgido de una mezcla más o menos ecléctica de las dos formas de pensar y no tanto una teoría coherente sobre la prueba de hipótesis.</p>
+<section id="el-procedimiento" class="level3">
+<h3 class="anchored" data-anchor-id="el-procedimiento">El procedimiento</h3>
+<p>El objetivo de una prueba de significancia es hacer inferencias sobre un parámetro que el investigador concibe asociado a un atributo numérico relevante de la población que define su objetivo de investigación. El procedimiento utiliza como base los datos de una muestra extraída de esa población. El enfoque se opera específicamente como un instrumento para excluir un valor o una gama de valores específicos como plausibles para el parámetro.</p>
+<section id="el-paso-a-paso-del-formalismo-de-prueba-de-hipótesis" class="level4">
+<h4 class="anchored" data-anchor-id="el-paso-a-paso-del-formalismo-de-prueba-de-hipótesis">El <em>paso a paso</em> del formalismo de prueba de hipótesis</h4>
+<ol type="1">
+<li>Construir un modelo estadístico. Se trata de un conjunto de supuestos sobre las variables de interés.</li>
+<li>Especificar la hipótesis nula.</li>
+<li>Definir un estadístico de contraste (frecuentemente llamada “la prueba estadística”).</li>
+<li>Identificar la distribución del estadístico de contraste bajo los supuestos del modelo.</li>
+<li>Calcular, bajo el supuesto de la hipótesis nula, el valor del estadístico de contraste en la muestra observada.</li>
+<li>Calcular la probabilidad de tener un valor del estadístico como el resultante o un valor más extremo en la distribución de referencia (el famosos valor <em>p</em>).</li>
+<li>Aceptar o rechazar la hipótesis nula. Si el valor <em>p</em> es menor que el criterio α de significancia (especificado a priori), se rechaza la hipótesis nula, en el caso contrario se acepta o por lo menos no se rechaza (por lo pronto).</li>
+</ol>
+<p>Rechazar la hipótesis nula es algo que quizás produce poca tensión emocional, quizás hasta un alivio, finalmente, el investigador sospecha (desea mostrar) que lo interesante está en otra parte, en su juego de hipótesis alternativas.</p>
+</section>
+</section>
+<section id="es-este-procedimiento-afín-al-refutacionismo-popperiano." class="level3">
+<h3 class="anchored" data-anchor-id="es-este-procedimiento-afín-al-refutacionismo-popperiano."><span style="color:GoldenRod"><strong>¿Es este procedimiento afín al refutacionismo Popperiano?.</strong></span></h3>
+<p>Para interpretar correctamente un valor <em>p</em> se necesita tener claro que se opera dentro de una marco conceptual frecuentista. Esto lleva a que se conciba a los parámetros del modelo estadístico como constantes en la población objetivo (valor fijo que nunca se conoce en realidad).</p>
+<p>Además se asume que, al menos conceptualmente, sería posible repetir el experimento un número infinito de veces. También se asume que siempre se está muestreando la misma población objetivo (universo muestral) así que los parámetros tienen el mismo valor, pero las muestras fluctúan aleatoriamente.</p>
+<p>Bajo estos supuestos es aceptable considerar que el estadístico de prueba se distribuye de acuerdo con el modelo de probabilidades propuesto para construir el contraste y por lo tanto da cuenta de las variaciones esperadas entre las diferentes repeticiones del experimento.</p>
+<p>En la aproximación tradicional a la <em>contrastación estadística de hipótesis</em> (frecuentista) se parte de la formulación de proposiciones hipotéticas que son descritas con referencia a alguna distribución de probabilidades.</p>
+<p>En este marco conceptual, un componente es la llamada hipótesis nula (<span class="math inline">\(H_{0}\)</span>). Se concibe como un planteamiento que asume la ausencia de efecto de los “factores explicativos”.</p>
+<p>En contraste se propone una o más hipótesis alternativas (<span class="math inline">\(H_{1...n}\)</span>), en las que se valora algún o algunos efectos de los “factores explicativos”. La proposición hipotética que hacemos se traduce en valores que podemos comparar con un conjunto de valores a los que consideramos <em>observados</em>. La diferencia entre estos dos conjuntos de valores nos permiten valorar la factibilidad de nuestra proposición.</p>
+<p><img src="images/Potencia_estadística.png" class="img-fluid" width="700"></p>
+<p>En la práctica, suele ocurrir que se concentre la atención en la hipótesis nula expresada con la gran simplicidad que implica la <em>ausencia de efectos</em> y se proceda con menor rigurosidad el análisis de la hipótesis alternativa, la que suele procesarse en forma más bien exploratoria mediante procedimientos de comparaciones múltiples.</p>
+</section>
+<section id="críticas" class="level3">
+<h3 class="anchored" data-anchor-id="críticas">Críticas</h3>
+<p>Entre las críticas que se han hecho al procedimiento clásico de <strong><em>prueba de hipótesis</em></strong> está la que señala que el valor <em>p</em>, al excluir el valor de cero como valor plausible para el parámetro, no aporta información completa sobre los valores que sí son plausibles. Esto implica que la <em>significancia estadística</em> no implica <em>relevancia práctica</em>.</p>
+</section>
+<section id="cómo-interpretas-esta-afirmación" class="level3">
+<h3 class="anchored" data-anchor-id="cómo-interpretas-esta-afirmación"><span style="color:GoldenRod"><strong>¿Cómo interpretas esta afirmación?</strong></span></h3>
+<p>En el mismo razonamiento, un “valor de <em>p</em> extremadamente significativo” no hace otra cosa que excluir el cero como valor plausible para el parámetro no precisamente sobre la calidad del hallazgo.</p>
+<p>Otra crítica señala que interpretar el valor <em>p</em> en términos de <em>evidencia en contra de la hipótesis nula</em> (siguiendo el pensamiento de Fisher) o <em>la plausibilidad de que la hipótesis nula sea falsa</em> a veces se expresan equivocadamente como la probabilidad de que la hipótesis nula sea falsa en consideración de la evidencia (<em>E</em>) disponible. Al plantearlo así, formalmente se enuncia como <span class="math inline">\(P(H_{0}|E)\)</span>. Pero esto no es apropiado, formalmente resulta ser una inconsistencia en la lógica del planteamiento.</p>
+</section>
+<section id="puedes-reconocer-esta-inconsistencia" class="level3">
+<h3 class="anchored" data-anchor-id="puedes-reconocer-esta-inconsistencia"><span style="color:GoldenRod"><strong>¿Puedes reconocer esta inconsistencia?</strong></span></h3>
+<p>La inconsistencia está en que, en primer lugar como dije arriba, el valor <em>p</em> se define dentro del marco frecuentista y se concibe que los parámetros son valores constantes, aunque desconocidos (¡supuesto estadístico de efectos fijos!). No se trata de los parámetros de alguna distribución de probabilidades (observada o no). Por tanto, no tiene sentido asignar probabilidades a los distintos valores estimados del parámetro.</p>
+<p>Además, el valor <em>p</em> se calcula bajo el supuesto de que la hipótesis nula es cierta; esto hace imposible, por construcción, interpretarlo como la probabilidad de que la hipótesis alternativa sea cierta. La probabilidad a la que se refiere el valor <em>p</em> guarda más relación con la probabilidad inversa, <span class="math inline">\(P(E|H{0})\)</span>. ¿Qué tan probable sería tener una muestra como la que tenemos enfrente, si la hipótesis considerada fuera cierta?. Esto se conoce como la <strong>verosimilitud</strong>, es decir, la probabilidad de observar los datos que se han obtenido en un estudio suponiendo que los atributos del modelo fueran ciertos. La verosimilitud valora a la muestra como un resultado <em>condicional</em> a los supuestos hechos en el modelo estadístico y en este caso, la hipótesis nula.</p>
+<p>Sin embargo, la probabilidad que realmente interesa -por ejemplo, al investigador de nuestro ejemplo- es la anteriormente mencionada <span class="math inline">\(P(H_{0}|E)\)</span>. Aunque no está definida dentro del marco frecuentista, en el marco Bayesiano sí se define. Las probabilidades <span class="math inline">\(P(E|H_{0})\)</span> y <span class="math inline">\(P(H_{0}|E)\)</span> no son iguales.</p>
+</section>
+<section id="recuerdas-qué-representa-cada-uno-de-ellas-cuál-es-la-relación-entre-ambas" class="level3">
+<h3 class="anchored" data-anchor-id="recuerdas-qué-representa-cada-uno-de-ellas-cuál-es-la-relación-entre-ambas"><span style="color:GoldenRod"><strong>¿Recuerdas qué representa cada uno de ellas? ¿cuál es la relación entre ambas?</strong></span></h3>
+<p>Otra crítica interesante surge de la llamada paradoja de Lindley (1957), quien mostró, con una formulación Bayesiana, que existe la posibilidad de tener datos congruentes con rechazar una hipótesis nula con un bajo valor <em>p</em> y que al mismo tiempo llevan a una probabilidad posterior alta.</p>
+<p>Encontró que es perfectamente posible, a partir de los mismos datos <em>E</em>, obtener al mismo tiempo una <span class="math inline">\(P(E|H_{0})\)</span> = 0.05 (baja probabilidad de obtener una muestra como la que se observó, si <span class="math inline">\(H_{0}\)</span> fuera cierta) y <span class="math inline">\(P(H_{0}|E)\)</span> = 0.95 (fuerte evidencia en favor de <span class="math inline">\(H_{0}\)</span>). Este resultado contradictorio permite ver lo cuestionable que resulta interpretar el <strong>valor <em>p</em> como evidencia en contra de la hipótesis nula.</strong></p>
+<p>Se ha contrargumentado que la paradoja requiere muestras grandes para manifestarse, y se oponen a los supuestos adicionales que requiere el análisis Bayesiano. Se ha defendido que bajo condiciones razonables, un bajo valor <em>p</em> generalmente implica una baja probabilidad posterior, es decir, poca evidencia para la hipótesis nula. Sin embargo, a pesar de esta defensa al enfoque <em>clásico</em>, se ha encontrado que los valores <em>p</em> sistemáticamente sobrestiman la evidencia en contra de la hipótesis nula.</p>
+<p>En resumen, el valor mismo de <em>p</em>, resultado de una prueba clásica de hipótesis, no aporta mucha información de interés para los investigadores. En caso de optar por la hipótesis alternativa con base en la <em>p</em>, no se favorece llegar a ninguna conclusión sustancial sobre posibles explicaciones alternativas, lo único que queda claro es que la nula probablemente es falsa.</p>
+<p>Para que quede claro, hay que insistir en que si el valor <em>p</em> es juzgado <strong><em>significativo</em></strong>, únicamente nos inclina a <strong>excluir un solo valor como estimador plausible</strong> para el parámetro. Peor aún, el significado de <strong>plausible</strong> en la última expresión tiene una relación nebulosa con la probabilidad que sí le interesa a los investigadores: <strong><em>la probabilidad posterior de que la hipótesis nula sea cierta a la luz de la evidencia recopilada</em></strong> <span class="math inline">\(P(H_{0}|E)\)</span>.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="¿Qué piensas de la paradoja de Lindley y sus implicaciones">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿Qué piensas de la paradoja de Lindley y sus implicaciones
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><img src="images/bullet-2728144_1280.jpg" class="img-fluid" style="width:50.0%"></p>
+</div>
+</div>
+</section>
+<section id="remedios-y-alternativas-para-la-prueba-estadística-de-la-hipótesis-nula" class="level3">
+<h3 class="anchored" data-anchor-id="remedios-y-alternativas-para-la-prueba-estadística-de-la-hipótesis-nula">Remedios y alternativas para la prueba estadística de la hipótesis nula</h3>
+<p>Para enfrentar algunos de los inconvenientes del enfoque clásico de prueba de hipótesis se ha recomendado ahora sustituir el valor <em>p</em> por un <em>intervalo de confianza</em> que abarca un conjunto de valores que permiten valorar si es razonable rechazar la hipótesis nula y además, en caso contrario proporciona una gama de valores que caracterizan al parámetro, lo que resulta de mucho interés.</p>
+<p>La práctica de presentar intervalos de confianza, posiblemente en conjunto con <em>p</em>, constituye una respuesta a la crítica de que sólo se excluye un valor como valor plausible para el parámetro. Además, hacer esto proporciona información sobre significancia. Si el intervalo no incluye el valor de cero, entonces se declararía el resultado como <strong>estadísticamente significativo</strong>. El intervalo informa también sobre el posible tamaño del efecto.</p>
+<p>A la luz de las críticas, Muchos autores ven necesario actualmente adoptar el marco Bayesiano para enfrentar las deficiencias del enfoque <em>clásico</em>.</p>
+</section>
+<section id="potencia-de-la-prueba" class="level3">
+<h3 class="anchored" data-anchor-id="potencia-de-la-prueba">Potencia de la prueba</h3>
+<p>En la práctica, la potencia de la prueba depende del <em>grado de dispersión</em> en los datos. Si se está asumiendo un modelo de probabilidades Gaussiano (distribución normal), el factor de dispersión o escala se relaciona con la varianza. Por lo tanto, es usual notar que el mismo cálculo del error estandar, <span class="math inline">\(s_{e}=\frac{\sigma}{\sqrt{n}}\)</span>, sugiere la solución.</p>
+<p><img src="images/Potencia_estadística.png" class="img-fluid" width="700"></p>
+<ol type="1">
+<li>Se puede incrementar el tamaño de muestra, <em>n</em>,</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="¿Por qué funcionaría esto?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿Por qué funcionaría esto?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><img src="images/geometry-1922743_1280.jpg" class="img-fluid" style="width:50.0%"></p>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Aumentar la precisión con la que se estima <span class="math inline">\(\sigma^2\)</span>,</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="¿Cómo se puede hacer esto?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿Cómo se puede hacer esto?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><img src="images/key-5216637_1280.jpg" class="img-fluid" style="width:50.0%"></p>
+</div>
+</div>
+<p>Es interesante apreciar, que la búsqueda de un tamaño de muestra apropiado para un estudio que estemos planeando, se puede lograr muy eficazmente haciendo simulaciones como las que hemos estado viendo en este bloque del curso. A través de este camino y haciendo el esfuerzo de especificar hipótesis alternativas relevantes se pueden resolver preguntas como:</p>
+<ul>
+<li>¿Cuál es el tamaño de muestra necesario para detectar una cierta diferencia en lo que medimos?</li>
+<li>¿Cuál es la diferencia detectable dada una <em>n</em> o una potencia de la prueba (<span class="math inline">\(1-\beta\)</span>)?</li>
+<li>¿Cuál es la potencia (<span class="math inline">\(1-\beta\)</span>) dado un <em>n</em> y cierta diferencia con <span class="math inline">\(H_{a}\)</span> de interés?</li>
+</ul>
+</section>
+</section>
+<section id="quiz-prueba-estadística-de-hipótesis" class="level2">
+<h2 class="anchored" data-anchor-id="quiz-prueba-estadística-de-hipótesis">Quiz: Prueba estadística de hipótesis</h2>
+<p>Participa: vevox.app ID: 125-688-362</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[-1, 80, -10]]">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 1.1%;justify-content: flex-start;">
+<p>&nbsp;</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 87.9%;justify-content: center;">
+<p><a href="https://vevox.app/#/m/152551925"><img src="images/clase_1-conceptos-prueba-hipotesis.png" class="img-fluid" width="200"></a></p>
+</div>
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 11.0%;justify-content: flex-start;">
+<p>&nbsp;</p>
+</div>
+</div>
+</div>
+
+
+<script type="webr-data">
+eyJyZW5kZXJfZGYiOiJkZWZhdWx0IiwicGFja2FnZXMiOnsicGtncyI6WyJldmFsdWF0ZSIsImtuaXRyIiwiaHRtbHRvb2xzIl0sInJlcG9zIjpbXX0sIm9wdGlvbnMiOnsiYmFzZVVybCI6Imh0dHBzOi8vd2Vici5yLXdhc20ub3JnL3YwLjQuMi8ifX0=
+</script>
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0IiwiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xOCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMTg7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOmZhbHNlLCJjZWxsTmFtZSI6IndlYnItMTgiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzE4ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMTgtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici0xOC1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8xOCA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMTgsIHt9KTtcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0IiwiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xNyIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMTc7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOmZhbHNlLCJjZWxsTmFtZSI6IndlYnItMTciLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzE3ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMTctY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici0xNy1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8xNyA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMTcsIHt9KTtcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0IiwiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xNiIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMTY7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOmZhbHNlLCJjZWxsTmFtZSI6IndlYnItMTYiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzE2ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMTYtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici0xNi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8xNiA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMTYsIHt9KTtcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0IiwiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xNSIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMTU7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOmZhbHNlLCJjZWxsTmFtZSI6IndlYnItMTUiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzE1ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMTUtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici0xNS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8xNSA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMTUsIHt9KTtcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0IiwiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xNCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMTQ7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOmZhbHNlLCJjZWxsTmFtZSI6IndlYnItMTQiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzE0ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMTQtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici0xNC1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8xNCA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMTQsIHt9KTtcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0IiwiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xMyIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMTM7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOmZhbHNlLCJjZWxsTmFtZSI6IndlYnItMTMiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzEzID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMTMtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici0xMy1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8xMyA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMTMsIHt9KTtcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0IiwiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xMiIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMTI7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOmZhbHNlLCJjZWxsTmFtZSI6IndlYnItMTIiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzEyID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMTItY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici0xMi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8xMiA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMTIsIHt9KTtcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0IiwiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xMSIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMTE7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOmZhbHNlLCJjZWxsTmFtZSI6IndlYnItMTEiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzExID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMTEtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici0xMS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8xMSA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMTEsIHt9KTtcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0IiwiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0xMCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMTA7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOmZhbHNlLCJjZWxsTmFtZSI6IndlYnItMTAiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzEwID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMTAtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici0xMC1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8xMCA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMTAsIHt9KTtcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0IiwiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC05Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV85O1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLTkiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzkgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici05LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHdlYnItOS1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV85ID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl85LCB7fSk7XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsImlubGluZSI6ZmFsc2UsImNlbGxOYW1lIjoid2Vici13aWRnZXQtOCIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfODtcbiAgaWYgKHdpbmRvdy5IVE1MV2lkZ2V0cykge1xuICAgIHdpbmRvdy5IVE1MV2lkZ2V0cy5zdGF0aWNSZW5kZXIoKTtcbiAgfVxuICBpZiAod2luZG93LlBhZ2VkVGFibGVEb2MpIHtcbiAgICB3aW5kb3cuUGFnZWRUYWJsZURvYy5pbml0QWxsKCk7XG4gIH1cbn1cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6ZmFsc2UsImNlbGxOYW1lIjoid2Vici04Iiwic291cmNlIjoidmlld29mIF93ZWJyX2VkaXRvcl84ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItOC1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTgtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgV2ViUkV4ZXJjaXNlRWRpdG9yKHdlYlJPanMud2ViUlByb21pc2UsIGJsb2NrLmNvZGUsIG9wdGlvbnMpO1xuXG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxuX3dlYnJfdmFsdWVfOCA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfOCwge30pO1xuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJpbmxpbmUiOmZhbHNlLCJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTciLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzc7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOmZhbHNlLCJjZWxsTmFtZSI6IndlYnItNyIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfNyA9IHtcbiAgY29uc3QgeyBXZWJSRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTctY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici03LWNvbnRlbnRzYCB9LCBibG9jay5hdHRyKTtcbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl93ZWJyX3ZhbHVlXzcgPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzcsIHt9KTtcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0IiwiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC02Iiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV82O1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLTYiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzYgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici02LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHdlYnItNi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV82ID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl82LCB7fSk7XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsImlubGluZSI6ZmFsc2UsImNlbGxOYW1lIjoid2Vici13aWRnZXQtNSIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfNTtcbiAgaWYgKHdpbmRvdy5IVE1MV2lkZ2V0cykge1xuICAgIHdpbmRvdy5IVE1MV2lkZ2V0cy5zdGF0aWNSZW5kZXIoKTtcbiAgfVxuICBpZiAod2luZG93LlBhZ2VkVGFibGVEb2MpIHtcbiAgICB3aW5kb3cuUGFnZWRUYWJsZURvYy5pbml0QWxsKCk7XG4gIH1cbn1cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6ZmFsc2UsImNlbGxOYW1lIjoid2Vici01Iiwic291cmNlIjoidmlld29mIF93ZWJyX2VkaXRvcl81ID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItNS1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTUtY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgV2ViUkV4ZXJjaXNlRWRpdG9yKHdlYlJPanMud2ViUlByb21pc2UsIGJsb2NrLmNvZGUsIG9wdGlvbnMpO1xuXG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxuX3dlYnJfdmFsdWVfNSA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfNSwge30pO1xuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJpbmxpbmUiOmZhbHNlLCJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTQiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzQ7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOmZhbHNlLCJjZWxsTmFtZSI6IndlYnItNCIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfNCA9IHtcbiAgY29uc3QgeyBXZWJSRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTQtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici00LWNvbnRlbnRzYCB9LCBibG9jay5hdHRyKTtcbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl93ZWJyX3ZhbHVlXzQgPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzQsIHt9KTtcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0IiwiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLXdpZGdldC0zIiwic291cmNlIjoie1xuICAvLyBXYWl0IGZvciBvdXRwdXQgdG8gYmUgd3JpdHRlbiB0byB0aGUgRE9NLCB0aGVuIHRyaWdnZXIgd2lkZ2V0IHJlbmRlcmluZ1xuICBhd2FpdCBfd2Vicl92YWx1ZV8zO1xuICBpZiAod2luZG93LkhUTUxXaWRnZXRzKSB7XG4gICAgd2luZG93LkhUTUxXaWRnZXRzLnN0YXRpY1JlbmRlcigpO1xuICB9XG4gIGlmICh3aW5kb3cuUGFnZWRUYWJsZURvYykge1xuICAgIHdpbmRvdy5QYWdlZFRhYmxlRG9jLmluaXRBbGwoKTtcbiAgfVxufVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLTMiLCJzb3VyY2UiOiJ2aWV3b2YgX3dlYnJfZWRpdG9yXzMgPSB7XG4gIGNvbnN0IHsgV2ViUkV4ZXJjaXNlRWRpdG9yLCBiNjREZWNvZGUgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici0zLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHdlYnItMy1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBXZWJSRXhlcmNpc2VFZGl0b3Iod2ViUk9qcy53ZWJSUHJvbWlzZSwgYmxvY2suY29kZSwgb3B0aW9ucyk7XG5cbiAgcmV0dXJuIGVkaXRvci5jb250YWluZXI7XG59XG5fd2Vicl92YWx1ZV8zID0gd2ViUk9qcy5wcm9jZXNzKF93ZWJyX2VkaXRvcl8zLCB7fSk7XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsImlubGluZSI6ZmFsc2UsImNlbGxOYW1lIjoid2Vici13aWRnZXQtMiIsInNvdXJjZSI6IntcbiAgLy8gV2FpdCBmb3Igb3V0cHV0IHRvIGJlIHdyaXR0ZW4gdG8gdGhlIERPTSwgdGhlbiB0cmlnZ2VyIHdpZGdldCByZW5kZXJpbmdcbiAgYXdhaXQgX3dlYnJfdmFsdWVfMjtcbiAgaWYgKHdpbmRvdy5IVE1MV2lkZ2V0cykge1xuICAgIHdpbmRvdy5IVE1MV2lkZ2V0cy5zdGF0aWNSZW5kZXIoKTtcbiAgfVxuICBpZiAod2luZG93LlBhZ2VkVGFibGVEb2MpIHtcbiAgICB3aW5kb3cuUGFnZWRUYWJsZURvYy5pbml0QWxsKCk7XG4gIH1cbn1cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6ZmFsc2UsImNlbGxOYW1lIjoid2Vici0yIiwic291cmNlIjoidmlld29mIF93ZWJyX2VkaXRvcl8yID0ge1xuICBjb25zdCB7IFdlYlJFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuICBjb25zdCBzY3JpcHRDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcIndlYnItMi1jb250ZW50c1xcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGJsb2NrID0gSlNPTi5wYXJzZShiNjREZWNvZGUoc2NyaXB0Q29udGVudCkpO1xuXG4gIGNvbnN0IG9wdGlvbnMgPSBPYmplY3QuYXNzaWduKHsgaWQ6IGB3ZWJyLTItY29udGVudHNgIH0sIGJsb2NrLmF0dHIpO1xuICBjb25zdCBlZGl0b3IgPSBuZXcgV2ViUkV4ZXJjaXNlRWRpdG9yKHdlYlJPanMud2ViUlByb21pc2UsIGJsb2NrLmNvZGUsIG9wdGlvbnMpO1xuXG4gIHJldHVybiBlZGl0b3IuY29udGFpbmVyO1xufVxuX3dlYnJfdmFsdWVfMiA9IHdlYlJPanMucHJvY2Vzcyhfd2Vicl9lZGl0b3JfMiwge30pO1xuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJpbmxpbmUiOmZhbHNlLCJjZWxsTmFtZSI6IndlYnItd2lkZ2V0LTEiLCJzb3VyY2UiOiJ7XG4gIC8vIFdhaXQgZm9yIG91dHB1dCB0byBiZSB3cml0dGVuIHRvIHRoZSBET00sIHRoZW4gdHJpZ2dlciB3aWRnZXQgcmVuZGVyaW5nXG4gIGF3YWl0IF93ZWJyX3ZhbHVlXzE7XG4gIGlmICh3aW5kb3cuSFRNTFdpZGdldHMpIHtcbiAgICB3aW5kb3cuSFRNTFdpZGdldHMuc3RhdGljUmVuZGVyKCk7XG4gIH1cbiAgaWYgKHdpbmRvdy5QYWdlZFRhYmxlRG9jKSB7XG4gICAgd2luZG93LlBhZ2VkVGFibGVEb2MuaW5pdEFsbCgpO1xuICB9XG59XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJpbmxpbmUiOmZhbHNlLCJjZWxsTmFtZSI6IndlYnItMSIsInNvdXJjZSI6InZpZXdvZiBfd2Vicl9lZGl0b3JfMSA9IHtcbiAgY29uc3QgeyBXZWJSRXhlcmNpc2VFZGl0b3IsIGI2NERlY29kZSB9ID0gd2luZG93Ll9leGVyY2lzZV9vanNfcnVudGltZTtcbiAgY29uc3Qgc2NyaXB0Q29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ3ZWJyLTEtY29udGVudHNcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBibG9jayA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKHNjcmlwdENvbnRlbnQpKTtcblxuICBjb25zdCBvcHRpb25zID0gT2JqZWN0LmFzc2lnbih7IGlkOiBgd2Vici0xLWNvbnRlbnRzYCB9LCBibG9jay5hdHRyKTtcbiAgY29uc3QgZWRpdG9yID0gbmV3IFdlYlJFeGVyY2lzZUVkaXRvcih3ZWJST2pzLndlYlJQcm9taXNlLCBibG9jay5jb2RlLCBvcHRpb25zKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl93ZWJyX3ZhbHVlXzEgPSB3ZWJST2pzLnByb2Nlc3MoX3dlYnJfZWRpdG9yXzEsIHt9KTtcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0IiwiaW5saW5lIjpmYWxzZSwiY2VsbE5hbWUiOiJ3ZWJyLXByZWx1ZGUiLCJzb3VyY2UiOiJ3ZWJST2pzID0ge1xuICBjb25zdCB7IFdlYlIsIENoYW5uZWxUeXBlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lLldlYlI7XG4gIGNvbnN0IHtcbiAgICBXZWJSRXZhbHVhdG9yLFxuICAgIFdlYlJFbnZpcm9ubWVudE1hbmFnZXIsXG4gICAgc2V0dXBSLFxuICAgIGI2NERlY29kZSxcbiAgICBjb2xsYXBzZVBhdGhcbiAgfSA9IHdpbmRvdy5fZXhlcmNpc2Vfb2pzX3J1bnRpbWU7XG5cbiAgY29uc3Qgc3RhdHVzQ29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJleGVyY2lzZS1sb2FkaW5nLXN0YXR1c1wiKTtcbiAgY29uc3QgaW5kaWNhdG9yQ29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJleGVyY2lzZS1sb2FkaW5nLWluZGljYXRvclwiKTtcbiAgaW5kaWNhdG9yQ29udGFpbmVyLmNsYXNzTGlzdC5yZW1vdmUoXCJkLW5vbmVcIik7XG5cbiAgbGV0IHN0YXR1c1RleHQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwiZGl2XCIpXG4gIHN0YXR1c1RleHQuY2xhc3NMaXN0ID0gXCJleGVyY2lzZS1sb2FkaW5nLWRldGFpbHNcIjtcbiAgc3RhdHVzVGV4dCA9IHN0YXR1c0NvbnRhaW5lci5hcHBlbmRDaGlsZChzdGF0dXNUZXh0KTtcbiAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBJbml0aWFsaXNlYDtcblxuICAvLyBIb2lzdCBpbmRpY2F0b3Igb3V0IGZyb20gZmluYWwgc2xpZGUgd2hlbiBydW5uaW5nIHVuZGVyIHJldmVhbFxuICBjb25zdCByZXZlYWxTdGF0dXMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnJldmVhbCAuZXhlcmNpc2UtbG9hZGluZy1pbmRpY2F0b3JcIik7XG4gIGlmIChyZXZlYWxTdGF0dXMpIHtcbiAgICByZXZlYWxTdGF0dXMucmVtb3ZlKCk7XG4gICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXZlYWwgPiAuc2xpZGVzXCIpLmFwcGVuZENoaWxkKHJldmVhbFN0YXR1cyk7XG4gIH1cblxuICAvLyBNYWtlIGFueSByZXZlYWwgc2xpZGVzIHdpdGggbGl2ZSBjZWxscyBzY3JvbGxhYmxlXG4gIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoXCIucmV2ZWFsIC5leGVyY2lzZS1jZWxsXCIpLmZvckVhY2goKGVsKSA9PiB7XG4gICAgZWwuY2xvc2VzdCgnc2VjdGlvbi5zbGlkZScpLmNsYXNzTGlzdC5hZGQoXCJzY3JvbGxhYmxlXCIpO1xuICB9KVxuXG4gIC8vIHdlYlIgc3VwcGxlbWVudGFsIGRhdGEgYW5kIG9wdGlvbnNcbiAgY29uc3QgZGF0YUNvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwid2Vici1kYXRhXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgZGF0YSA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKGRhdGFDb250ZW50KSk7XG5cbiAgLy8gR3JhYiBsaXN0IG9mIHJlc291cmNlcyB0byBiZSBkb3dubG9hZGVkXG4gIGNvbnN0IGZpbGVzQ29udGVudCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoYHNjcmlwdFt0eXBlPVxcXCJ2ZnMtZmlsZVxcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGZpbGVzID0gSlNPTi5wYXJzZShiNjREZWNvZGUoZmlsZXNDb250ZW50KSk7XG5cbiAgLy8gVXNlIFBvc3RNZXNzYWdlIGNoYW5uZWwgZm9yIGFzeW5jIGNvbW11bmljYXRpb25cbiAgLy8gV2UgZG8gbm90IGV4cGVjdCB0byB0YWtlIG5lc3RlZCBwcm9tcHQgaW5wdXQgaW4gUXVhcnRvIExpdmUgY2VsbHNcbiAgZGF0YS5vcHRpb25zLmNoYW5uZWxUeXBlID0gQ2hhbm5lbFR5cGUuUG9zdE1lc3NhZ2U7XG5cbiAgLy8gSW5pdGlhbGlzZSB3ZWJSIGFuZCBzZXR1cCBmb3IgUiBjb2RlIGV2YWx1YXRpb25cbiAgbGV0IHdlYlJQcm9taXNlID0gKGFzeW5jICh3ZWJSKSA9PiB7XG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyB3ZWJSYDtcbiAgICBhd2FpdCB3ZWJSLmluaXQoKTtcblxuICAgIC8vIEluc3RhbGwgcHJvdmlkZWQgbGlzdCBvZiBwYWNrYWdlc1xuICAgIC8vIEVuc3VyZSB3ZWJSIGRlZmF1bHQgcmVwbyBpcyBpbmNsdWRlZFxuICAgIGRhdGEucGFja2FnZXMucmVwb3MucHVzaChcImh0dHBzOi8vcmVwby5yLXdhc20ub3JnXCIpXG4gICAgYXdhaXQgZGF0YS5wYWNrYWdlcy5wa2dzLm1hcCgocGtnKSA9PiAoKSA9PiB7XG4gICAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHBhY2thZ2U6ICR7cGtnfWA7XG4gICAgICByZXR1cm4gd2ViUi5ldmFsUlZvaWQoYFxuICAgICAgICB3ZWJyOjppbnN0YWxsKHBrZywgcmVwb3MgPSByZXBvcylcbiAgICAgICAgbGlicmFyeShwa2csIGNoYXJhY3Rlci5vbmx5ID0gVFJVRSlcbiAgICAgIGAsIHsgZW52OiB7XG4gICAgICAgIHBrZzogcGtnLFxuICAgICAgICByZXBvczogZGF0YS5wYWNrYWdlcy5yZXBvcyxcbiAgICAgIH19KTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcblxuICAgIC8vIERvd25sb2FkIGFuZCBpbnN0YWxsIHJlc291cmNlc1xuICAgIGF3YWl0IGZpbGVzLm1hcCgoZmlsZSkgPT4gYXN5bmMgKCkgPT4ge1xuICAgICAgY29uc3QgbmFtZSA9IGZpbGUuc3Vic3RyaW5nKGZpbGUubGFzdEluZGV4T2YoJy8nKSArIDEpO1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyByZXNvdXJjZTogJHtuYW1lfWA7XG4gICAgICBjb25zdCByZXNwb25zZSA9IGF3YWl0IGZldGNoKGZpbGUpO1xuICAgICAgaWYgKCFyZXNwb25zZS5vaykge1xuICAgICAgICB0aHJvdyBuZXcgRXJyb3IoYENhbid0IGRvd25sb2FkIFxcYCR7ZmlsZX1cXGAuIEVycm9yICR7cmVzcG9uc2Uuc3RhdHVzfTogXCIke3Jlc3BvbnNlLnN0YXR1c1RleHR9XCIuYCk7XG4gICAgICB9XG4gICAgICBjb25zdCBkYXRhID0gYXdhaXQgcmVzcG9uc2UuYXJyYXlCdWZmZXIoKTtcblxuICAgICAgLy8gU3RvcmUgVVJMcyBpbiB0aGUgY3dkIHdpdGhvdXQgYW55IHN1YmRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGlmIChmaWxlLmluY2x1ZGVzKFwiOi8vXCIpKSB7XG4gICAgICAgIGZpbGUgPSBuYW1lO1xuICAgICAgfVxuXG4gICAgICAvLyBDb2xsYXBzZSBoaWdoZXIgZGlyZWN0b3J5IHN0cnVjdHVyZVxuICAgICAgZmlsZSA9IGNvbGxhcHNlUGF0aChmaWxlKTtcblxuICAgICAgLy8gQ3JlYXRlIGRpcmVjdG9yeSB0cmVlLCBpZ25vcmluZyBcImRpcmVjdG9yeSBleGlzdHNcIiBWRlMgZXJyb3JzXG4gICAgICBjb25zdCBwYXJ0cyA9IGZpbGUuc3BsaXQoJy8nKS5zbGljZSgwLCAtMSk7XG4gICAgICBsZXQgcGF0aCA9ICcnO1xuICAgICAgd2hpbGUgKHBhcnRzLmxlbmd0aCA+IDApIHtcbiAgICAgICAgcGF0aCArPSBwYXJ0cy5zaGlmdCgpICsgJy8nO1xuICAgICAgICB0cnkge1xuICAgICAgICAgIGF3YWl0IHdlYlIuRlMubWtkaXIocGF0aCk7XG4gICAgICAgIH0gY2F0Y2ggKGUpIHtcbiAgICAgICAgICBpZiAoIWUubWVzc2FnZS5pbmNsdWRlcyhcIkZTIGVycm9yXCIpKSB7XG4gICAgICAgICAgICB0aHJvdyBlO1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgfVxuXG4gICAgICAvLyBXcml0ZSB0aGlzIGZpbGUgdG8gdGhlIFZGU1xuICAgICAgcmV0dXJuIGF3YWl0IHdlYlIuRlMud3JpdGVGaWxlKGZpbGUsIG5ldyBVaW50OEFycmF5KGRhdGEpKTtcbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgSW5zdGFsbGluZyB3ZWJSIHNoaW1zYDtcbiAgICBhd2FpdCB3ZWJSLmV2YWxSVm9pZChgd2Vicjo6c2hpbV9pbnN0YWxsKClgKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgV2ViUiBlbnZpcm9ubWVudCBzZXR1cGA7XG4gICAgYXdhaXQgc2V0dXBSKHdlYlIsIGRhdGEpO1xuXG4gICAgc3RhdHVzVGV4dC5yZW1vdmUoKTtcbiAgICBpZiAoc3RhdHVzQ29udGFpbmVyLmNoaWxkcmVuLmxlbmd0aCA9PSAwKSB7XG4gICAgICBzdGF0dXNDb250YWluZXIucGFyZW50Tm9kZS5yZW1vdmUoKTtcbiAgICB9XG4gICAgcmV0dXJuIHdlYlI7XG4gIH0pKG5ldyBXZWJSKGRhdGEub3B0aW9ucykpO1xuXG4gIC8vIEtlZXAgdHJhY2sgb2YgaW5pdGlhbCBPSlMgYmxvY2sgcmVuZGVyXG4gIGNvbnN0IHJlbmRlcmVkT2pzID0ge307XG5cbiAgY29uc3QgcHJvY2VzcyA9IGFzeW5jIChjb250ZXh0LCBpbnB1dHMpID0+IHtcbiAgICBjb25zdCB3ZWJSID0gYXdhaXQgd2ViUlByb21pc2U7XG4gICAgY29uc3QgZXZhbHVhdG9yID0gbmV3IFdlYlJFdmFsdWF0b3Iod2ViUiwgY29udGV4dClcbiAgICBhd2FpdCBldmFsdWF0b3IucHJvY2VzcyhpbnB1dHMpO1xuICAgIHJldHVybiBldmFsdWF0b3IuY29udGFpbmVyO1xuICB9XG5cbiAgcmV0dXJuIHtcbiAgICBwcm9jZXNzLFxuICAgIHdlYlJQcm9taXNlLFxuICAgIHJlbmRlcmVkT2pzLFxuICB9O1xufVxuIn1dfQ==
+</script>
+<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
+<div id="exercise-loading-status" class="d-flex gap-2">
+
+</div>
+<div class="spinner-grow spinner-grow-sm">
+
+</div>
+</div>
+<script type="vfs-file">
+W10=
+</script>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../posts/01-concepto-y-modelos-experimentar";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "../..";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
