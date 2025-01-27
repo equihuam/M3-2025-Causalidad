@@ -250,12 +250,18 @@ names(resultados) <- c("p_error", "p_post")
 3. Veamos los resultados del experimento con ayuda de una gráfica.
 
 ```{webr}
+# fondo de las gráficas
+par(bg = "white")
+
 # Área de graficación. mar() para el margen. oma() alrededor del margen.
 par(oma=c(2,3,1,2)) # abajo=2, izq=3, arriba=1, der=2
 par(mar=c(4,4,2,2) + 0.7)
 
 # Tamaño de la gráfica
 options(repr.plot.width = 15, repr.plot.height = 5)
+
+# fondo de las gráficas evita aparrezca un bloque obscurro en su lugar
+par(bg = "white")
 
 # Gráfica
 plot(x = 1 - resultados$p_error, y = resultados$p_post,
@@ -415,7 +421,7 @@ Para ver como es que opera el anova veamos el ejemplo que sigue. Considera un so
 
 ```{webr}
 
-set.seed(1234)
+set.seed(1234) # para fines didácticos: obtener resultados reproducibles 
 
 anova.data <- data.frame(y=c(rnorm(7, 5.4, 1), rnorm(7, 10.8, 1)))
 anova.data$f <- factor(rep(c("a", "b"), each = 7))  
@@ -427,6 +433,10 @@ Pongamos estos datos en una gráfica simple, sgún el orden en el que fueron obt
 ```{webr}
 
 attach(anova.data)
+
+# fondo de las gráficas
+par(bg = "white")
+
 plot(y)
 abline(mean(y), 0)
 for (i in 1:length(y)) lines (c(i,i), c(mean(y), y[i]))
@@ -437,8 +447,8 @@ for (i in 1:length(y)) lines (c(i,i), c(mean(y), y[i]))
 
 ```{webr}
 
-dist_med_y <- sum((y - mean(y))**2)
-dist_med_y
+dist_tot_y <- sum((y - mean(y))**2)
+dist_tot_y
 ```
 :::
 
@@ -453,6 +463,8 @@ means
 Grafiquemos esta nueva estructura de datos.
 
 ```{webr}
+# fondo de las gráficas
+par(bg = "white")
 
 plot(y)
 lines(c(1, 7.5), c(means[1], means[1]))
@@ -465,10 +477,10 @@ for (i in 8:14) lines (c(i,i), c(means[2], y[i]))
 
 ```{webr}
 
-dist_med_s <- sum(m1=sum((y[1:7] - means[1])**2), 
+dist_tot_s <- sum(m1=sum((y[1:7] - means[1])**2), 
                   m2=sum((y[8:14] - means[2])**2))
 
-dist_med_s
+dist_tot_s
 ```
 :::
 
@@ -478,6 +490,8 @@ dist_med_s
 Esta diferencia se asocia con la siguiente gráfica:
 
 ```{webr}
+# fondo de las gráficas
+par(bg = "white")
 
 modelo <- lm(y ~ f) # ¿qué estoy haciendo aquí?
 plot (y, col = "red")
@@ -490,9 +504,9 @@ Ahora la suma de estas líneas verticales es
 
 ```{webr}
 
-dist_med_s_y <- sum(sum((rep(means[1], 7) - mean(anova.data$y))**2),  
+dist_tot_s_y <- sum(sum((rep(means[1], 7) - mean(anova.data$y))**2),  
                     sum((rep(means[2], 7) - mean(anova.data$y))**2))
-dist_med_s_y
+dist_tot_s_y
 ```
 :::
 
@@ -509,13 +523,15 @@ En el cuadro de análisis de varianza se suele etiquetar a los componentes de er
 
 anova(modelo)
 
-dist_med_y
-dist_med_s
-dist_med_s_y 
+dist_tot_y
+dist_tot_s
+dist_tot_s_y 
 
 detach(anova.data)
 
 ```
+
+:::
 
 ## Disposición de tratamientos e intereses sobre los factores
 
@@ -527,7 +543,9 @@ Quizás la forma más simple de identificar las variables explicativas que tiene
 
 Las variables de efectos aleatorios surgen cuando se considera que el factor considerado no es sino una muestra de los posibles resultados que se pueden obtener de muestrear la condición que caracteriza el factor. Por ejemplo, si en un experimento para explorar la germinación de *Bouteloua gracilis* bajo distintas condiciones de temperatura en campo, se distribuyen las semillas en varios sitios de una zona de interés. Los aprecia que hay básicamente dos tipos de ambiente, suelos arenosos y suelos con algo de grava, así que se eligen 5 sitios en cada condición, y en cada uno de ellos se ponen a prueba dos tratamientos, "pisoteo por ganado" y "sin pisoteo por ganado". Los 10 sitios elegidos estarían definidos como de efectos aleatorios, pues podemos ver que los niveles elegidos son en realidad una muestra de las posibles condiciones que prevalecen en la zona de estudio. Además, claramente el interés de la predicción es ser generalizable para toda la zona. A veces podemos pensar en esta forma de proceder como equivalente a un *muestreo estratificado*, en este caso, los tipos de ambiente son los estratos. No es el caso del tratamiento pisoteo. aprovechando podemos ver que en este experimento tendremos un mínimo de 4 combinaciones experimentales, y que ese arreglo mínimo se repetirá 5 veces, así que reqeriremos 20 unidades experimentales para realizar el estudio.
 
-::: {.callout-tip title="¿Puedes darnos un ejemplo en el que distingas entre efectos fijos y aleatorios?"
+
+
+::: {.callout-tip title="¿Puedes darnos un ejemplo en el que distingas entre efectos fijos y aleatorios?"}
 
 ![](images/man-159771_1280.png){width="50%"}
 :::
