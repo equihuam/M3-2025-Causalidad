@@ -702,6 +702,12 @@ Es interesante apreciar, que la búsqueda de un tamaño de muestra apropiado par
 -   ¿Cuál es la potencia ($1-\beta$) dado un *n* y cierta diferencia con $H_{a}$ de interés?
 
 
+# Participación activa
+
+Hemos previsto tener frecuentes eventos interactivos para dar seguimiento a los temas que iremos tratando o para generar espacios de enfoque que nos ayuden a generar contextos de discusión que nos ayuden a reflexionar sobre cómo es que hacemos ciencia. Para hacer esto utilizaremos la aplicación en línea a la que podrán acceder desde sus computadoras o teléfonos celulares:
+
+![](images/vevox-QR.png){width="400"}
+
 ## Quiz: Prueba estadística de hipótesis
 
 Participa: vevox.app ID: 125-688-362
@@ -710,9 +716,9 @@ Participa: vevox.app ID: 125-688-362
 [![](images/clase_1-conceptos-prueba-hipotesis.png){width="200"}](https://vevox.app/#/m/125688362)
 :::
 
-## Prreregistro y prepublicación
+## Preregistro y prepublicación
 
-[Reflexión sobbrrer prepublicación](https://blog.scielo.org/es/2020/10/15/son-los-preprints-un-problema-5-formas-de-mejorar-la-calidad-y-credibilidad-de-los-preprints/)
+[Reflexión sobre prepublicación](https://blog.scielo.org/es/2020/10/15/son-los-preprints-un-problema-5-formas-de-mejorar-la-calidad-y-credibilidad-de-los-preprints/)
 
 [EcoEvorxiv](https://ecoevorxiv.org/)
 
