@@ -22,12 +22,16 @@ reveal-header:
     sc-sb-title: false
     header: "."
 transition: convex
+
+image: images/pay-937884_1280.jpg
+
 execute: 
   eval: true
   echo: true
 embed-resources: false
 preload-iframes: true
 ---
+
 
 ## Instrucciones para participar
 
