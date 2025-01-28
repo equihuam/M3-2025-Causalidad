@@ -81,9 +81,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -205,7 +205,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categorías</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Todas <span class="quarto-category-count">(0)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categorías</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Todas <span class="quarto-category-count">(1)</span></div><div class="category" data-category="presentación">presentación <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -219,7 +219,39 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-
+<div class="quarto-post image-right" data-index="0" data-categories="presentación" data-listing-date-sort="1738044000000" data-listing-file-modified-sort="1738036634373" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2236">
+<div class="thumbnail">
+<p><a href="./presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html" class="no-external"></a></p><a href="./presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html" class="no-external">
+<p class="card-img-top"><img src="presentaciones\02-leyes-de-la-ciencia\images\clase_1-Leyes-en-ecologia0.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html" class="no-external">Leyes de la Ciencia</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html" class="no-external">Diseño de estudios y experimentos</a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('presentación'); return false;">
+presentación
+</div>
+</div>
+<div class="listing-description">
+<a href="./presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html" class="no-external">&nbsp;</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html" class="no-external">
+<div class="listing-date">
+28 ene 2025
+</div>
+<div class="listing-author">
+Miguel Equihua
+</div>
+</a>
+</div>
+</div>
 </div>
 <div class="listing-no-matching d-none">
 No hay resultados

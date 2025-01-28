@@ -4,12 +4,12 @@ subtitle: "Diseño de estudios y experimentos"
 author: 
   - name: "Miguel Equihua"
     email: "equihuam@gmail.com"
-date: "2025-01-2"
-draft: true
+date: "2025-01-28"
+draft: false
 date-format: "[Xalapa, Ver.,] D MMMM, YYYY"
 categories: [presentación]
 lang: es
-footer: "[M3-Causalidad](https://m3-causalidad-2025.netlify.app/)"
+footer: "[M3-Causalidad](https://m3-2025-causalidad.netlify.app/)"
 logo:  "images/Logo-Inecol.png"
 title-slide-attributes:
     data-background-image: "images/gamma-plantilla_alfa.png"

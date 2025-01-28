@@ -5,7 +5,7 @@ author:
     email: "equihuam@gmail.com"
   - name:  "Elio Lagunes"
     email: "elio.lagunes@inecol.mx"
-date: "2025-01-27"
+date: "2025-01-27 09:00:00"
 lang: es
 draft: false
 code-fold: true
