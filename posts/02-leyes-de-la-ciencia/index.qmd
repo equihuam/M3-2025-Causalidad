@@ -3,7 +3,7 @@ title: "Leyes de la Ciencia"
 author: ["Miguel Equihua", "Octavio Pérez Maqueo", "Elio Lagunes"]
 date: "2025-01-28"
 lang: es
-draft: true
+draft: false
 categories: [clase]
 format:
   html:

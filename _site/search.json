@@ -81,7 +81,7 @@
     "href": "index.html",
     "title": "M3 - Diseño de Experimentos",
     "section": "",
-    "text": "Bienvenidos al Módulo 3 de estadística\n\n\n\n\n\n\noperación\n\n\n\n\n\n\n\n\n\n27 ene 2025\n\n\nMiguel Equihua, Elio Lagunes\n\n\n\n\n\n\n\n\n\n\n\n\nConceptos y Modelos en la experimentación\n\n\n\n\n\n\nclase\n\n\n\n\n\n\n\n\n\n27 ene 2025\n\n\nMiguel Equihua, Elio Lagunes\n\n\n\n\n\n\nNo hay resultados"
+    "text": "Leyes de la Ciencia\n\n\n\n\n\n\nclase\n\n\n\n\n\n\n\n\n\n28 ene 2025\n\n\nMiguel Equihua, Octavio Pérez Maqueo, Elio Lagunes\n\n\n\n\n\n\n\n\n\n\n\n\nBienvenidos al Módulo 3 de estadística\n\n\n\n\n\n\noperación\n\n\n\n\n\n\n\n\n\n27 ene 2025\n\n\nMiguel Equihua, Elio Lagunes\n\n\n\n\n\n\n\n\n\n\n\n\nConceptos y Modelos en la experimentación\n\n\n\n\n\n\nclase\n\n\n\n\n\n\n\n\n\n27 ene 2025\n\n\nMiguel Equihua, Elio Lagunes\n\n\n\n\n\n\nNo hay resultados"
   },
   {
     "objectID": "posts/01-concepto-y-modelos-experimentar/index.html",
@@ -236,5 +236,264 @@
     "title": "Pacto del participante",
     "section": "",
     "text": "Este Código de Conducta es una adaptación del Contributor Covenant, versión 1.4, disponible en https://www.contributor-covenant.org/es/version/1/4/code-of-conduct.html"
+  },
+  {
+    "objectID": "posts/01-concepto-y-modelos-experimentar/index.html#prreregistro-y-prepublicación",
+    "href": "posts/01-concepto-y-modelos-experimentar/index.html#prreregistro-y-prepublicación",
+    "title": "Conceptos y Modelos en la experimentación",
+    "section": "Prreregistro y prepublicación",
+    "text": "Prreregistro y prepublicación\nReflexión sobbrrer prepublicación\nEcoEvorxiv\npreprints.org\nNature\nOpen Science Facility\nScience"
+  },
+  {
+    "objectID": "posts/02-leyes-de-la-ciencia/index.html",
+    "href": "posts/02-leyes-de-la-ciencia/index.html",
+    "title": "Leyes de la Ciencia",
+    "section": "",
+    "text": "En esta primera sesión les proponemos reflexionar sobre la intención o incluso necesidad de recurrir a enfoques numéricos o matemáticos para hacer ciencia. También, debemos considerar el propósito mismo de la actividad científica en la que estamos involucrados. Cuando hablamos de generación de conocimiento, ¿realmente a qué nos estamos refiriendo?. Podríamos considerar que la producción de conocimiento involucra la formulación de expresiones matemáticas. Con estas expresiones podemos describir la existencia de relaciones específicas entre procesos que observamos. ¿es esto así? Si es el caso, ¿es la única manera de hacerlo?. Si consideramos que nos es la única, entonces cabe preguntarnos ¿es la mejor manera de hacerlo?. Estas y otras inquietudes de este tipo serán el tema de reflexión y hasta debate si quieren en esta primera sesión.\n\nParticipación activa\nHemos previsto tener frecuentes eventos interactivos para dar seguimiento a los temas que iremos tratando o para generar espacios de enfoque que nos ayuden a generar contextos de discusión que nos ayuden a reflexionar sobre cómo es que hacemos ciencia. Para hacer esto utilizaremos la aplicación en línea a la que podrán acceder desde sus computadoras o teléfonos celulares mediante el siguiente vínculo: https://vevox.app/#/m/152551925 o recurriendo al siguiente código QR.\n\n\n\nApoyo audiovisual de la sesión\nA continuación encontraran la presentación que usamos como apoyo audiovisual para conducir la exploración de los temas que discutimos en esta sesión (haz click en la imágen)."
+  },
+  {
+    "objectID": "presentaciones/04-diagramas-causales/index.html",
+    "href": "presentaciones/04-diagramas-causales/index.html",
+    "title": "Introducción a Diagramas Causales",
+    "section": "",
+    "text": "Pearl, Judea. The Book of Why: The New Science of Cause and Effect (p. 28). Basic Books."
+  },
+  {
+    "objectID": "presentaciones/04-diagramas-causales/index.html#la-escalera-de-la-causalidad",
+    "href": "presentaciones/04-diagramas-causales/index.html#la-escalera-de-la-causalidad",
+    "title": "Introducción a Diagramas Causales",
+    "section": "",
+    "text": "Pearl, Judea. The Book of Why: The New Science of Cause and Effect (p. 28). Basic Books."
+  },
+  {
+    "objectID": "presentaciones/04-diagramas-causales/index.html#terminología-básica-de-un-dag",
+    "href": "presentaciones/04-diagramas-causales/index.html#terminología-básica-de-un-dag",
+    "title": "Introducción a Diagramas Causales",
+    "section": "Terminología básica de un DAG",
+    "text": "Terminología básica de un DAG\n\n\n\n\nNodo : una variable\nArista : una relación causal, representada por una flecha\nVariable Explicativa : Es nuestro predictor causal de interés. Aquí es la representada por X . También se le llama variable independiente.\nRespuesta : En el DAG es la representada por Y . También se le llama variable dependiente.\nAncestros : Nodos que están “aguas arriba” de una variable dada. En este DAG A y C son ancestros de X .\nDescendientes : Nodos que están “aguas abajo” de una variable en particular. En este DAG Y y B son descendientes de X ."
+  },
+  {
+    "objectID": "presentaciones/04-diagramas-causales/index.html#b-es-una-variable-mediadora-del-efecto-de-a",
+    "href": "presentaciones/04-diagramas-causales/index.html#b-es-una-variable-mediadora-del-efecto-de-a",
+    "title": "Introducción a Diagramas Causales",
+    "section": "B es una variable “mediadora” del efecto de A",
+    "text": "B es una variable “mediadora” del efecto de A"
+  },
+  {
+    "objectID": "presentaciones/04-diagramas-causales/index.html#papel-de-las-variables-en-un-dag",
+    "href": "presentaciones/04-diagramas-causales/index.html#papel-de-las-variables-en-un-dag",
+    "title": "Introducción a Diagramas Causales",
+    "section": "Papel de las variables en un DAG",
+    "text": "Papel de las variables en un DAG\n\n\n\n\nFactor de Confusión : Es ancestro tanto de la explicativa X como de la respuesta Y . A lo es el DAG .\nMediador : Es al mismo tiempo descendiente de la explicativa y ancestro de la respuesta. F lo es. Parte (o la totalidad) del efecto causal sobre la respuesta se transmite a través de él.\nProxy de un Factor de Confusión : Es descendiente de un factor de confusión y ancestro de la explicativa o de la respuesta (pero no de ambas, pues entonces sería un factor de confusión). El efecto de confusión se transmite a través de esta variable. B es proxy.\nCompetidor de la explicativa : Es un ancestro de la variable de respuesta Y, sin ser ni ancestro ni descendiente de la exposición X . G compite aquí.\nInstrumento : Un instrumento es un ancestro de la explicativa. No tiene ningún camino hacia la respuesta Y que no pase a través de la explicativa X (pues sería un factor de confusión). D es un instrumento.\nColisionador : Un colisionador es un descendiente tanto de la exposición X como de la respuesta Y. E es un colisionador en el ejemplo DAG."
+  },
+  {
+    "objectID": "presentaciones/04-diagramas-causales/index.html#cuándo-esperar-asociación",
+    "href": "presentaciones/04-diagramas-causales/index.html#cuándo-esperar-asociación",
+    "title": "Introducción a Diagramas Causales",
+    "section": "Cuándo esperar asociación",
+    "text": "Cuándo esperar asociación\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n… a veces por pura buen fortuna"
+  },
+  {
+    "objectID": "presentaciones/04-diagramas-causales/index.html#sesgo-sistemático-efecto-de-confusión",
+    "href": "presentaciones/04-diagramas-causales/index.html#sesgo-sistemático-efecto-de-confusión",
+    "title": "Introducción a Diagramas Causales",
+    "section": "Sesgo sistemático: efecto de confusión",
+    "text": "Sesgo sistemático: efecto de confusión\n\n\n\n\n\n\n\n\n\n\n\n \n\n\nHay sesgo sistemático si hay una asociación entre A e Y que no surge del efecto causal de A sobre Y. Cuando existe una asociación entre A e Y, incluso si A tiene un efecto causal cero sobre Y, se dice que hay sesgo bajo la condición nula."
+  },
+  {
+    "objectID": "presentaciones/04-diagramas-causales/index.html#sesgo-por-selección",
+    "href": "presentaciones/04-diagramas-causales/index.html#sesgo-por-selección",
+    "title": "Introducción a Diagramas Causales",
+    "section": "Sesgo por Selección",
+    "text": "Sesgo por Selección"
+  },
+  {
+    "objectID": "presentaciones/04-diagramas-causales/index.html#en-un-dag-con-nodos-l-a-e-y-en-este-orden-de-aparición",
+    "href": "presentaciones/04-diagramas-causales/index.html#en-un-dag-con-nodos-l-a-e-y-en-este-orden-de-aparición",
+    "title": "Introducción a Diagramas Causales",
+    "section": "En un DAG con nodos L, A e Y (en este orden de aparición)",
+    "text": "En un DAG con nodos L, A e Y (en este orden de aparición)\nVevox\n¿Qué significa que no haya un arco del nodo A al Y?\nIngresa a: vevox.app con el ID: 169-614-732"
+  },
+  {
+    "objectID": "presentaciones/04-diagramas-causales/index.html#si-nuestro-conocimiento-en-la-materia-es-insuficiente-para-descartar-la-existencia-de-un-efecto-directo-de-la-variable-d-sobre-la-e.",
+    "href": "presentaciones/04-diagramas-causales/index.html#si-nuestro-conocimiento-en-la-materia-es-insuficiente-para-descartar-la-existencia-de-un-efecto-directo-de-la-variable-d-sobre-la-e.",
+    "title": "Introducción a Diagramas Causales",
+    "section": "Si nuestro conocimiento en la materia es insuficiente para descartar la existencia de un efecto directo de la variable D sobre la E.",
+    "text": "Si nuestro conocimiento en la materia es insuficiente para descartar la existencia de un efecto directo de la variable D sobre la E.\nvevox\n¿Deberíamos incluir un arco de D a E en el diagrama causal?\nIngresa a: vevox.app con el ID: 169-614-732"
+  },
+  {
+    "objectID": "presentaciones/04-diagramas-causales/index.html#la-inteligencia-reduce-el-tiempo-necesario-de-estudio-para-aprender.-al-mismo-tiempo-la-inteligencia-junto-con-el-tiempo-de-estudio-explican-la-calificación-en-el-examen.-cuál-es-el-dag-que-describe-esta-proposición-causal",
+    "href": "presentaciones/04-diagramas-causales/index.html#la-inteligencia-reduce-el-tiempo-necesario-de-estudio-para-aprender.-al-mismo-tiempo-la-inteligencia-junto-con-el-tiempo-de-estudio-explican-la-calificación-en-el-examen.-cuál-es-el-dag-que-describe-esta-proposición-causal",
+    "title": "Introducción a Diagramas Causales",
+    "section": "La inteligencia reduce el tiempo necesario de estudio para aprender. Al mismo tiempo, la inteligencia, junto con el tiempo de estudio explican la calificación en el examen. ¿Cuál es el DAG que describe esta proposición causal?",
+    "text": "La inteligencia reduce el tiempo necesario de estudio para aprender. Al mismo tiempo, la inteligencia, junto con el tiempo de estudio explican la calificación en el examen. ¿Cuál es el DAG que describe esta proposición causal?\nIngresa a: vevox.app con el ID: 169-614-732"
+  },
+  {
+    "objectID": "presentaciones/04-diagramas-causales/index.html#reglas-de-independencia-condicional",
+    "href": "presentaciones/04-diagramas-causales/index.html#reglas-de-independencia-condicional",
+    "title": "Introducción a Diagramas Causales",
+    "section": "Reglas de independencia condicional",
+    "text": "Reglas de independencia condicional\nUn DAG también describe aspectos clave del “flujo de la asociación” a través de la estructura causal.\n\nCuando las variables están conectadas, correlacionan, lo que implica que la información puede fluir entre ellas en cualquier dirección.\nHay tres reglas fundamentales sobre como se puede dar esta interconexión, es decir de como se separan o conectan los nodos."
+  },
+  {
+    "objectID": "presentaciones/04-diagramas-causales/index.html#regla-1-variable-intermedia",
+    "href": "presentaciones/04-diagramas-causales/index.html#regla-1-variable-intermedia",
+    "title": "Introducción a Diagramas Causales",
+    "section": "Regla 1 “variable intermedia”",
+    "text": "Regla 1 “variable intermedia”\n\n\n\n\n\n\nDos variables, X e Y, son condicionalmente independientes dado A , si sólo hay una ruta unidireccional entre X e Y , cuando A es una variable (podrían ser muchas) intercalada en el camino."
+  },
+  {
+    "objectID": "presentaciones/04-diagramas-causales/index.html#regla-2-causa-común",
+    "href": "presentaciones/04-diagramas-causales/index.html#regla-2-causa-común",
+    "title": "Introducción a Diagramas Causales",
+    "section": "Regla 2 “causa común”",
+    "text": "Regla 2 “causa común”\n\n\n\n\n\n\n \n\n\n\n\nSi una variable A es una causa común de las variables X e Y , y solo hay una ruta entre X e Y , entonces X e Y son condicionalmente independientes cuando se consideran como condicionantes los datos de A ."
+  },
+  {
+    "objectID": "presentaciones/04-diagramas-causales/index.html#regla-3-colisionador",
+    "href": "presentaciones/04-diagramas-causales/index.html#regla-3-colisionador",
+    "title": "Introducción a Diagramas Causales",
+    "section": "Regla 3 “colisionador”",
+    "text": "Regla 3 “colisionador”\n\n\n\n\n\n\n \n\n\n\n\nSi una variable A es el nodo de colisión entre dos variables X e Y , y solo hay un camino entre X e Y , entonces X e Y son incondicionalmente independientes pero dependen condicionalmente de A así como de cualquier descendiente de A ."
+  },
+  {
+    "objectID": "presentaciones/04-diagramas-causales/index.html#separación-direccional-d-separation",
+    "href": "presentaciones/04-diagramas-causales/index.html#separación-direccional-d-separation",
+    "title": "Introducción a Diagramas Causales",
+    "section": "Separación-direccional (d-separation)",
+    "text": "Separación-direccional (d-separation)\nEl flujo de información en una ruta p queda bloqueado por un conjunto de nodos Z si y sólo si:\n1 p contiene una cadena de nodos A → B → C o una horquilla A ← B → C , de tal manera que el nodo medio B proporciona datos como criterio condicional de observación. Es decir si la ruta es del tipo variable intermedia o causa común, el condicionarlas bloquea.\n2 p contiene un colisionador A → B ← C tal que ni el nodo de colisión B , ni ninguno de sus descendientes, son criterio para condicionar las observaciones. Es decir condicionar sore un colisionador desbloquea ."
+  },
+  {
+    "objectID": "presentaciones/04-diagramas-causales/index.html#se-puede-medir-el-efecto-sin-sesgos-de-la-aspirina",
+    "href": "presentaciones/04-diagramas-causales/index.html#se-puede-medir-el-efecto-sin-sesgos-de-la-aspirina",
+    "title": "Introducción a Diagramas Causales",
+    "section": "¿Se puede medir el efecto, sin sesgos, de la aspirina?",
+    "text": "¿Se puede medir el efecto, sin sesgos, de la aspirina?\nIngresa a: vevox.app con el ID: 169-614-732"
+  },
+  {
+    "objectID": "presentaciones/04-diagramas-causales/index.html#colisionadores",
+    "href": "presentaciones/04-diagramas-causales/index.html#colisionadores",
+    "title": "Introducción a Diagramas Causales",
+    "section": "Colisionadores",
+    "text": "Colisionadores\n\nMcElreath nos ofrece esta proposición:\n\nLos estudios científicos más noticiables son los menos fiables. Cuanto más probable es que te mate, si es cierto, menos probable es que sea cierto. Cuanto más aburrido el tema, más rigurosos los resultados.\n\n\nFuente: The Haunted DAG & The Causal Terror | Statistical rethinking with brms, ggplot2, and the tidyverse: Second edition (bookdown.org)"
+  },
+  {
+    "objectID": "presentaciones/04-diagramas-causales/index.html#cómo-se-produce-esta-correlación-negativa",
+    "href": "presentaciones/04-diagramas-causales/index.html#cómo-se-produce-esta-correlación-negativa",
+    "title": "Introducción a Diagramas Causales",
+    "section": "¿Cómo se produce esta correlación negativa?",
+    "text": "¿Cómo se produce esta correlación negativa?\nEsta asociación NO CAUSAL se produce cuando los revisores se preocupan tanto por el interés “innovador” (pensando en su potencial noticioso), como por la fiabilidad.\nUna fuerte selección induce una correlación negativa entre los criterios utilizados en la selección.\n¿Por qué? Si la única forma de cruzar el umbral es obtener una puntuación alta, es más frecuente obtener una puntuación alta en un criterio que en ambos.\nFuente: The Haunted DAG & The Causal Terror | Statistical rethinking with brms, ggplot2, and the tidyverse: Second edition (bookdown.org)"
+  },
+  {
+    "objectID": "presentaciones/04-diagramas-causales/index.html#la-paradoja-de-simpson",
+    "href": "presentaciones/04-diagramas-causales/index.html#la-paradoja-de-simpson",
+    "title": "Introducción a Diagramas Causales",
+    "section": "La paradoja de Simpson",
+    "text": "La paradoja de Simpson\nEjemplo con datos de COVID-19 sobre mortalidad por raza, tal y como se describe en el blog de Judea Pearl .\nLa paradoja: los blancos no hispanos tienen una mayor mortalidad si nos fijamos en los datos agregados. Pero: Desagregados por edad (relativo a la expectativa de vida, de ahí el arco B), los blancos tienen una mortalidad menor en todos los grupos de edad. El DAG correspondiente:\n. . .\n\n\n\n\n\n\n\n\n\nComo podemos ver en el gráfico, la edad es un factor de confusión para esta relación y, por tanto, mirar los datos observacionales Pr (Muerte|Raza) no dará la respuesta correcta. Una vez que observamos Pr (Muerte|Raza, Edad), el efecto de la variable Raza se invierte. La razón por la que puede ocurrir esto es poco intuitiva."
+  },
+  {
+    "objectID": "presentaciones/04-diagramas-causales/index.html#la-paradoja-de-berkson",
+    "href": "presentaciones/04-diagramas-causales/index.html#la-paradoja-de-berkson",
+    "title": "Introducción a Diagramas Causales",
+    "section": "La paradoja de Berkson",
+    "text": "La paradoja de Berkson\n\n\n\nLa paradoja de Berkson surge al condicionar un colisionador. Esto puede parecer paradójico pero usualmente es un artefacto del diseño del estudio, por ejemplo durante la selección de participantes.\nSupongamos investigas si existe alguna relación entre contraer COVID y padecer alguna otra enfermedad.\nSupongamos además que en la población general la COVID es independiente de otras enfermedades. Ahora bien, si basas tu estudio únicamente en pacientes hospitalizados, encontrarás que Pr(COVID|no Otras enfermedades) = ¡1!\nObviamente hubo algún padecimiento para estar hospitalizados.\nCondicionar a la hospitalización hace que las dos variables resulten asociadas, cuando antes no lo eran.\nEl condicionamiento sobre el colisionador ha desbloqueado la vía causal entre las dos variables."
+  },
+  {
+    "objectID": "presentaciones/04-diagramas-causales/index.html#efecto-problemático-de-un-colisionador",
+    "href": "presentaciones/04-diagramas-causales/index.html#efecto-problemático-de-un-colisionador",
+    "title": "Introducción a Diagramas Causales",
+    "section": "Efecto problemático de un “colisionador”",
+    "text": "Efecto problemático de un “colisionador”\n\n\n\n\n\n\n Fuente: https://www.nature.com/articles/s41467-020-19478-2"
+  },
+  {
+    "objectID": "presentaciones/04-diagramas-causales/index.html#cómo-influye-la-edad-sobre-la-felicidad",
+    "href": "presentaciones/04-diagramas-causales/index.html#cómo-influye-la-edad-sobre-la-felicidad",
+    "title": "Introducción a Diagramas Causales",
+    "section": "¿cómo influye la edad sobre la felicidad?",
+    "text": "¿cómo influye la edad sobre la felicidad?\nSi disponemos de una amplia encuesta de personas felices, ¿cabría esperar alguna asociación entre la edad y la felicidad?"
+  },
+  {
+    "objectID": "presentaciones/04-diagramas-causales/index.html#la-paradoja-del-bajo-peso-al-nacer",
+    "href": "presentaciones/04-diagramas-causales/index.html#la-paradoja-del-bajo-peso-al-nacer",
+    "title": "Introducción a Diagramas Causales",
+    "section": "La paradoja del bajo peso al nacer",
+    "text": "La paradoja del bajo peso al nacer\nEste es un ejemplo real que desconcertó a la comunidad médica durante muchos años.\nAl estudiar el efecto del tabaco en la mortalidad infantil. Ya se sabía que fumar provocaba un mayor riesgo de bajo peso al nacer y que el bajo peso al nacer aumenta el riesgo de mortalidad infantil.\n¿El tabaquismo tiene algún otro efecto sobre la mortalidad infantil?, aparte de causar bajo peso al nacer.\nLa intuición de los investigadores sugirió condicionar el peso al nacer y entonces observar el efecto del tabaquismo sobre la mortalidad: ¡se descubrió que fumar tenía un efecto protector!\nLa explicación es que ¡se trata de un sesgo del colisionador!\nHay varias causas de bajo peso al nacer. Fumar es una de ellas, pero hay otras.\nLas otras causas de bajo peso al nacer tienen un mayor riesgo negativo sobre la mortalidad infantil, aparte de su efecto sobre el bajo peso al nacer.\nComo reto, dibuja el DAG correspondiente y combina todos estos hechos para averiguar cómo el condicionamiento sobre el peso al nacer puede crear el hallazgo de que fumar tiene un falso efecto protector."
+  },
+  {
+    "objectID": "presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html#instrucciones-para-participar",
+    "href": "presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html#instrucciones-para-participar",
+    "title": "Leyes de la Ciencia",
+    "section": "Instrucciones para participar",
+    "text": "Instrucciones para participar\n\n\n\n\n\n\nlo que hay que hacer es\n\n\n\nEn tu computadora ir vevox.app\nPara usar el celular instala Vevox desde la tienda de apps"
+  },
+  {
+    "objectID": "presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html#para-ti-qué-es-la-ciencia",
+    "href": "presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html#para-ti-qué-es-la-ciencia",
+    "title": "Leyes de la Ciencia",
+    "section": "1. Para ti, ¿qué es la ciencia?",
+    "text": "1. Para ti, ¿qué es la ciencia?\n\nParticipa: vevox.app ID: 152-551-925\n\n\n\n\n\n\n\n \n\n\n\n\n(escribe de 3 a 20 palabras que reflejan tu percepción)\n\n\n\n\nEscribe una palabra y oprime enviar"
+  },
+  {
+    "objectID": "presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html#supuestos-que-se-hacen-al-hacer-ciencia",
+    "href": "presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html#supuestos-que-se-hacen-al-hacer-ciencia",
+    "title": "Leyes de la Ciencia",
+    "section": "Supuestos que se hacen al hacer ciencia",
+    "text": "Supuestos que se hacen al hacer ciencia\n\nToda argumentación racional inicia con ciertos supuestos .\nEstos supuestos típicamente quedan implícitos en la práctica de las actividades científicas\nConviene hacerlas explícitas para darle claridad a nuestra forma de hacer ciencia."
+  },
+  {
+    "objectID": "presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html#qué-damos-por-sentados-cuando-hacemos-ciencia",
+    "href": "presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html#qué-damos-por-sentados-cuando-hacemos-ciencia",
+    "title": "Leyes de la Ciencia",
+    "section": "2. ¿Qué damos por sentados cuando hacemos ciencia?",
+    "text": "2. ¿Qué damos por sentados cuando hacemos ciencia?\n\nParticipa: vevox.app ID: 152-551-925\n\n\n\n\n\n\n\n \n\n\n\n\n(escribe de 3 a 20 palabras que reflejan tu percepción)\n\n\n\n\nEscribe una palabra y oprime enviar"
+  },
+  {
+    "objectID": "presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html#algunos-otros-corolarios-interesantes",
+    "href": "presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html#algunos-otros-corolarios-interesantes",
+    "title": "Leyes de la Ciencia",
+    "section": "Algunos otros corolarios interesantes",
+    "text": "Algunos otros corolarios interesantes\n\nLa naturaleza es comprensible . Einstein afirmaba que: la cosa más incomprensible del universo es que sea comprensible.\nLa naturaleza es uniforme . Es decir los procesos y patrones observados sólo en una escala limitada se mantendrán universalmente (esto es obviamente imprescindible en ciencias como la Astronomía).\n\n¿Qué pasa con este supuesto en ciencias como la Ecología, la Psicología o las Ciencias sociales? De paso, hay que notar que este supuesto implica la homogeneidad del material experimental.\n\nLa causalidad existe . El principio de causalidad es la noción que consiste en que “cada evento (o fenómeno) natural se supone tiene una causa, de modo que si tal situación causal puede ser restituida, el evento será duplicado” (Underwood1957)."
+  },
+  {
+    "objectID": "presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html#cómo-debe-interpretarse-esto",
+    "href": "presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html#cómo-debe-interpretarse-esto",
+    "title": "Leyes de la Ciencia",
+    "section": "3. ¿Cómo debe interpretarse esto?",
+    "text": "3. ¿Cómo debe interpretarse esto?\n\nParticipa: vevox.app ID: 152-551-925\n\n\n\n\n\n\n\n \n\n\n\n\n\n90% de las semillas en un grupo tratado germinan.\n20% lo hacen en el grupo control.\n\n\n\n\n\nElije la respuesta que consideres más apropiada"
+  },
+  {
+    "objectID": "presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html#qué-tan-de-acuerdo-estás-con-la-siguiente-aseveración",
+    "href": "presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html#qué-tan-de-acuerdo-estás-con-la-siguiente-aseveración",
+    "title": "Leyes de la Ciencia",
+    "section": "4. ¿Qué tan de acuerdo estás con la siguiente aseveración?",
+    "text": "4. ¿Qué tan de acuerdo estás con la siguiente aseveración?\n\nParticipa: vevox.app ID: 152-551-925\n\n“La causalidad implica correlación”"
+  },
+  {
+    "objectID": "presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html#causalidad-finita-y-desprecio",
+    "href": "presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html#causalidad-finita-y-desprecio",
+    "title": "Leyes de la Ciencia",
+    "section": "Causalidad finita y desprecio…",
+    "text": "Causalidad finita y desprecio…\n\nPara Bachelard, uno de los signos distintivos del espíritu científico y del espíritu filosófico es el derecho a despreciar . Para él, el espíritu científico explicita clara y distintamente este derecho a despreciar lo despreciable\nDerecho que incansablemente el espíritu filosófico le rehúsa.\nPara ilustrar esto, recurre a Ostwald:\n\n“Cualquiera que sea el fenómeno considerado, siempre hay un número extremadamente grande de circunstancias que no tienen influencia mesurable sobre él”.\n¿Cómo influye el color de un proyectil en sus propiedades balísticas?"
+  },
+  {
+    "objectID": "presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html#conoces-alguna-metodología-científica-para-describir-y-analizar-estructuras-de-relación-causa-efecto",
+    "href": "presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html#conoces-alguna-metodología-científica-para-describir-y-analizar-estructuras-de-relación-causa-efecto",
+    "title": "Leyes de la Ciencia",
+    "section": "5. ¿Conoces alguna metodología científica para describir y analizar estructuras de relación causa efecto?",
+    "text": "5. ¿Conoces alguna metodología científica para describir y analizar estructuras de relación causa efecto?\n\nParticipa: vevox.app ID: 152-551-925"
+  },
+  {
+    "objectID": "presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html#cuáles-son-los-aspectos-clave-para-diseñar-un-experimentoestudio",
+    "href": "presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html#cuáles-son-los-aspectos-clave-para-diseñar-un-experimentoestudio",
+    "title": "Leyes de la Ciencia",
+    "section": "6 ¿Cuáles son los aspectos CLAVE para diseñar un experimento/estudio?",
+    "text": "6 ¿Cuáles son los aspectos CLAVE para diseñar un experimento/estudio?\n\nParticipa: vevox.app ID: 152-551-925"
+  },
+  {
+    "objectID": "presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html#section-5",
+    "href": "presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html#section-5",
+    "title": "Leyes de la Ciencia",
+    "section": "",
+    "text": "M3-Causalidad"
   }
 ]
