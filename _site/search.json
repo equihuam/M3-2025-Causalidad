@@ -4,7 +4,7 @@
     "href": "presentaciones.html",
     "title": "M3-Presentaciones",
     "section": "",
-    "text": "Leyes de la Ciencia\n\n\nDiseño de estudios y experimentos\n\n\n\npresentación\n\n\n\n\n\n\n\n\n\n28 ene 2025\n\n\nMiguel Equihua\n\n\n\n\n\n\nNo hay resultados"
+    "text": "Leyes de la Ciencia\n\n\nDiseño de estudios y experimentos\n\n\n\npresentación\n\n\n\n\n\n\n\n\n\n28 ene 2025\n\n\nMiguel Equihua\n\n\n\n\n\n\n\n\n\n\n\n\nModelo Estadístico Lineal\n\n\nmodelación y prueba de hipótesis\n\n\n\npresentación\n\n\n\n\n\n\n\n\n\n30 ene 2025\n\n\nMiguel Equihua\n\n\n\n\n\n\nNo hay resultados"
   },
   {
     "objectID": "posts/00-Bienvenida/index.html#objetivos-del-módulo-3",
@@ -81,7 +81,7 @@
     "href": "index.html",
     "title": "M3 - Diseño de Experimentos",
     "section": "",
-    "text": "Leyes de la Ciencia\n\n\n\n\n\n\nclase\n\n\n\n\n\n\n\n\n\n28 ene 2025\n\n\nMiguel Equihua, Octavio Pérez Maqueo, Elio Lagunes\n\n\n\n\n\n\n\n\n\n\n\n\nConceptos y Modelos en la experimentación\n\n\n\n\n\n\nclase\n\n\n\n\n\n\n\n\n\n27 ene 2025\n\n\nMiguel Equihua\n\n\n\n\n\n\n\n\n\n\n\n\nBienvenidos al Módulo 3 de estadística\n\n\n\n\n\n\noperación\n\n\n\n\n\n\n\n\n\n27 ene 2025\n\n\nMiguel Equihua, Elio Lagunes\n\n\n\n\n\n\nNo hay resultados"
+    "text": "Leyes de la Ciencia\n\n\n\n\n\n\nclase\n\n\n\n\n\n\n\n\n\n28 ene 2025\n\n\nMiguel Equihua, Octavio Pérez Maqueo, Elio Lagunes\n\n\n\n\n\n\n\n\n\n\n\n\nEl Modelo estadístico lineal\n\n\n\n\n\n\nclase\n\n\n\n\n\n\n\n\n\n28 ene 2025\n\n\nMiguel Equihua\n\n\n\n\n\n\n\n\n\n\n\n\nConceptos y Modelos en la experimentación\n\n\n\n\n\n\nclase\n\n\n\n\n\n\n\n\n\n27 ene 2025\n\n\nMiguel Equihua\n\n\n\n\n\n\n\n\n\n\n\n\nBienvenidos al Módulo 3 de estadística\n\n\n\n\n\n\noperación\n\n\n\n\n\n\n\n\n\n27 ene 2025\n\n\nMiguel Equihua, Elio Lagunes\n\n\n\n\n\n\nNo hay resultados"
   },
   {
     "objectID": "posts/01-concepto-y-modelos-experimentar/index.html",
@@ -509,5 +509,47 @@
     "title": "Conceptos y Modelos en la experimentación",
     "section": "Preregistro y prepublicación",
     "text": "Preregistro y prepublicación\nReflexión sobre prepublicación\nEcoEvorxiv\npreprints.org\nNature\nOpen Science Facility\nScience"
+  },
+  {
+    "objectID": "posts/03-modelo-lineal/index.html",
+    "href": "posts/03-modelo-lineal/index.html",
+    "title": "El Modelo estadístico lineal",
+    "section": "",
+    "text": "El diseño, análisis y reporte de los resultados de experimentos o estudios en general tiene un vínculo muy estrecho con la modelación estadística. Las hipótesis de investigación deben ser expresadas de modo tal que sean suceptibles de ser valoradas con apoyo estadístico y a partir de ahí, el análiisis de los datos y el reporte de resultados hacen referencia obligada a los atributos de los modelos estudiados, desde luego considerando su correspondencia o falta de ella, con los datos obtenidos en el estudio y las ideas que el equipo de investigación se ha propuesto desentrañar. Es así como usualmente se aplica la llamada prueba de hipótesis que se basa en la comparación y selección de modelos, buscando encontrar aquellos que ofrezcan la mejor correspondencia con una explicación plausible del proceso que genera datos semejantes a los que se utilizaron en el estudio. En esta sesión abordaremos esta temática.\n\n\n\n\n\n\n \n\n\n\n\n\n \n\n\n\n\n \n\n\nHaz click sobre la imagen para ver la presentación"
+  },
+  {
+    "objectID": "presentaciones/03-modelo-lineal/pres-modelo-lineal.html#el-modelo-estadístico-lineal-generalcenter",
+    "href": "presentaciones/03-modelo-lineal/pres-modelo-lineal.html#el-modelo-estadístico-lineal-generalcenter",
+    "title": "Modelo Estadístico Lineal",
+    "section": "El modelo estadístico lineal general{center}",
+    "text": "El modelo estadístico lineal general{center}\nEstructura general"
+  },
+  {
+    "objectID": "presentaciones/03-modelo-lineal/pres-modelo-lineal.html#ejemplo-de-modelo-lineal",
+    "href": "presentaciones/03-modelo-lineal/pres-modelo-lineal.html#ejemplo-de-modelo-lineal",
+    "title": "Modelo Estadístico Lineal",
+    "section": "Ejemplo de modelo lineal",
+    "text": "Ejemplo de modelo lineal\n\nGanancia de peso en un grupo de orugas que declina conforme se incrementa el contenido de taninos en la dieta.\nEsta condición puede describirse en forma abreviada así:\n\nganancia de peso de cada oruga=ganancia de peso base en general+efecto del contenido de taninos en la dieta+efecto de otros factores que fluctuan aleatoriamente\nComo modelo lineal se puede escribir así :\n\\[\ny_{ij} = \\beta_0 x_0j + \\sum_{i=1}^{k}\\beta_i x_{ij} + \\varepsilon_{j(i)}  \n\\]"
+  },
+  {
+    "objectID": "presentaciones/03-modelo-lineal/pres-modelo-lineal.html#modelos-con-variables-explicativas-cualitativas",
+    "href": "presentaciones/03-modelo-lineal/pres-modelo-lineal.html#modelos-con-variables-explicativas-cualitativas",
+    "title": "Modelo Estadístico Lineal",
+    "section": "Modelos con variables explicativas cualitativas",
+    "text": "Modelos con variables explicativas cualitativas\n\n\n\n\n\n\nUn agrónomo planea estudiar las tasas de producción de cuatro híbridos de trigo en tres regiones geográficas representantes de diferentes condiciones de sequía. Los sitios se escogen según la cantidad de lluvia como normal climatológica y la respuesta es el rendimiento por hectárea. Las semillas de los híbridos son asignadas aleatoriamente a los sitios.\n\n\n¿cómo piensas que se podría hacer esta aleatorización.\n\n\n\n\n¿cual sería el modelo lineal que lo podría describir?\n\n\n\n\\[\ny_{ijk} = \\mu + R_i + H_j + RH_{ij} +  \\varepsilon_{k(ij)}\n\\]"
+  },
+  {
+    "objectID": "presentaciones/03-modelo-lineal/pres-modelo-lineal.html#el-modelo-en-todo-su-esplendor",
+    "href": "presentaciones/03-modelo-lineal/pres-modelo-lineal.html#el-modelo-en-todo-su-esplendor",
+    "title": "Modelo Estadístico Lineal",
+    "section": "El modelo en todo su esplendor",
+    "text": "El modelo en todo su esplendor\n\\[\n\\begin{gather*}\ny_{ijk} = \\mu + \\beta_{1k}R_{1k} + \\beta_{2k}R_{2k} + \\beta_{3k}R_{3k} + \\\\\n          \\beta_{4k}H_{1k}   + \\beta_{5k}H_{2k}   + \\beta_{6k}H_{3k}   + \\beta_{7k}H_{ik} + \\\\\n          \\beta_{8k}RH_{1k}  + \\beta_{9k}RH_{2k}  + \\beta_{10k}RH_{3k} + \\beta_{11k}RH_{ik}+ \\\\\n          \\beta_{12k}RH_{1k} + \\beta_{13k}RH_{2k} + \\beta_{14k}RH_{3k} + \\beta_{15k}RH_{ik}+\\\\\n          \\beta_{16k}RH_{1k} + \\beta_{17k}RH_{2k} + \\beta_{18k}RH_{3k} + \\beta_{19k}RH_{ik}+\n          \\varepsilon_{k(ij)}\n\\end{gather*}\n\\]"
+  },
+  {
+    "objectID": "presentaciones/03-modelo-lineal/pres-modelo-lineal.html#qué-valores-toman-las-x-las-r-y-las-h",
+    "href": "presentaciones/03-modelo-lineal/pres-modelo-lineal.html#qué-valores-toman-las-x-las-r-y-las-h",
+    "title": "Modelo Estadístico Lineal",
+    "section": "¿Qué valores toman las X, las R y las H?",
+    "text": "¿Qué valores toman las X, las R y las H?\nLa forma más común de modelar datos cualitativos es:\n\n\n\n\nMediante variables usualmente llamadas factores.\nUn factor es una listas de nombres o códigos de identificación de estados o niveles mutuamente excluyentes.\nEn la modelación se requiere convertir el factor a variables indicadoras o dummy.\nHabrá tantas variables dummy como estados o niveles tenga el factor\nCada variable se construye anotando la presencia/ausencia de la condición del factor.\n\n\n\n\n\\[\nH_1 = \\left\\{\n         \\begin{align*}\n           \\text{si } \\color{red}{sí} \\text{ es híbrido del tipo } a &: 1 \\\\\n           \\text{si } \\color{red}{no} \\text{ es híbrido del tipo } a &: 0\n         \\end{align*}\n      \\right\\}\n\\]"
   }
 ]
