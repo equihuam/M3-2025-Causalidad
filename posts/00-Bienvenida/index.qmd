@@ -45,6 +45,8 @@ Como ejercicio inicial les pedimos preparen y nos entreguen en **una sola cuarti
 Habilité un espacio en [Google Clasroom](https://classroom.google.com/c/NzQ0NDQ5Mjg5Njcy?cjc=w44lfnd) para llevar el control de nuestras comunicaciones en forma ordenada.
 
 
+::: {.callout-note title="Calendario" collapse="true"}
+
 ```{r }
 #| label: calendario
 #| tbl-cap: Aactividades del Módulo 3 
@@ -72,9 +74,12 @@ feb <- calendR(month = 2,
         legend.pos = "right")
 
 ene
-
 feb
+```
 
+:::
+
+```{r }
 contenido <- read_csv("contenido.csv", col_names = TRUE, show_col_types = FALSE)
 contenido$lectura <- c(" ", "debate")[contenido$lectura + 1]
 

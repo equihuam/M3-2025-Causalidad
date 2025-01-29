@@ -1,6 +1,6 @@
 ---
 title: "Control de Entregas"
-author: ["Miguel Equihua", "Elio Lagunes"]
+author: ["Miguel Equihua"]
 date: last-modified
 lang: es
 draft: false
@@ -26,11 +26,7 @@ library(DT)
 # Autenticación genérica
 suppressMessages(drive_auth(email = "miguel.equihua@ecologia.edu.mx"))
 
-m3_dir <- drive_ls(path = as_dribble('M3-estadística/2025'), recursive = TRUE, type = "folder")
-  
-
-# Contenido de la carpeta Tareas
-m3_tareas <- drive_ls(path = as_id(m3_dir$id[grepl("Tareas", m3_dir$name)]))
+m3_dir <- drive_ls(path = as_dribble('M3-estadística/2025/Tareas'), recursive = TRUE, type = "folder")
 
 ```
 
@@ -51,14 +47,15 @@ Esta es la lista de tareas que hemos recibido y reunido en la carpeta que tenemo
 \
 
 
-
 ```{r }
-#| label: m3_tareas
+#| label: m3_ejercicios
 #| warning: false
 #| include: true
 #| echo: false
 
-m3_tareas %>% 
+m3_ejercicios <- drive_ls(path = as_id(m3_dir$id[grepl("ejercicios", m3_dir$name)]))
+
+m3_ejercicios %>% 
    select(name) %>%  
    mutate(name_lwr = str_to_lower(.$name)) %>% 
    filter(str_detect(.$name_lwr, "tarea")) %>% 
@@ -96,7 +93,9 @@ Esta es la colección de controles de lectura que hemos recibido.
 #| include: true
 #| echo: false
 
-m3_tareas %>% 
+m3_lecturas <- drive_ls(path = as_id(m3_dir$id[grepl("lecturas", m3_dir$name)]))
+
+m3_lecturas %>% 
    select(name) %>% 
    mutate(name_lwr = str_to_lower(.$name)) %>% 
    filter(str_detect(.$name_lwr, "lectura")) %>% 
