@@ -28,7 +28,7 @@ experimento <- function (n, m_real, sd_real, h1, p)
   # Graficación ilustrativa del experimento
   etiquetas <- data.frame(
                   x = c(0, h1),
-                  y = c(0.3, 0.3),
+                  y = c(0.8, 0.8),
                   texto = c("H0", "H1"))
   
   grafica <- dist_hs |> 
