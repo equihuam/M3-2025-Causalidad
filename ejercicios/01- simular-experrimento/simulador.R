@@ -1,28 +1,34 @@
 library(ggplot2)
 suppressPackageStartupMessages(library(tidyverse))
 
+
+# Función que contiene los términos de la simulación del experimento
 experimento <- function (n, m_real, sd_real, h1, p)
 {
-
+  # datos simulados
   datos <- data.frame(y = rnorm(n, m_real, sd_real))
  
-  es_estimado <-  sd(datos$y) / n
+  # estimadores estadísticos a partir de los datos simulados
+  es_estimado <-  sd(datos$y) / sqrt(n)
   m_estimada <- mean(datos$y)
   m_h0 = 0
   q_h0_up = qnorm(p = p, mean = 0, sd = es_estimado,  lower.tail = F)
   beta_p = 1 - pnorm(q_h0_up, mean = h1, sd = es_estimado)
   
+  # Valores teóricos de las distribuciones suponiendo H0 y H1
+  #intervalo de valores de respuesta explorados
   x <- seq(from = -3 * es_estimado, 
            to = max(h1 + 3 * es_estimado, m_estimada), 
            length = 1500 )
-  
+  # valores de densidad de probabilidad asociado a cada valor x
   dist_hs <- data.frame(x = x, 
                         y_h0 = dnorm(x, 0,  sd = es_estimado), 
                         y_h1 = dnorm(x, h1, sd = es_estimado))
   
+  # Graficación ilustrativa del experimento
   etiquetas <- data.frame(
                   x = c(0, h1),
-                  y = c(0.5, 0.5),
+                  y = c(0.3, 0.3),
                   texto = c("H0", "H1"))
   
   grafica <- dist_hs |> 
@@ -40,11 +46,12 @@ experimento <- function (n, m_real, sd_real, h1, p)
                linetype = "dotted") +
     geom_label(data = etiquetas, aes(x = x, y = y, label = texto),                 , 
                color="gray40", 
-               size=7 , angle=45, fontface="bold" ) +
+               size=6 , angle=45, fontface="bold" ) +
     labs(title = "Experimento simulado", subtitle = "analiza H0 vs H1") +
     ylab(label = "densidad de probabilidad") +
     xlab(label = "variable de respuesta")
   
+  # Organización y entrega de resultados
   resultados <- list(grafica = grafica,
                      resultados = data.frame(h1 = h1,
                            n = n,
@@ -59,4 +66,7 @@ experimento <- function (n, m_real, sd_real, h1, p)
   return(resultados)
 }
 
-experimento(n = 20, m_real = 1.2, sd_real = 6, h1 = 1, p = 0.05)
+
+# Realiza el experimento
+experimento(n = 20, m_real = 1, sd_real = 1, h1 = 0.5, p = 0.05)
+
