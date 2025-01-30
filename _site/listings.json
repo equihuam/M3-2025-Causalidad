@@ -3,6 +3,7 @@
     "listing": "/presentaciones.html",
     "items": [
       "/presentaciones/02-leyes-de-la-ciencia/pres-leyes-ciencia.html",
+      "/presentaciones/04-diagramas-causales/index.html",
       "/presentaciones/03-modelo-lineal/pres-modelo-lineal.html"
     ]
   },
@@ -15,6 +16,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/04-diagramas-causales/index.html",
       "/posts/02-leyes-de-la-ciencia/index.html",
       "/posts/03-modelo-lineal/index.html",
       "/posts/01-concepto-y-modelos-experimentar/index.html",
