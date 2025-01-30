@@ -6,7 +6,7 @@ experimento <- function (n, m_real, sd_real, h1, p)
 
   datos <- data.frame(y = rnorm(n, m_real, sd_real))
  
-  es_estimado <-  sd(datos$y) / n
+  es_estimado <-  sd(datos$y) / sqrt(n)
   m_estimada <- mean(datos$y)
   m_h0 = 0
   q_h0_up = qnorm(p = p, mean = 0, sd = es_estimado,  lower.tail = F)
@@ -60,3 +60,4 @@ experimento <- function (n, m_real, sd_real, h1, p)
 }
 
 experimento(n = 20, m_real = 1.2, sd_real = 6, h1 = 1, p = 0.05)
+
