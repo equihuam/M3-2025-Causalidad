@@ -4,11 +4,12 @@ sbtiitle: "Directed Acyclic Graphs (DAG)"
 author: 
   - name: "Miguel Equihua"
     email: "equihuam@gmail.com"
-date: "2025-01-30"
+date: "2025-01-30 12:00:00"
 draft: false
 date-format: "[Xalapa, Ver.,] D MMMM YYYY"
 categories: [presentación]
 lang: es
+image: "images/causal-diagram.svg"
 footer: "[M3-Causalidad](http://m3-2025-causalidad.miequiz-ca.net/)"
 logo:  "images/Logo-Inecol.png"
 title-slide-attributes:
@@ -28,6 +29,7 @@ execute:
 embed-resources: false
 preload-iframes: true
 ---
+
 
 ## La escalera de la causalidad
 

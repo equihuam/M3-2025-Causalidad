@@ -4,7 +4,7 @@ subtitle: "Diseño de estudios y experimentos"
 author: 
   - name: "Miguel Equihua"
     email: "equihuam@gmail.com"
-date: "2025-01-28"
+date: "2025-01-29"
 draft: false
 date-format: "[Xalapa, Ver.,] D MMMM, YYYY"
 categories: [presentación]
@@ -47,6 +47,7 @@ preload-iframes: true
 ![](images/clase_1-Leyes-en-ecologia1.png)
 :::
 :::
+
 
 ## 1. Para ti, ¿qué es la ciencia?
 

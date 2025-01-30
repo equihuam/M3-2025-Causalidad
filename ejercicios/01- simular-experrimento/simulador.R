@@ -39,7 +39,7 @@ experimento <- function (n, m_real, sd_real, h1, p)
                color = "darkgreen",
                linetype = "dotted") +
     geom_label(data = etiquetas, aes(x = x, y = y, label = texto),                 , 
-               color="orange", 
+               color="gray40", 
                size=7 , angle=45, fontface="bold" ) +
     labs(title = "Experimento simulado", subtitle = "analiza H0 vs H1") +
     ylab(label = "densidad de probabilidad") +

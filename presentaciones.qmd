@@ -4,7 +4,7 @@ lang: es
 listing:
   contents:
     - "presentaciones/*/*.qmd"
-  sort: "date"
+  sort: "date desc" 
   type: default
   categories: true
   sort-ui: false

@@ -4,7 +4,8 @@ subtitle: "modelación y prueba de hipótesis"
 author: 
   - name: "Miguel Equihua"
     email: "equihuam@gmail.com"
-date: "2025-01-30"
+date: "2025-01-30 10:00:00"
+image: "images/mathematics-1233876_1280.jpg"
 draft: false
 date-format: "[Xalapa, Ver.,] D MMMM YYYY"
 categories: [presentación]
@@ -27,6 +28,7 @@ execute:
 preload-iframes: true
 embed-resources: true
 ---
+
 
 ```{r}
 #| label: inicio
@@ -56,34 +58,34 @@ library(flextable)
 
 # Procesos de confusión
 
-::: columns
-::: {.column width="60%"}
+:::::: columns
+:::: {.column width="60%"}
 ::: incremental
 -   Hacen aparecer una asociación que no existe.
 -   Ocultan o enmascaran la existencia de una asociación
 :::
-:::
+::::
 
 ::: {.column width="40%"}
 ![](images/clase3-Modelo-lineal0.png){width="100%"}
 :::
-:::
+::::::
 
 # Sesgo por selección
 
-::: columns
-::: {.column width="60%"}
+:::::: columns
+:::: {.column width="60%"}
 ::: incremental
 -   Cuando una variable explicativa y alguna otra variable actúan simultáneamente sobre la de respuesta.
 -   En este caso la variable de respuesta es un “colisionador”.
 -   Si no se maneja adecuadamente en el diseño del estudio o en el análisis, pueden producir resultados sesgados.
 :::
-:::
+::::
 
 ::: {.column width="40%"}
 ![](images/clase3-modelo-lineal1.png){width="100%"}
 :::
-:::
+::::::
 
 # Clasificación y medición {.center}
 
@@ -176,8 +178,8 @@ $$
 
 La forma más común de modelar datos cualitativos es:
 
-::: columns
-::: {.column width="60%"}
+::::::: columns
+:::: {.column width="60%"}
 ::: {style="font-size: 90%;"}
 -   Mediante variables usualmente llamadas **factores**.
 -   Un factor es una listas de nombres o códigos de identificación de estados o **niveles** mutuamente excluyentes.
@@ -185,9 +187,9 @@ La forma más común de modelar datos cualitativos es:
 -   Habrá tantas variables ***dummy*** como estados o niveles tenga el factor
 -   Cada variable se construye anotando la presencia/ausencia de la condición del factor.
 :::
-:::
+::::
 
-::: {.column width="30%"}
+:::: {.column width="30%"}
 ::: {style="font-size: 80%;"}
 $$
 H_1 = \left\{ 
@@ -198,8 +200,8 @@ H_1 = \left\{
       \right\} 
 $$
 :::
-:::
-:::
+::::
+:::::::
 
 # Dependencia lineal
 
@@ -214,7 +216,7 @@ $$
 y = \mu + \beta_1x_1 + \beta_2x_2
 $$
 
-::: columns
+:::::::: columns
 ::: {.column width="40%"}
 ```{r}
 #| results: asis
@@ -228,20 +230,20 @@ flextable(dat) %>%
 ```
 :::
 
-::: {.column width="60%"}
+:::::: {.column width="60%"}
 ::: fragment
 -   ¿Cuál es la dependencia lineal en esta tabla de datos?
 :::
 
-::: fragment
+:::: fragment
 ::: {.fragment .highlight-red}
 $$
 x_2 = 1 + 0.5 x_1
 $$
 :::
-:::
-:::
-:::
+::::
+::::::
+::::::::
 
 # Y... ¿qué tenemos aquí?
 
@@ -249,7 +251,7 @@ $$
 y = \mu + \beta_1x_1 + \beta_2x_2
 $$
 
-::: columns
+::::::: columns
 ::: {.column width="40%"}
 ```{r}
 #| results: asis
@@ -264,16 +266,16 @@ flextable(dat) %>%
 ```
 :::
 
-::: {.column width="60%"}
-::: {.callout-important title="¿hay colinealidad en esta tabla de datos?"}
+::::: {.column width="60%"}
+:::: {.callout-important title="¿hay colinealidad en esta tabla de datos?"}
 ::: incremental
 -   ¡La colinealidad impide resolver el ajuste de modelos!
 -   Para resolver este problema hay que reparametrizar.
 -   Una forma de reparametrizar: eliminar la primera variable dummy de un factor.
 :::
-:::
-:::
-:::
+::::
+:::::
+:::::::
 
 # Otro caso {.center}
 
