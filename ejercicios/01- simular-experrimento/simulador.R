@@ -68,5 +68,5 @@ experimento <- function (n, m_real, sd_real, h1, p)
 
 
 # Realiza el experimento
-experimento(n = 20, m_real = 1, sd_real = 1, h1 = 0.5, p = 0.05)
+experimento(n = 10, m_real = 1, sd_real = 1, h1 = 0.5, p = 0.05)
 
