@@ -4,7 +4,7 @@ sbtiitle: "Directed Acyclic Graphs (DAG)"
 author: 
   - name: "Miguel Equihua"
     email: "equihuam@gmail.com"
-date: "2025-01-28"
+date: "2025-01-30"
 draft: false
 date-format: "[Xalapa, Ver.,] D MMMM YYYY"
 categories: [presentación]
