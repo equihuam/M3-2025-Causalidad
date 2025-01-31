@@ -3,7 +3,7 @@ title: "Introducción a Diagramas Causales"
 sbtiitle: "Directed Acyclic Graphs (DAG)"
 author: 
   - name: "Miguel Equihua"
-    email: "equihuam@gmail.com"
+    email: "miguel.equihua@ecologia.edu.mx"
 date: "2025-01-30 12:00:00"
 draft: false
 date-format: "[Xalapa, Ver.,] D MMMM YYYY"
@@ -85,7 +85,7 @@ preload-iframes: true
 
 :::{.column width="50%"}
 
-![](images/elementos-de-un-dag.svg)
+![](images/elementos-de-un-dag.svg){width=500px}
 :::
 :::
 
@@ -98,7 +98,7 @@ preload-iframes: true
 ## Papel de las variables en un DAG
 
 :::{.columns}
-:::{.column width="60%"}
+:::{.column width="50%"}
 :::{style="font-size:60%;"}
 
 + **Factor de Confusión** : Es ancestro tanto de la explicativa *X* como de la respuesta *Y* . *A* lo es el *DAG* .
@@ -110,7 +110,7 @@ preload-iframes: true
 :::
 :::
 
-::: {.column width="40%}
+::: {.column width="35%}
 ![](images/tipos-relacion-dag.svg){width=500px}
 :::
 :::
@@ -195,9 +195,9 @@ Si una variable *A* es el nodo de colisión entre dos variables *X* e *Y* , y so
 
 El flujo de información en una ruta *p* queda bloqueado por un conjunto de nodos *Z* si y sólo si:
 
-1 *p* contiene una cadena de nodos *A* → *B* → *C* o una horquilla *A* ← *B* → *C* , de tal manera que el nodo medio *B* proporciona datos como criterio condicional de observación. Es decir si la ruta es del tipo **variable intermedia o causa común, el condicionarlas bloquea.**
+1. *p* contiene una cadena de nodos *A* → *B* → *C* o una horquilla *A* ← *B* → *C* , de tal manera que el nodo medio *B* proporciona datos como criterio condicional de observación. Es decir si la ruta es del tipo **variable intermedia o causa común, el condicionarlas bloquea.**
 
-2 *p* contiene un colisionador *A* → *B* ← *C* tal que ni el nodo de colisión *B* , ni ninguno de sus descendientes, son criterio para condicionar las observaciones. Es decir **condicionar sore un colisionador desbloquea** .
+2. *p* contiene un colisionador *A* → *B* ← *C* tal que ni el nodo de colisión *B* , ni ninguno de sus descendientes, son criterio para condicionar las observaciones. Es decir **condicionar sore un colisionador desbloquea** .
 
 
 # Regla de la Puerta trasera

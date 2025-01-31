@@ -501,7 +501,7 @@
     "href": "presentaciones/04-diagramas-causales/index.html#separación-direccional-d-separation",
     "title": "Introducción a Diagramas Causales",
     "section": "Separación-direccional (d-separation)",
-    "text": "Separación-direccional (d-separation)\nEl flujo de información en una ruta p queda bloqueado por un conjunto de nodos Z si y sólo si:\n1 p contiene una cadena de nodos A → B → C o una horquilla A ← B → C , de tal manera que el nodo medio B proporciona datos como criterio condicional de observación. Es decir si la ruta es del tipo variable intermedia o causa común, el condicionarlas bloquea.\n2 p contiene un colisionador A → B ← C tal que ni el nodo de colisión B , ni ninguno de sus descendientes, son criterio para condicionar las observaciones. Es decir condicionar sore un colisionador desbloquea ."
+    "text": "Separación-direccional (d-separation)\nEl flujo de información en una ruta p queda bloqueado por un conjunto de nodos Z si y sólo si:\n\np contiene una cadena de nodos A → B → C o una horquilla A ← B → C , de tal manera que el nodo medio B proporciona datos como criterio condicional de observación. Es decir si la ruta es del tipo variable intermedia o causa común, el condicionarlas bloquea.\np contiene un colisionador A → B ← C tal que ni el nodo de colisión B , ni ninguno de sus descendientes, son criterio para condicionar las observaciones. Es decir condicionar sore un colisionador desbloquea ."
   },
   {
     "objectID": "presentaciones/04-diagramas-causales/index.html#se-puede-medir-el-efecto-sin-sesgos-de-la-aspirina",
