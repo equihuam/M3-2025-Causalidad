@@ -256,8 +256,8 @@ $$
 en donde *N*(*μ*, *σ*) indica que existen variaciones por causas no observadas que vamos a suponer generan oscilaciones aleatorias o un *ruido*, cuya distribución es semejante a la que produciría una distribución Normal de probabilidades. Ahora escribimos estas ecuaciones en un escript de **R**.
 
 ```{r}
-set.seed(1896) # Si interesa repetir la misma secuencia de numeros aleatorios. Habilita Repetibilidad
-n <- 1000 # Sample Size
+set.seed(1896) # Habilita Repetibilidad
+n <- 1000 # Tamaño de muestra
 
 aprender <- rnorm(n)
 conocer <- 5 * aprender + rnorm(n)  # Conocer depende del comportamiento de aprender

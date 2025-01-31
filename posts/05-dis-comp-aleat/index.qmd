@@ -1,9 +1,9 @@
 ---
 title: "Experimentos completamente aleatorizados"
-author: ["Miguel Equihua", "Elio Lagunes"]
+author: ["Miguel Equihua"]
 date: "2025-01-31"
 lang: es
-draft: true
+draft: false
 categories: [clase]
 format:
   html:
