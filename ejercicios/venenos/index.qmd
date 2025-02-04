@@ -1,6 +1,6 @@
 ---
 title: "Ensayo de antivenenos"
-author: ["Miguel Equihua", "Elio Lagunes"]
+author: ["Miguel Equihua"]
 date: "2024-02-02"
 lang: es
 draft: false
@@ -29,6 +29,31 @@ El archivo Excel que se adjunta muestra el tiempo de sobrevivencia, en unidades 
  8. Valora la calidad del modelo, incluyendo el análisis de los residuos
  9. Resuelve que tratamientos difieren de los demás
 10. Argumenta tus conclusiones
+
 :::
 
+
 [Descargar los datos como un libro Excel](Venenos.xlsx)
+
+
+```{r}
+#| include: true
+#| eval: false
+#| code-fold: true
+  
+library(readxl)
+library(tidyverse)
+venenos <- read_excel("Venenos.xlsx", skip = 1, col_names = TRUE)
+venenos$Veneno <-  rep(c("I", "II", "III"), each = 4)
+names(venenos) <- str_to_lower(names(venenos))
+
+venenos <- venenos %>% pivot_longer(cols = c("a", "b", "c", "d"), 
+                         names_to = "antidoto", values_to = "tsv", )
+
+venenos <- venenos %>% mutate(veneno = factor(veneno), 
+                              antidoto = factor(antidoto))
+
+
+head(venenos)
+```
+
