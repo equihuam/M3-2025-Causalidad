@@ -18,6 +18,7 @@ Imaginemos que tenemos las dos situaciones experimentales que se ilustran en la 
 
 
 ![](images/retricciones_a_la_aleatorizaci%C3%B3n_1.png)
+
 ::: {.callout-tip collapse="true"}
 
 ## [¿qué modelos propondrías para analizarlos?]{style="color: GoldenRod; font-size: 1.5em;"}
@@ -28,7 +29,12 @@ $$
 y_{ijk} = \mu + Z_{i} + B_{j} + \varepsilon_{k(ij)}
 $$
 
-En donde: \* $\mu$ es la media general \* $Z_{i}$ es el efecto del tratamiento $i,\dots, t$ \* $B_{j}$ es el efecto del tratamiento $j,\dots, b$ \* $\varepsilon_{(ij)}$ es el error aleatorio
+En donde: 
+
+* $mu$ es la media general   
+* $Z_{i}$ es el efecto del tratamiento $i,\dots, t$  
+* $B_{j}$ es el efecto del tratamiento $j,\dots, b$  
+* $\varepsilon_{(ij)}$ es el error aleatorio  
 
 :::
 
@@ -56,7 +62,7 @@ En donde los términos tienen la misma interpretación de arriba, y lo que agreg
 
 El *error de restricción de bloques* representa las características particulares y aleatorias de cada conjunto de unidades que formen el bloque *j* (cosas como errores de medición, condiciones ambientales peculiares del bloque pero comunes en su interior, manipulación común al iinterior del bloque, etc.). Este nuevo término tiene estas características:
 
--   Es aleatorio (se asume se distribuye como una normal e independientemente: \~normal(0, $\sigma_{k}^2$)
+-   Es aleatorio (se asume se distribuye parrecido a una normal con observaciones realizadas independientemente: \~DNI(0, $\sigma_{k}^2$)
 
 -   No es estimable y tampoco lo son sus combinaciones, porque no hay grados de libertad.
 

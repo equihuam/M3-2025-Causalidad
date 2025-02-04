@@ -10,6 +10,7 @@
   {
     "listing": "/ejercicios.html",
     "items": [
+      "/ejercicios/venenos/index.html",
       "/ejercicios/tareas/index.html",
       "/ejercicios/pizzas/index.html"
     ]

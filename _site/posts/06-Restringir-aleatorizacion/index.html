@@ -234,16 +234,37 @@ window.Quarto = {
 <section id="restricciones-a-la-aleatorización" class="level3">
 <h3 class="anchored" data-anchor-id="restricciones-a-la-aleatorización">Restricciones a la aleatorización</h3>
 <p>Imaginemos que tenemos las dos situaciones experimentales que se ilustran en la figura. El análisis de estas situaciones experimentales sugiere dos posible aproximaciones prácticas</p>
-<p><img src="images/retricciones_a_la_aleatorización_1.png" class="img-fluid"> ::: {.callout-tip collapse=“true”}</p>
-</section>
-<section id="qué-modelos-propondrías-para-analizarlos" class="level2">
-<h2 class="anchored" data-anchor-id="qué-modelos-propondrías-para-analizarlos"><span style="color: GoldenRod; font-size: 1.5em;">¿qué modelos propondrías para analizarlos?</span></h2>
+<p><img src="images/retricciones_a_la_aleatorización_1.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span style="color: GoldenRod; font-size: 1.5em;">¿qué modelos propondrías para analizarlos?</span>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>Si se supone ausencia de interacción entre Z y β, ambos casos se podría analizar con el mismo modelo:</p>
 <p><span class="math display">\[
 y_{ijk} = \mu + Z_{i} + B_{j} + \varepsilon_{k(ij)}
 \]</span></p>
-<p>En donde: * <span class="math inline">\(\mu\)</span> es la media general * <span class="math inline">\(Z_{i}\)</span> es el efecto del tratamiento <span class="math inline">\(i,\dots, t\)</span> * <span class="math inline">\(B_{j}\)</span> es el efecto del tratamiento <span class="math inline">\(j,\dots, b\)</span> * <span class="math inline">\(\varepsilon_{(ij)}\)</span> es el error aleatorio</p>
-<p>:::</p>
+<p>En donde:</p>
+<ul>
+<li><span class="math inline">\(mu\)</span> es la media general<br>
+</li>
+<li><span class="math inline">\(Z_{i}\)</span> es el efecto del tratamiento <span class="math inline">\(i,\dots, t\)</span><br>
+</li>
+<li><span class="math inline">\(B_{j}\)</span> es el efecto del tratamiento <span class="math inline">\(j,\dots, b\)</span><br>
+</li>
+<li><span class="math inline">\(\varepsilon_{(ij)}\)</span> es el error aleatorio</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
 <section id="errores-de-restricción-a-la-aleatorización" class="level3">
 <h3 class="anchored" data-anchor-id="errores-de-restricción-a-la-aleatorización">Errores de restricción a la aleatorización</h3>
 <p>Anderson (1970, 1974) notó que no podía ser que el mismo modelo fuera apropiado para dos situaciones tan distintas. Razonó que no se podían hacer inferencias sobre los <strong>bloques</strong> pues cada uno de ellos aparece sólo una vez.</p>
@@ -261,7 +282,7 @@ y_{ijkm} = \mu + Z_{i} + B_{j} + \delta_{k(j)} + \varepsilon_{m(ijk)}
 </ul>
 <p>El <em>error de restricción de bloques</em> representa las características particulares y aleatorias de cada conjunto de unidades que formen el bloque <em>j</em> (cosas como errores de medición, condiciones ambientales peculiares del bloque pero comunes en su interior, manipulación común al iinterior del bloque, etc.). Este nuevo término tiene estas características:</p>
 <ul>
-<li><p>Es aleatorio (se asume se distribuye como una normal e independientemente: ~normal(0, <span class="math inline">\(\sigma_{k}^2\)</span>)</p></li>
+<li><p>Es aleatorio (se asume se distribuye parrecido a una normal con observaciones realizadas independientemente: ~DNI(0, <span class="math inline">\(\sigma_{k}^2\)</span>)</p></li>
 <li><p>No es estimable y tampoco lo son sus combinaciones, porque no hay grados de libertad.</p></li>
 <li><p>Es útil en el modelo para facilitar identificar qué efectos se pueden poner a prueba mediante razones <em>F</em>. Esto se determina al examinar las <em>esperanzas de cuadrados medios</em> (<strong>ECM</strong>).</p></li>
 <li><p>Es un <em>efecto confundido</em> (no se puede separar) del efecto de bloque o grupo de unidades experimentales.</p></li>
@@ -320,7 +341,6 @@ gl_{total} &amp;= gl_{ración} + gl_{ración} + gl_{ración} = 11
 \end{align}
 \]</span></p>
 <p>Como <a href="http://www.scielo.org.co/pdf/rccp/v20n2/v20n2a11.pdf">referencia sugerida encontré este artículo</a> que describe como hacer el análisis necesario para determinar las <em>esperanzas de cuadrados medios</em> (<strong>EMC</strong>).</p>
-</section>
 </section>
 </section>
 <section id="manos" class="level2">

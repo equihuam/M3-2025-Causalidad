@@ -3,7 +3,7 @@ title: "Ensayo de antivenenos"
 author: ["Miguel Equihua", "Elio Lagunes"]
 date: "2024-02-02"
 lang: es
-draft: true
+draft: false
 categories: [taller]
 format:
   html:
