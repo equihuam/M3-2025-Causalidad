@@ -687,15 +687,18 @@ cultivarseco   -5.7096998 -1.990940</code></pre>
 </div>
 <details class="code-fold">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>url_drive <span class="ot">&lt;-</span> <span class="st">"https://docs.google.com/uc?id=%s&amp;export=download"</span> </span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>url_prot <span class="ot">&lt;-</span> <span class="st">"https://drive.google.com/file/d/1b-1binYTUJotvPWX9sCnImwxPctumezn/view?usp=sharing"</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>dat_alcal_id <span class="ot">&lt;-</span> <span class="fu">str_extract</span>(url_prot, <span class="st">"(?&lt;=d/)(.*)(?=/view)"</span>)</span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>alcal_dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">sprintf</span>(url_drive, dat_alcal_id)) </span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="co">#alcal_dat &lt;- read_excel("alcal_dat.xlsx",</span></span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="co">#    col_types = c("numeric", "numeric", "numeric"),</span></span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="co">#    col_names = TRUE)</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">#alcal_dat_xls &lt;- read_excel("alcal_dat.xlsx", skip = 0, col_names = TRUE)</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>url_drive <span class="ot">&lt;-</span> <span class="st">"https://docs.google.com/uc?id=%s&amp;export=download"</span> </span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>url_prot <span class="ot">&lt;-</span> <span class="st">"https://drive.google.com/file/d/1b-1binYTUJotvPWX9sCnImwxPctumezn/view?usp=sharing"</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>dat_alcal_id <span class="ot">&lt;-</span> <span class="fu">str_extract</span>(url_prot, <span class="st">"(?&lt;=d/)(.*)(?=/view)"</span>)</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>alcal_dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">sprintf</span>(url_drive, dat_alcal_id)) </span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="co">#alcal_dat &lt;- read_excel("alcal_dat.xlsx",</span></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a><span class="co">#    col_types = c("numeric", "numeric", "numeric"),</span></span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a><span class="co">#    col_names = TRUE)</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>

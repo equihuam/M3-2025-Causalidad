@@ -184,6 +184,10 @@ En este ejemplo usaremos la biblioteca `readxl` para leer los datos directamente
 library(readxl)
 library(tidyverse)
 
+
+#alcal_dat_xls <- read_excel("alcal_dat.xlsx", skip = 0, col_names = TRUE)
+
+
 url_drive <- "https://docs.google.com/uc?id=%s&export=download" 
 url_prot <- "https://drive.google.com/file/d/1b-1binYTUJotvPWX9sCnImwxPctumezn/view?usp=sharing"
 dat_alcal_id <- str_extract(url_prot, "(?<=d/)(.*)(?=/view)")
