@@ -1,6 +1,6 @@
 ---
 title: "Modelos de medidas repetidas"
-author: ["Miguel Equihua", "Elio Lagunes"]
+author: ["Miguel Equihua"]
 date: "2025-02-06"
 lang: es
 draft: false
