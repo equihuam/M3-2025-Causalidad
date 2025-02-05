@@ -1,6 +1,6 @@
 ---
 title: "Experimentación Ecológica"
-author: ["Miguel Equihua", "Elio Lagunes"]
+author: ["Miguel Equihua"]
 date: "2024-02-07"
 lang: es
 draft: false
