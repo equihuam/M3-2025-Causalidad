@@ -4,7 +4,7 @@
     "href": "presentaciones.html",
     "title": "M3-Presentaciones",
     "section": "",
-    "text": "Introducción a Diagramas Causales\n\n\n\n\n\n\npresentación\n\n\n\n\n\n\n\n\n\n30 ene 2025\n\n\nMiguel Equihua\n\n\n\n\n\n\n\n\n\n\n\n\nModelo Estadístico Lineal\n\n\nmodelación y prueba de hipótesis\n\n\n\npresentación\n\n\n\n\n\n\n\n\n\n30 ene 2025\n\n\nMiguel Equihua\n\n\n\n\n\n\n\n\n\n\n\n\nLeyes de la Ciencia\n\n\nDiseño de estudios y experimentos\n\n\n\npresentación\n\n\n\n\n\n\n\n\n\n29 ene 2025\n\n\nMiguel Equihua\n\n\n\n\n\n\nNo hay resultados"
+    "text": "Medidas Repetidas\n\n\n\n\n\n\npresentación\n\n\n\n\n\n\n\n\n\n6 feb 2025\n\n\nMiguel Equihua\n\n\n\n\n\n\n\n\n\n\n\n\nIntroducción a Diagramas Causales\n\n\n\n\n\n\npresentación\n\n\n\n\n\n\n\n\n\n30 ene 2025\n\n\nMiguel Equihua\n\n\n\n\n\n\n\n\n\n\n\n\nModelo Estadístico Lineal\n\n\nmodelación y prueba de hipótesis\n\n\n\npresentación\n\n\n\n\n\n\n\n\n\n30 ene 2025\n\n\nMiguel Equihua\n\n\n\n\n\n\n\n\n\n\n\n\nLeyes de la Ciencia\n\n\nDiseño de estudios y experimentos\n\n\n\npresentación\n\n\n\n\n\n\n\n\n\n29 ene 2025\n\n\nMiguel Equihua\n\n\n\n\n\n\nNo hay resultados"
   },
   {
     "objectID": "presentaciones/03-modelo-lineal/pres-modelo-lineal.html#el-modelo-estadístico-lineal-generalcenter",
@@ -733,5 +733,19 @@
     "title": "Experimentación Ecológica",
     "section": "Ciencia Abierta",
     "text": "Ciencia Abierta\nCentro de Ciencia Abierta\nCiecia abierta - UNESCO\nCiencia Abierta - CEPAL"
+  },
+  {
+    "objectID": "presentaciones/09-medidas-repetidas/index.html#casos-familiares-en-ecología",
+    "href": "presentaciones/09-medidas-repetidas/index.html#casos-familiares-en-ecología",
+    "title": "Medidas Repetidas",
+    "section": "Casos familiares en ecología",
+    "text": "Casos familiares en ecología\n\\[  \n\\begin{align*}\nn_{t+1} &= rn_t \\\\\nn_{t+1} &= rn_t (1 - \\alpha n_t) \\\\\n\\end{align*}\n\\]\n\nEsta última versión de crecimiento logístico se ve así arreglando un poco los términos \\[  \nn_{t-1} = rn_t - r \\alpha n_t^2\n\\]\nOtra forma de incorporar densodependencia\n\n\\[\nn_{t+1} = rn_t e^{-an_t}\n\\]\n\n¿se puede arreglar ésta de alguna forma conveniente?"
+  },
+  {
+    "objectID": "presentaciones/09-medidas-repetidas/index.html#ventajas-de-los-diseños-con-medidas-repetidas",
+    "href": "presentaciones/09-medidas-repetidas/index.html#ventajas-de-los-diseños-con-medidas-repetidas",
+    "title": "Medidas Repetidas",
+    "section": "Ventajas de los diseños con medidas repetidas",
+    "text": "Ventajas de los diseños con medidas repetidas\n\nSe obtiene más información de cada sujeto comparada con la que normalmente se obtiene en los diseños convencionales.\nEl número de sujetos necesarios para el estudio, dentro de un nivel dado de potencia estadística, tiende a ser mucho menor.\nComo las observaciones son hechas dentro de los sujetos, la variabilidad debida a las diferencias individuales entre los sujetos se elimina del término de error.\nCada sujeto actúa como su propio control, incrementando la potencia estadística del estudio."
   }
 ]
