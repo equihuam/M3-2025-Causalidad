@@ -1,6 +1,6 @@
 ---
 title: "Modelos de Efectos Mixtos"
-author: ["Miguel Equihua", "Elio Lagunes"]
+author: ["Miguel Equihua"]
 date: "2025-02-05"
 lang: es
 draft: false
